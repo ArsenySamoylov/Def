@@ -10,5 +10,5 @@
 graphics/
 *.txt
 *.png
-
+.gitignore
 SPrYtny
