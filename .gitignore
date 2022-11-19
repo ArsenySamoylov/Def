@@ -1,0 +1,14 @@
+*.exe
+*.o
+*.ii
+*.s
+*.d
+.vscode/
+*.json
+*.html
+*.png
+graphics/
+*.txt
+*.png
+
+SPrYtny

@@ -1,0 +1,106 @@
+#include "BinaryTree.h"
+
+#include <assert.h>
+#include <malloc.h>
+
+
+#include "my_buffer.h"
+#include "CommonEnums.h"
+#include "QDiagnostic.h"
+#include "Utils.h"
+#include "stdlog.h"
+
+static int  DeleteBranch (Node* root);
+
+int Ctor (BinaryTree* tree)
+    {
+    CHECK_STDERR(tree, return NULL_PTR);
+
+    // Node* root = (Node*) calloc (1, sizeof(Node));
+    // CHECK_STDERR(root, return BAD_CALLOC);
+
+    // // //root->data         = CRINGE;
+    // // //root->data         = {};
+    // // root->parent       = NULL;
+    // // root->first_child  = NULL;
+    // // root->second_child = NULL;
+
+    // tree->root = root;
+    tree->root   = NULL;
+    tree->size   = 0;
+    tree->status = ACTIVE;
+
+    return LogMsgRet (SUCCESS, "Tree succesfully initialized");
+    }
+
+int Dtor (BinaryTree* tree)
+    {
+    CHECK_STDERR(tree, return NULL_PTR);
+
+    if (tree->status != ACTIVE)
+        return MsgRet(FAILURE, "Ebat, deleting, not active mode\n");
+    
+    int status = DeleteBranch(tree->root);
+    if (status != SUCCESS)
+        return MsgRet(FAILURE, "Ebat, error deleting main branch\n");
+
+    tree->root   = NULL;
+    tree->size   = 0;
+    tree->status = DEAD;
+
+    return SUCCESS;
+    }
+
+int AddChildren (Node* node)
+    {
+    CHECK_STDERR(node, return NULL_PTR);
+
+    if (node->first_child)
+        return MsgRet(FAILURE, "Node already has first child\n");
+
+    if (node->second_child)
+        return MsgRet(FAILURE, "Node already has second child\n");
+
+    Node* first_child  = (Node*) calloc (1, sizeof(Node));
+    CHECK_STDERR(first_child,  return BAD_CALLOC);
+
+    Node* second_child = (Node*) calloc (1, sizeof(Node));
+    CHECK_STDERR(second_child, return BAD_CALLOC);
+
+    first_child->parent       = node;
+    first_child->first_child  = NULL;
+    first_child->second_child = NULL;
+
+    second_child->parent       = node;
+    second_child->first_child  = NULL;
+    second_child->second_child = NULL;
+
+    node->first_child  = first_child;
+    node->second_child = second_child;
+
+    return SUCCESS;
+    }
+
+static int  DeleteBranch (Node* root)
+    {
+    assert(root);
+    // CHECK_STDERR(root, return NULL_PTR);
+
+    if (! (root->first_child || root->second_child) )
+        {
+        free (root);
+        root = NULL;
+
+        return SUCCESS;
+        }
+
+    int status  = DeleteBranch (root->first_child);
+    if (status != SUCCESS)
+        return MsgRet (FAILURE, "Could't delete first_child branch\n");
+
+        status  = DeleteBranch (root->second_child);
+    if (status != SUCCESS)
+        return MsgRet (FAILURE, "Could't delete second_child branch\n");
+
+    return SUCCESS;
+    }
