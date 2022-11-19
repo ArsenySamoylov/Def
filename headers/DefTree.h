@@ -11,13 +11,12 @@ enum DefNodeType
     FUNCTION,
     // /////////
     NOT_A_OPERATOR,
-    NOT_A_FUNCTION,
+    NOT_A_FUNCTION = -1,
     // OPENING_BRACKET,
     // CLOSING_BRACKET,
     };
 
 const int FUNCTION_LENGTH = 16;
-const int NUMBER_OF_FUNCTIONS = 6;
 
 struct DefNode
     {

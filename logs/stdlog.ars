@@ -1,14 +1,83 @@
-main
+Sat Nov 19 18:05:12 2022
+
+main::
   {
-  SetDefTree
+  SetDefTree::
     {
-    BufferCtor
+    BufferCtor::
       {
 
-      return 0; - Success (BufferCtor, line 298)
+      return 0; - Success (BufferCtor:298)
       }
 
-    ExpressionParser
+    ExpressionParser::
       {
-      	*buf->str: (
-      	BufferGetCh(buf):  
+      	buf->str: "((x) + (2))"
+      	temp: '('
+      	current_defnode: 0x556636dd4740
+      
+
+      ExpressionParser::
+        {
+        	buf->str: "(x) + (2))"
+        	temp: '('
+        	current_defnode: 0x556636dd4790
+        
+
+        SetDefNodeValue::
+          {
+          	buf->str: "x) + (2))"
+          	ch: 'x'
+          	temp: ')'
+          	buf->str: ") + (2))"
+          ONE CHILD: x - variable
+          }
+
+        return CHILD_FREE defnode 0x556636dd4790
+        }
+
+      	current_defnode->left_child: 0x556636dd4790
+      	temp: '+'
+      SetDefNodeValue::
+        {
+        	buf->str: "+ (2))"
+        	ch: '+'
+        TWO_CHILDREN: + - operator
+        }
+
+      ExpressionParser::
+        {
+        	buf->str: "(2))"
+        	temp: '('
+        	current_defnode: 0x556636dd47c0
+        
+
+        SetDefNodeValue::
+          {
+          	buf->str: "2))"
+          	ch: '2'
+          	buf->str: "2))"
+          CHILD FREE: 2 - constant
+          }
+
+        return CHILD_FREE defnode 0x556636dd47c0
+        }
+
+      	current_defnode->left_child: 0x556636dd4790
+      	current_defnode->right_child: 0x556636dd47c0
+      ret current_defnode
+      }
+
+
+    return 0; - Data base setted succesfuly (from path: ./samples/firstsample.txt)
+
+
+    }
+
+
+  return 0; - Success (main:16)
+  }
+
+*********************************************************************
+		Log Successfuly ended, on Sat Nov 19 18:05:12 2022
+*********************************************************************

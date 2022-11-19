@@ -23,6 +23,9 @@ Logger::Logger (const char* log_name) : my_log(NULL), level(0), indent(0), logna
                     throw "Ebat, lox, You can't even open logfile\n";
 
                setvbuf(my_log, NULL, _IONBF, 0);
+
+               time_t NewYorkTime = time(NULL);
+               fprintf (my_log, "%s\n", ctime(&NewYorkTime));
                }
             catch(const char* message)
                {

@@ -1,9 +1,7 @@
 #include "FunctionLogger.h"
 
-// #define SEPARATOR ":::::::::::::::::::::::::::::::::::::::::::::::::"
-// #define SEPARATOR "::"
-
-FunctionLogger::FunctionLogger(int lvl, const char* func_name):  guard_level(FULL_MAXIMUM_ULTRA_TOTAL_FUCKING_LOGGING), 
+FunctionLogger::FunctionLogger(int lvl, const char* func_name):  old_level(FULL_MAXIMUM_ULTRA_TOTAL_FUCKING_LOGGING), 
+                                                                 guard_level(FULL_MAXIMUM_ULTRA_TOTAL_FUCKING_LOGGING), 
                                                                  current_indent(0),
                                                                  function_name("No name") 
     {
@@ -15,8 +13,10 @@ FunctionLogger::FunctionLogger(int lvl, const char* func_name):  guard_level(FUL
 
     Logger& log = Logger::getInstance();
 
+    old_level = log.getlevel();
+
     log.setlevel  (lvl);
-    log.log("%s\n", function_name);
+    log.log("%s::\n", function_name);
 
     log.setindent (log.getindent() + 1); // mb change to decrease and increase indent
     log.log("{\n");
@@ -33,7 +33,7 @@ FunctionLogger:: ~FunctionLogger()
     //log.log ("End of function %s\n", function_name);
     log.log ("}\n\n");
 
-    log.setlevel(FULL_MAXIMUM_ULTRA_TOTAL_FUCKING_LOGGING);
+    log.setlevel(old_level);
     log.setindent(current_indent - 1); // mb change to decrease and increase indent
 
     return;

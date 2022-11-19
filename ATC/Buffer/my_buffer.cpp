@@ -313,7 +313,12 @@ int  BufferGetCh (Buffer* buf)
     assert(buf);
 
     int n = 0;
-    sscanf(buf->str, "%*[^ \t\n\v]%n", &n);
+    sscanf(buf->str, "%*[ \t\n\v]%n", &n);
 
-    return *((buf->str) + n);
+    // $li(n)
+    // $lc(*buf->str)
+    // $ls(buf->str)
+    buf->str += n;
+
+    return *(buf->str++);
     }

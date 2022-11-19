@@ -3,17 +3,17 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-#include "BinaryTree.h"
+#include "DefTree.h"
 
 #include "GVConfig.h"
 
 FILE* OpenDotFile  (const char* path);
 void  CloseDotFile ();
 
-const char* MakeImg (const char* img_name, const BinaryTree* data_tree);
+const char* MakeImg (const char* img_name, const DefTree* data_tree);
 
-void DotTreeBranch (Node* node);
-void PrintNode     (Node* node);
+void DotTreeBranch (DefNode* node);
+void PrintNode     (DefNode* node);
 
 // mb ask programmer to write his own functions to include it here ????
 

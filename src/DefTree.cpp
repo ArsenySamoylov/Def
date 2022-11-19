@@ -18,6 +18,9 @@ enum
     CHILD_FREE,
     };
 
+const char OPERATORS[] = "+-/*"; 
+
+const int NUMBER_OF_FUNCTIONS = 6;
 const char* SUPPORTED_FUNCTIONS[NUMBER_OF_FUNCTIONS] = {
                                      "cos",
                                      "sin",
@@ -26,6 +29,16 @@ const char* SUPPORTED_FUNCTIONS[NUMBER_OF_FUNCTIONS] = {
                                      "tg",
                                      "ctg",
                                     };
+
+
+#define CringeScanf(format, ...)                                           \
+        {                                                                  \
+        int n = 0;                                                         \
+        sscanf (buf->str, format "%n", __VA_ARGS__ __VA_OPT__(,) &n);      \
+                                                                           \
+        buf->str += n;                                                     \
+        buf->str = SkipSpaces (buf->str);                                  \
+        }
 
 static DefNode* NewDefNode();
 static int DeleteBranch         (DefNode* root);
@@ -42,6 +55,7 @@ static int isfunction (const char* str);
 
 int SetDefTree (DefTree* def_tree, const char* path)
     {
+    
     $log(DEBUG)
 
     assertlog (def_tree,  EFAULT, exit(LFAILURE));
@@ -54,6 +68,7 @@ int SetDefTree (DefTree* def_tree, const char* path)
     Buffer buf{};
     BufferCtor (&buf, buffer);
     $s(buffer);
+  
     DefNode* root = ExpressionParser (&buf);
     CHECK (root, return LFAILURE);
     
@@ -65,19 +80,9 @@ int SetDefTree (DefTree* def_tree, const char* path)
     return LogMsgRet (SUCCESS, "Data base setted succesfuly (from path: %s)\n\n", path);
     }
 
-
-#define CringeScanf(format, ...)                                           \
-        {                                                                  \
-        int n = 0;                                                         \
-        sscanf (buf->str, format "%n", __VA_ARGS__ __VA_OPT__(,) &n);      \
-                                                                           \
-        buf->str += n;                                                     \
-        buf->str = SkipSpaces (buf->str);                                  \
-        }
-
 static DefNode* NewDefNode()
     {
-    $log(DEBUG)
+    // $log(DEBUG)
 
     DefNode* new_defnode = (DefNode*) calloc (1, sizeof(DefNode));
     CHECK (new_defnode, return LNULL);
@@ -93,241 +98,66 @@ static DefNode* ExpressionParser (Buffer* buf)
     {
     $log(DEBUG)
 
-    assertlog (buf, EINVAL, exit(LFAILURE));
+    assertlog (buf, EINVAL, return LNULL);
 
-    $lc(*buf->str)
-    $lc(BufferGetCh(buf))
-    $$
-    // change to != '(' - syntax error
-    if (BufferGetCh(buf) == '(')
+    $ls(buf->str)
+
+    char temp = BufferGetCh(buf); 
+    $lc(temp)
+
+    if (temp != '(')
         {
-        $$
-        DefNode* current_defnode = NewDefNode();
-        
-        char temp = BufferGetCh(buf); 
-        $lc(temp)
-        if (temp != '(' && temp != ')')
-            {
-            int status = SetDefNodeValue(current_defnode, buf);
+        flog << "DYRACHOC, SYNTAX ERROR (missing opening bracket)";
+        return LNULL;
+        }
+    
+    DefNode* current_defnode = NewDefNode();
+    $lp(current_defnode); flog<<"\n";
 
-            if (status == TWO_CHILDREN)
-                {
-                current_defnode->right_child = ExpressionParser(buf);
-                current_defnode->right_child->parent = current_defnode;
-                }
+    temp = BufferGetCh(buf);
+           BufferUngetCh(buf);
 
-            if (BufferGetCh(buf) != ')')
-                return logf("Missing closing braket in %s", buf->str), LNULL;
-
-            return current_defnode;
-            }
-
-        BufferUngetCh(buf);
-
+    if (temp == '(')
+        {
         current_defnode->left_child = ExpressionParser(buf);
         current_defnode->left_child->parent = current_defnode;
 
-        return current_defnode;
+        $lp(current_defnode->left_child)
+
+        temp = BufferGetCh(buf);
+        BufferUngetCh(buf);
+        $lc(temp)
+        }
+    
+    if (temp != '(')
+        {
+        int status = SetDefNodeValue(current_defnode, buf);
+        
+        if (status == CHILD_FREE)
+            {            
+            if (BufferGetCh(buf) != ')')
+                return logf("Missing closing braket in %s", buf->str), LNULL;
+            
+            logf("return CHILD_FREE defnode %p\n", current_defnode);
+
+            return current_defnode;
+            }
         }
 
-    printf("EROROR, YOU COULD'T REACH HERE %s:%d\n", __func__, __LINE__);
+    current_defnode->right_child = ExpressionParser(buf);
+    current_defnode->right_child->parent = current_defnode;
+    // $ls(buf->str)
+    
+    $lp(current_defnode->left_child)
+    $lp(current_defnode->right_child)
+
+    if (BufferGetCh(buf) == ')')
+        return logf("ret current_defnode\n"), current_defnode;
+
+    logf("Ups, smthg went wrong in - %s (%s:%d)", buf->str, __PRETTY_FUNCTION__, __LINE__);
     return LNULL;
     }
 
-static int SetDefNodeValue(DefNode* current_defnode, Buffer* buf)
-    {
-    $log(DEBUG)
-
-    assertlog (current_defnode, EFAULT, exit(LFAILURE));
-    assertlog (buf, EINVAL, exit(LFAILURE));
-    // mb check something in def_node
-    // forexample root should be binary
-    // 
-
-    switch(GetDefNodeType(buf))
-        {
-        case '(':
-            {
-            logf("Erorr, here should't be opening bracket- %s\n", buf->str);
-            // current_defnode-> left_child = ExpressionParser (buf);
-            // current_defnode->right_child = ExpressionParser (buf);
-
-            // current_defnode-> left_child->parent = current_defnode;
-            // current_defnode->right_child->parent = current_defnode;
-            // ((x) * (4))
-            break;
-            }
-        case ')':
-            {
-            logf("Erorr, here should't be closing bracket- %s\n", buf->str);
-            // return current_defnode;
-
-            break;
-            }
-        case OPERATOR: 
-            {
-            current_defnode->def_type = OPERATOR;
-
-            current_defnode->value.t_operator = BufferGetCh(buf);
-
-            current_defnode-> left_child = ExpressionParser(buf);
-            current_defnode->right_child = ExpressionParser(buf);
-            
-            return TWO_CHILDREN; 
-            break;
-            }
-        case VARIABLE:
-            {
-            current_defnode->def_type = VARIABLE;
-
-            current_defnode->value.t_variable = BufferGetCh(buf);
-
-            current_defnode-> left_child = nullptr;
-            current_defnode->right_child = nullptr;
-
-            return CHILD_FREE;
-            break;
-            }
-        case FUNCTION:
-            {
-            current_defnode->def_type = FUNCTION;
-
-            char function[FUNCTION_LENGTH] = "";
-
-            int n = 0;
-            sscanf(buf->str, "%[^)]%n)", function, &n);
-            buf->str += n; 
-
-            current_defnode->value.t_function = isfunction(function); 
-
-            // how many arguments functios have ?
-            printf ("@todo: function arguments (%s)\n", function);
-
-            current_defnode->left_child  = nullptr;
-            current_defnode->right_child = nullptr;
-
-            return ONE_CHILD;
-            break;
-            }
-        case CONSTANT:
-            {
-            current_defnode->def_type = CONSTANT;
-
-            double temp = NAN;
-            CringeScanf("%lg", &temp);
-
-            current_defnode->value.t_constant = temp;
-
-            current_defnode->left_child  = nullptr;
-            current_defnode->right_child = nullptr;
-
-            return CHILD_FREE;
-            break;
-            }
-        case NOT_A_OPERATOR:
-        case NOT_A_FUNCTION:
-        default: 
-            {
-            printf("Syntax error in: (%.15s)\n", buf->str);
-
-            logf("Syntax error in expression (%s)\n", buf->buffer);
-            return LFAILURE;
-            break;
-            }
-        }
-
-    printf("EROROR, YOU COULD'T REACH HERE %s:%d\n", __func__, __LINE__);
-
-    return LFAILURE;
-    }
-
-/*
-static DefNode* SetNewDefNod (DefNode* parent, const char** buffer)
-    {
-    $log(DEBUG)
-
-    //assert(parent); // PARENT CAN BE NULL !!! 
-    assertlog (buffer, EINVAL, return LNULL);
-
-    DefNode* new_defnod = (DefNode*) calloc (1, sizeof(new_defnod[0]));
-    CHECK (new_defnod, return LNULL);
-
-    new_defnod->parent = parent;
-
-    *buffer = SkipSpaces (++(*buffer));        
-
-    int n = 0;
-    int status = sscanf (++(*buffer), "%[^\"]%n", new_defnod->data, &n);
-
-    if (!status)
-        return ParsingErrorMessage ("sscanf could't read this line\n", *buffer);
-
-    if (!n)
-        return ParsingErrorMessage ("\"statement\" is empty\n", *buffer);
-
-    if (*(*buffer + n) != '"')
-        return ParsingErrorMessage ("\"statement\" missing closig \" bracket \n", *buffer);
-
-    *buffer = SkipSpaces(*buffer + n + 1);
-
-    new_defnod->right_child  = NULL;
-    new_defnod->left_child = NULL;
-
-    // current_defnod = new_defnod;
-    // number_of_defnods++;
-
-    LogDefNod (new_defnod);
-
-    return new_defnod;
-    }
-
-static DefNode* FinishSetting (DefNode* current_defnod, const char** buffer)
-    {
-    $log(DEBUG)
-
-    assert(current_defnod);
-    assert(buffer);
-
-    DefNode* prev_defnod = current_defnod->parent;
-
-    // if prev_defnod is NULL, than current_defnod is root
-    if (!prev_defnod)
-        {
-        *buffer = SkipSpaces(++(*buffer));   
-
-        return current_defnod;
-        }
-
-    if (!prev_defnod->right_child)
-            prev_defnod->right_child = current_defnod;
-
-    else 
-
-        if (!prev_defnod->left_child)
-                prev_defnod->left_child = current_defnod;
-
-        else
-            
-            {
-            printf ("Error in line : ");
-            printl ( *buffer, '\n');
-            printf ("More specificly: %.20s\n", *buffer);
-
-            printf ("Data tree defnode can't have more then two children\n");
-
-            return NULL;
-            }
-        
-    // (prev_defnod->right_child == NULL) ? prev_defnod->right_child : prev_defnod->left_child = current_defnod;
-    LogDefNod (prev_defnod);
-
-    current_defnod = prev_defnod;
-    
-    *buffer = SkipSpaces(++(*buffer));
-
-    return prev_defnod;
-    }
-*/
 int CloseDefTree (DefTree* tree)
     {
     assertlog(tree, EFAULT, exit(LFAILURE));
@@ -411,17 +241,6 @@ static DefNode* ParsingErrorMessage (const char* message, const char* buffer)
     return NULL;
     }
 
-/*
-static void LogDefNod (const DefNode* defnode)
-    {
-    logf ("\nparent: %p\nData: (%s)\nAddress: %p\n\tFChild: %p \t Schild: %p\n", defnode->parent,
-                defnode->data, defnode, defnode->right_child, defnode->left_child);
-
-    return;
-    }   
-*/
-
-
 static int isfunction (const char* str)
     {
     assertlog(str, EFAULT, exit(LFAILURE));
@@ -435,26 +254,41 @@ static int isfunction (const char* str)
     return NOT_A_FUNCTION;
     }
 
-const char OPERATORS[] = "+-/*"; 
-
-int GetDefNodeType (Buffer* buf)
+static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
     {
-    assertlog(buf, EFAULT, exit(FAILURE));
+    $log(DEBUG)
 
+    assertlog(defnode, EFAULT, return LFAILURE);
+    assertlog(buf,     EFAULT, return LFAILURE);
+
+    $ls(buf->str)
     char ch = BufferGetCh(buf);
-
+    $lc(ch)
+    
     if (ch == '(' || ch == ')')
-        return ch;
+        {
+        flog << "I CANT WORK WITH BRACKETS !";
 
+        return SYNTAX_ERROR;
+        }
+
+    // FUNCTION OR VARIABLE
     if (isalpha(ch))
         {
         char temp = BufferGetCh(buf);
-        if  (temp == ')')
+        $lc(temp)
+
+        if  (temp == ')')  
             {
             BufferUngetCh(buf);
-            BufferUngetCh(buf);
 
-            return VARIABLE;
+            defnode->def_type = VARIABLE;
+
+            defnode->value.t_variable = ch;
+
+            $ls(buf->str)
+            logf("ONE CHILD: %c - variable\n", ch);
+            return CHILD_FREE;
             }
 
         BufferUngetCh(buf);
@@ -463,22 +297,75 @@ int GetDefNodeType (Buffer* buf)
 
         int n = 0;
         sscanf(buf->str, "%[^)]%n)", function, &n);
-        //buf->str += n; // cause I need to get function later on
+        buf->str += n; 
 
-        if (isfunction(function))
-            return FUNCTION;
+        int func_num = isfunction(function);
+        if (func_num == NOT_A_FUNCTION)
+            {
+            logf("Uncknown function %s\n", function);
+            return SYNTAX_ERROR;
+            }
 
-        return NOT_A_FUNCTION;
+        defnode->value.t_function = func_num;
+
+        // how many arguments functios have ?
+        printf ("@todo: function arguments (%s)\n", function);
+
+        logf("ONE CHILD: %s - function\n", function);
+        return ONE_CHILD;
         }
-                // t_operator
+    // CONSTANT
+    if (isdigit(ch))
+        {
+        BufferUngetCh(buf);
+        $ls(buf->str)
+
+        defnode->def_type = CONSTANT;
+
+        double temp = NAN;
+        CringeScanf("%lg)", &temp);
+        BufferUngetCh(buf); // to return ')'
+
+        defnode->value.t_constant = temp;
+
+        logf("CHILD FREE: %lg - constant\n", temp);
+        return CHILD_FREE;
+        }
+
+    // OPERATOR OR CONSTANT
     const char* t_operator = strchr(OPERATORS, ch);
 
     if (!t_operator)
-        return NOT_A_OPERATOR;
+        {
+        logf("Not a operator: %c\n", ch);
+        
+        return SYNTAX_ERROR;
+        }
     
     if (isdigit(BufferGetCh(buf)))
-        return BufferUngetCh(buf), CONSTANT;
+        {
+        BufferUngetCh(buf);
+
+        defnode->def_type = CONSTANT;
+
+        double temp = NAN;
+        CringeScanf("%lg)", &temp);
+        BufferUngetCh(buf); // to return ')'
+        
+        defnode->value.t_constant = temp;
+
+        logf("CHILD FREE: %lg - constant\n", temp);
+        return CHILD_FREE;
+        }
     
-    return OPERATOR;
+    BufferUngetCh(buf);
+
+    defnode->def_type = OPERATOR;
+
+    defnode->value.t_operator = *t_operator;
+
+    logf("TWO_CHILDREN: %c - operator\n", *t_operator);
+    return TWO_CHILDREN;
     }    
 
+#undef CringeScanf

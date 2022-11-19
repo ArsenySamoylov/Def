@@ -11,6 +11,8 @@
 class FunctionLogger
     {
     private:
+        int old_level;
+        
         int guard_level;
         int current_indent;
         const char* function_name;

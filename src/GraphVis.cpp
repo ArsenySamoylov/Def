@@ -1,4 +1,4 @@
-#include "GraphVis.h"
+#include "DefGraphVis.h"
 
 #include <assert.h>
 #include <stdarg.h>
@@ -7,7 +7,7 @@
 
 static FILE* Dot = NULL; 
 
-const char* MakeImg (const char* img_name, const BinaryTree* data_tree) 
+const char* MakeImg (const char* img_name, const DefTree* data_tree) 
     {
     assert (img_name);
 
@@ -92,39 +92,62 @@ void CloseDotFile ()
     return; 
     }
 
-void DotTreeBranch (Node* node)
+#include "EasyDebug.h"
+
+void DotTreeBranch (DefNode* node)
     {
     assertlog (node, EFAULT, abort());
     
     PrintNode (node);
-    
-    if (node->first_child)
+    $p(node->left_child)
+    $p(node->right_child)
+
+    if (node->left_child)
         {
-        PrintNode (node->first_child);
+        PrintNode (node->left_child);
 
-        DotPrint ("\t\tnode_%p -> node_%p [label = \"Yes\", color = Green]\n", node, node->first_child);
+        DotPrint ("\t\tnode_%p -> node_%p \n", node, node->left_child);
 
-        DotTreeBranch (node->first_child);
+        DotTreeBranch (node->left_child);
         }
 
-    if (node->second_child)
+    if (node->right_child)
         {
-        PrintNode (node->second_child);
+        PrintNode (node->right_child);
 
-        DotPrint ("\t\tnode_%p -> node_%p [label = \"NO\", color = Red]\n", node, node->second_child);
+        DotPrint ("\t\tnode_%p -> node_%p \n", node, node->right_child);
 
-        DotTreeBranch (node->second_child);
+        DotTreeBranch (node->right_child);
         }
 
     return;
     }
 
+#include <string.h>
 
-void PrintNode (Node* node)
+void PrintNode (DefNode* node)
     {
     assertlog (node, EFAULT, abort());
+
+    char def_type[333]   = "";
     
-    DotPrint ("\t\tnode_%p [shape = Mrecord label =  \"%s\"]\n", node, node->data);
+    switch (node->def_type)
+        {
+        case OPERATOR: strcpy(def_type, "OPERATOR");
+                       break;
+
+        case VARIABLE: strcpy(def_type, "VARIABLE");
+                       break;
+
+        case CONSTANT: strcpy(def_type, "CONSTANT");
+                       break;
+
+        case FUNCTION: strcpy(def_type, "FUNCTION");
+                       break;
+        default: break;
+        }
+
+    DotPrint ("\t\tnode_%p [shape = Mrecord label =  \"%s\"]\n", node, def_type);
 
     return;
     }    
