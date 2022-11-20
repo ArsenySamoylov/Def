@@ -1,4 +1,4 @@
-Sun Nov 20 20:39:49 2022
+Sun Nov 20 21:08:25 2022
 
 main::
   {
@@ -16,31 +16,27 @@ main::
         {
         	buf->str: "( (10) / ((8) * (y)) )"
         	temp: '('
-        	current_defnode: 0x55cc87533740
+        	current_defnode: 0x5652a62ec740
         
 
         ExpressionParser::
           {
           	buf->str: "(10) / ((8) * (y)) )"
           	temp: '('
-          	current_defnode: 0x55cc87533790
+          	current_defnode: 0x5652a62ec790
           
 
           SetDefNodeValue::
             {
             	buf->str: "10) / ((8) * (y)) )"
             	ch: '1'
-            	buf->str: "10) / ((8) * (y)) )"
-            	buf->str: ") / ((8) * (y)) )"
-            	buf->str: ") / ((8) * (y)) )"
             CHILD FREE: 10 - constant
-            	buf->str: ") / ((8) * (y)) )"
             }
 
-          return CHILD_FREE defnode 0x55cc87533790
+          return CHILD_FREE defnode 0x5652a62ec790
           }
 
-        	current_defnode->left_child: 0x55cc87533790
+        	current_defnode->left_child: 0x5652a62ec790
         	temp: '/'
         SetDefNodeValue::
           {
@@ -53,31 +49,27 @@ main::
           {
           	buf->str: "((8) * (y)) )"
           	temp: '('
-          	current_defnode: 0x55cc875337c0
+          	current_defnode: 0x5652a62ec7c0
           
 
           ExpressionParser::
             {
             	buf->str: "(8) * (y)) )"
             	temp: '('
-            	current_defnode: 0x55cc875337f0
+            	current_defnode: 0x5652a62ec7f0
             
 
             SetDefNodeValue::
               {
               	buf->str: "8) * (y)) )"
               	ch: '8'
-              	buf->str: "8) * (y)) )"
-              	buf->str: ") * (y)) )"
-              	buf->str: ") * (y)) )"
               CHILD FREE: 8 - constant
-              	buf->str: ") * (y)) )"
               }
 
-            return CHILD_FREE defnode 0x55cc875337f0
+            return CHILD_FREE defnode 0x5652a62ec7f0
             }
 
-          	current_defnode->left_child: 0x55cc875337f0
+          	current_defnode->left_child: 0x5652a62ec7f0
           	temp: '*'
           SetDefNodeValue::
             {
@@ -90,7 +82,7 @@ main::
             {
             	buf->str: "(y)) )"
             	temp: '('
-            	current_defnode: 0x55cc87533820
+            	current_defnode: 0x5652a62ec820
             
 
             SetDefNodeValue::
@@ -102,16 +94,16 @@ main::
               	buf->str: ")) )"
               }
 
-            return CHILD_FREE defnode 0x55cc87533820
+            return CHILD_FREE defnode 0x5652a62ec820
             }
 
-          	current_defnode->left_child: 0x55cc875337f0
-          	current_defnode->right_child: 0x55cc87533820
+          	current_defnode->left_child: 0x5652a62ec7f0
+          	current_defnode->right_child: 0x5652a62ec820
           ret current_defnode
           }
 
-        	current_defnode->left_child: 0x55cc87533790
-        	current_defnode->right_child: 0x55cc875337c0
+        	current_defnode->left_child: 0x5652a62ec790
+        	current_defnode->right_child: 0x5652a62ec7c0
         ret current_defnode
         }
 
@@ -133,7 +125,7 @@ main::
         {
         	buf->str: "(x)"
         	temp: '('
-        	current_defnode: 0x55cc87533c80
+        	current_defnode: 0x5652a62ec870
         
 
         SetDefNodeValue::
@@ -145,7 +137,7 @@ main::
           	buf->str: ")"
           }
 
-        return CHILD_FREE defnode 0x55cc87533c80
+        return CHILD_FREE defnode 0x5652a62ec870
         }
 
 
@@ -166,14 +158,14 @@ main::
         {
         	buf->str: "((x) * (6))"
         	temp: '('
-        	current_defnode: 0x55cc87533cd0
+        	current_defnode: 0x5652a62ec8c0
         
 
         ExpressionParser::
           {
           	buf->str: "(x) * (6))"
           	temp: '('
-          	current_defnode: 0x55cc87533d00
+          	current_defnode: 0x5652a62ec8f0
           
 
           SetDefNodeValue::
@@ -185,10 +177,10 @@ main::
             	buf->str: ") * (6))"
             }
 
-          return CHILD_FREE defnode 0x55cc87533d00
+          return CHILD_FREE defnode 0x5652a62ec8f0
           }
 
-        	current_defnode->left_child: 0x55cc87533d00
+        	current_defnode->left_child: 0x5652a62ec8f0
         	temp: '*'
         SetDefNodeValue::
           {
@@ -201,25 +193,21 @@ main::
           {
           	buf->str: "(6))"
           	temp: '('
-          	current_defnode: 0x55cc87533d30
+          	current_defnode: 0x5652a62ec920
           
 
           SetDefNodeValue::
             {
             	buf->str: "6))"
             	ch: '6'
-            	buf->str: "6))"
-            	buf->str: "))"
-            	buf->str: "))"
             CHILD FREE: 6 - constant
-            	buf->str: "))"
             }
 
-          return CHILD_FREE defnode 0x55cc87533d30
+          return CHILD_FREE defnode 0x5652a62ec920
           }
 
-        	current_defnode->left_child: 0x55cc87533d00
-        	current_defnode->right_child: 0x55cc87533d30
+        	current_defnode->left_child: 0x5652a62ec8f0
+        	current_defnode->right_child: 0x5652a62ec920
         ret current_defnode
         }
 
@@ -241,21 +229,21 @@ main::
         {
         	buf->str: "(((x) + (2)) * (3))"
         	temp: '('
-        	current_defnode: 0x55cc87533d80
+        	current_defnode: 0x5652a62ec970
         
 
         ExpressionParser::
           {
           	buf->str: "((x) + (2)) * (3))"
           	temp: '('
-          	current_defnode: 0x55cc87533db0
+          	current_defnode: 0x5652a62ec9a0
           
 
           ExpressionParser::
             {
             	buf->str: "(x) + (2)) * (3))"
             	temp: '('
-            	current_defnode: 0x55cc87533de0
+            	current_defnode: 0x5652a62ec9d0
             
 
             SetDefNodeValue::
@@ -267,10 +255,10 @@ main::
               	buf->str: ") + (2)) * (3))"
               }
 
-            return CHILD_FREE defnode 0x55cc87533de0
+            return CHILD_FREE defnode 0x5652a62ec9d0
             }
 
-          	current_defnode->left_child: 0x55cc87533de0
+          	current_defnode->left_child: 0x5652a62ec9d0
           	temp: '+'
           SetDefNodeValue::
             {
@@ -283,29 +271,25 @@ main::
             {
             	buf->str: "(2)) * (3))"
             	temp: '('
-            	current_defnode: 0x55cc87533e10
+            	current_defnode: 0x5652a62eca00
             
 
             SetDefNodeValue::
               {
               	buf->str: "2)) * (3))"
               	ch: '2'
-              	buf->str: "2)) * (3))"
-              	buf->str: ")) * (3))"
-              	buf->str: ")) * (3))"
               CHILD FREE: 2 - constant
-              	buf->str: ")) * (3))"
               }
 
-            return CHILD_FREE defnode 0x55cc87533e10
+            return CHILD_FREE defnode 0x5652a62eca00
             }
 
-          	current_defnode->left_child: 0x55cc87533de0
-          	current_defnode->right_child: 0x55cc87533e10
+          	current_defnode->left_child: 0x5652a62ec9d0
+          	current_defnode->right_child: 0x5652a62eca00
           ret current_defnode
           }
 
-        	current_defnode->left_child: 0x55cc87533db0
+        	current_defnode->left_child: 0x5652a62ec9a0
         	temp: '*'
         SetDefNodeValue::
           {
@@ -318,25 +302,21 @@ main::
           {
           	buf->str: "(3))"
           	temp: '('
-          	current_defnode: 0x55cc87533e40
+          	current_defnode: 0x5652a62eca30
           
 
           SetDefNodeValue::
             {
             	buf->str: "3))"
             	ch: '3'
-            	buf->str: "3))"
-            	buf->str: "))"
-            	buf->str: "))"
             CHILD FREE: 3 - constant
-            	buf->str: "))"
             }
 
-          return CHILD_FREE defnode 0x55cc87533e40
+          return CHILD_FREE defnode 0x5652a62eca30
           }
 
-        	current_defnode->left_child: 0x55cc87533db0
-        	current_defnode->right_child: 0x55cc87533e40
+        	current_defnode->left_child: 0x5652a62ec9a0
+        	current_defnode->right_child: 0x5652a62eca30
         ret current_defnode
         }
 
@@ -353,5 +333,5 @@ main::
   }
 
 *********************************************************************
-		Log Successfuly ended, on Sun Nov 20 20:39:53 2022
+		Log Successfuly ended, on Sun Nov 20 21:08:25 2022
 *********************************************************************

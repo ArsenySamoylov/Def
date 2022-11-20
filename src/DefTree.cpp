@@ -316,29 +316,31 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
         return ONE_CHILD;
         }
     // CONSTANT
+    const char* t_operator = strchr(OPERATORS, ch);
+
     if (isdigit(ch))
-        {
-        BufferUngetCh(buf);
-        $ls(buf->str)
+        goto IS_CONSTANT;
+    //     {
+    //     BufferUngetCh(buf);
+    //     $ls(buf->str)
 
-        defnode->def_type = CONSTANT;
+    //     defnode->def_type = CONSTANT;
 
-        double temp = NAN;
-        CringeScanf("%lg", &temp);
-        $ls(buf->str)
-        // BufferUngetCh(buf); // to return ')'
-        $ls(buf->str)
+    //     double temp = NAN;
+    //     CringeScanf("%lg", &temp);
+    //     $ls(buf->str)
+    //     // BufferUngetCh(buf); // to return ')'
+    //     $ls(buf->str)
 
-        defnode->value.t_constant = temp;
+    //     defnode->value.t_constant = temp;
         
         
-        logf("CHILD FREE: %lg - constant\n", temp);
-        $ls(buf->str)
-        return CHILD_FREE;
-        }
+    //     logf("CHILD FREE: %lg - constant\n", temp);
+    //     $ls(buf->str)
+    //     return CHILD_FREE;
+    //     }
 
     // OPERATOR OR CONSTANT
-    const char* t_operator = strchr(OPERATORS, ch);
 
     if (!t_operator)
         {
@@ -349,8 +351,10 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
     
     if (isdigit(BufferGetCh(buf)))
         {
-        BufferUngetCh(buf);
+        IS_CONSTANT:
 
+        BufferUngetCh(buf);
+    
         defnode->def_type = CONSTANT;
 
         double temp = NAN;

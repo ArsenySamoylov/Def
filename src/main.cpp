@@ -31,9 +31,10 @@ int UnitTests(DefTree* def_tree)
        sprintf(FileName, "./UnitTests/%d", i);
        
        CHECK (SetDefTree(def_tree, FileName) == SUCCESS, return LFAILURE);
-
+       
+       SYSTEM("../
        char GraphicName[99] = "";
-       sprintf(GraphicName, "./UnitTests/graphics/%d", i);
+       sprintf(GraphicName, "./UnitTests/graphics/%d2", i);
        const char* img = MakeImg(GraphicName, def_tree);
 
        SYSTEM("xdg-open %s", img);
