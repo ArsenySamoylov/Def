@@ -1,8 +1,8 @@
 #include "DefGraphVis.h"
 
-#include <assert.h>
 #include <stdarg.h>
 
+#include "EasyDebug.h"
 #include "LogMacroses.h"
 
 static FILE* Dot = NULL; 
@@ -14,7 +14,8 @@ const char* MakeImg (const char* img_name, const DefTree* data_tree)
     char      dot_file [MAX_GRAPH_NAME_LENGTH + 16] = {};
     snprintf (dot_file, MAX_GRAPH_NAME_LENGTH, "%s%s.dot", 
                                                 PATH_FOR_DOT, img_name);
-    //printf   ("(%s)\n", dot_file);
+    // printf   ("(%s)\n", dot_file);
+    // $$
     
     OpenDotFile (dot_file);
     if (!Dot) return NULL;
@@ -92,15 +93,13 @@ void CloseDotFile ()
     return; 
     }
 
-#include "EasyDebug.h"
-
 void DotTreeBranch (DefNode* node)
     {
     assertlog (node, EFAULT, abort());
     
     PrintNode (node);
-    $p(node->left_child)
-    $p(node->right_child)
+    // $p(node->left_child)
+    // $p(node->right_child)
 
     if (node->left_child)
         {
@@ -129,25 +128,27 @@ void PrintNode (DefNode* node)
     {
     assertlog (node, EFAULT, abort());
 
-    char def_type[333]   = "";
-    
+    char def_data[333]   = "";
+
+    //node 1 | {<next1> next 2} | {data 14} | {<prev1> prev 0}
+
     switch (node->def_type)
         {
-        case OPERATOR: strcpy(def_type, "OPERATOR");
+        case OPERATOR: sprintf(def_data, "Operator | {%c}", node->value.t_operator);
                        break;
 
-        case VARIABLE: strcpy(def_type, "VARIABLE");
+        case VARIABLE: sprintf(def_data, "Variable | {%c}", node->value.t_variable);
                        break;
 
-        case CONSTANT: strcpy(def_type, "CONSTANT");
+        case CONSTANT: sprintf(def_data, "Constant | {%lg}", node->value.t_constant);
                        break;
 
-        case FUNCTION: strcpy(def_type, "FUNCTION");
+        case FUNCTION: sprintf(def_data, "Function | {%d}", node->value.t_function);
                        break;
         default: break;
         }
 
-    DotPrint ("\t\tnode_%p [shape = Mrecord label =  \"%s\"]\n", node, def_type);
+    DotPrint ("\t\tnode_%p [shape = Mrecord label =  \"%s\"]\n", node, def_data);
 
     return;
     }    

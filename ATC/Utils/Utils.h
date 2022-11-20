@@ -11,5 +11,6 @@ void MsgNoRet (const char* format, ... );
                             printf(__VA_ARGS__);          \
                             } 
 
+int SYSTEM(const char* format, ...);
 
 // what??  baclslash at new line warning

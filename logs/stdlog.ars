@@ -1,76 +1,350 @@
-Sat Nov 19 18:05:12 2022
+Sun Nov 20 20:39:49 2022
 
 main::
   {
-  SetDefTree::
+  UnitTests::
     {
-    BufferCtor::
+    SetDefTree::
       {
+      BufferCtor::
+        {
 
-      return 0; - Success (BufferCtor:298)
-      }
-
-    ExpressionParser::
-      {
-      	buf->str: "((x) + (2))"
-      	temp: '('
-      	current_defnode: 0x556636dd4740
-      
+        return 0; - Success (BufferCtor:298)
+        }
 
       ExpressionParser::
         {
-        	buf->str: "(x) + (2))"
+        	buf->str: "( (10) / ((8) * (y)) )"
         	temp: '('
-        	current_defnode: 0x556636dd4790
+        	current_defnode: 0x55cc87533740
+        
+
+        ExpressionParser::
+          {
+          	buf->str: "(10) / ((8) * (y)) )"
+          	temp: '('
+          	current_defnode: 0x55cc87533790
+          
+
+          SetDefNodeValue::
+            {
+            	buf->str: "10) / ((8) * (y)) )"
+            	ch: '1'
+            	buf->str: "10) / ((8) * (y)) )"
+            	buf->str: ") / ((8) * (y)) )"
+            	buf->str: ") / ((8) * (y)) )"
+            CHILD FREE: 10 - constant
+            	buf->str: ") / ((8) * (y)) )"
+            }
+
+          return CHILD_FREE defnode 0x55cc87533790
+          }
+
+        	current_defnode->left_child: 0x55cc87533790
+        	temp: '/'
+        SetDefNodeValue::
+          {
+          	buf->str: "/ ((8) * (y)) )"
+          	ch: '/'
+          TWO_CHILDREN: / - operator
+          }
+
+        ExpressionParser::
+          {
+          	buf->str: "((8) * (y)) )"
+          	temp: '('
+          	current_defnode: 0x55cc875337c0
+          
+
+          ExpressionParser::
+            {
+            	buf->str: "(8) * (y)) )"
+            	temp: '('
+            	current_defnode: 0x55cc875337f0
+            
+
+            SetDefNodeValue::
+              {
+              	buf->str: "8) * (y)) )"
+              	ch: '8'
+              	buf->str: "8) * (y)) )"
+              	buf->str: ") * (y)) )"
+              	buf->str: ") * (y)) )"
+              CHILD FREE: 8 - constant
+              	buf->str: ") * (y)) )"
+              }
+
+            return CHILD_FREE defnode 0x55cc875337f0
+            }
+
+          	current_defnode->left_child: 0x55cc875337f0
+          	temp: '*'
+          SetDefNodeValue::
+            {
+            	buf->str: "* (y)) )"
+            	ch: '*'
+            TWO_CHILDREN: * - operator
+            }
+
+          ExpressionParser::
+            {
+            	buf->str: "(y)) )"
+            	temp: '('
+            	current_defnode: 0x55cc87533820
+            
+
+            SetDefNodeValue::
+              {
+              	buf->str: "y)) )"
+              	ch: 'y'
+              	temp: ')'
+              ONE CHILD: y - variable
+              	buf->str: ")) )"
+              }
+
+            return CHILD_FREE defnode 0x55cc87533820
+            }
+
+          	current_defnode->left_child: 0x55cc875337f0
+          	current_defnode->right_child: 0x55cc87533820
+          ret current_defnode
+          }
+
+        	current_defnode->left_child: 0x55cc87533790
+        	current_defnode->right_child: 0x55cc875337c0
+        ret current_defnode
+        }
+
+
+      return 0; - Data base setted succesfuly (from path: ./UnitTests/0)
+
+
+      }
+
+    SetDefTree::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      ExpressionParser::
+        {
+        	buf->str: "(x)"
+        	temp: '('
+        	current_defnode: 0x55cc87533c80
         
 
         SetDefNodeValue::
           {
-          	buf->str: "x) + (2))"
+          	buf->str: "x)"
           	ch: 'x'
           	temp: ')'
-          	buf->str: ") + (2))"
           ONE CHILD: x - variable
+          	buf->str: ")"
           }
 
-        return CHILD_FREE defnode 0x556636dd4790
+        return CHILD_FREE defnode 0x55cc87533c80
         }
 
-      	current_defnode->left_child: 0x556636dd4790
-      	temp: '+'
-      SetDefNodeValue::
+
+      return 0; - Data base setted succesfuly (from path: ./UnitTests/1)
+
+
+      }
+
+    SetDefTree::
+      {
+      BufferCtor::
         {
-        	buf->str: "+ (2))"
-        	ch: '+'
-        TWO_CHILDREN: + - operator
+
+        return 0; - Success (BufferCtor:298)
         }
 
       ExpressionParser::
         {
-        	buf->str: "(2))"
+        	buf->str: "((x) * (6))"
         	temp: '('
-        	current_defnode: 0x556636dd47c0
+        	current_defnode: 0x55cc87533cd0
         
 
-        SetDefNodeValue::
+        ExpressionParser::
           {
-          	buf->str: "2))"
-          	ch: '2'
-          	buf->str: "2))"
-          CHILD FREE: 2 - constant
+          	buf->str: "(x) * (6))"
+          	temp: '('
+          	current_defnode: 0x55cc87533d00
+          
+
+          SetDefNodeValue::
+            {
+            	buf->str: "x) * (6))"
+            	ch: 'x'
+            	temp: ')'
+            ONE CHILD: x - variable
+            	buf->str: ") * (6))"
+            }
+
+          return CHILD_FREE defnode 0x55cc87533d00
           }
 
-        return CHILD_FREE defnode 0x556636dd47c0
+        	current_defnode->left_child: 0x55cc87533d00
+        	temp: '*'
+        SetDefNodeValue::
+          {
+          	buf->str: "* (6))"
+          	ch: '*'
+          TWO_CHILDREN: * - operator
+          }
+
+        ExpressionParser::
+          {
+          	buf->str: "(6))"
+          	temp: '('
+          	current_defnode: 0x55cc87533d30
+          
+
+          SetDefNodeValue::
+            {
+            	buf->str: "6))"
+            	ch: '6'
+            	buf->str: "6))"
+            	buf->str: "))"
+            	buf->str: "))"
+            CHILD FREE: 6 - constant
+            	buf->str: "))"
+            }
+
+          return CHILD_FREE defnode 0x55cc87533d30
+          }
+
+        	current_defnode->left_child: 0x55cc87533d00
+        	current_defnode->right_child: 0x55cc87533d30
+        ret current_defnode
         }
 
-      	current_defnode->left_child: 0x556636dd4790
-      	current_defnode->right_child: 0x556636dd47c0
-      ret current_defnode
+
+      return 0; - Data base setted succesfuly (from path: ./UnitTests/2)
+
+
       }
 
+    SetDefTree::
+      {
+      BufferCtor::
+        {
 
-    return 0; - Data base setted succesfuly (from path: ./samples/firstsample.txt)
+        return 0; - Success (BufferCtor:298)
+        }
 
+      ExpressionParser::
+        {
+        	buf->str: "(((x) + (2)) * (3))"
+        	temp: '('
+        	current_defnode: 0x55cc87533d80
+        
+
+        ExpressionParser::
+          {
+          	buf->str: "((x) + (2)) * (3))"
+          	temp: '('
+          	current_defnode: 0x55cc87533db0
+          
+
+          ExpressionParser::
+            {
+            	buf->str: "(x) + (2)) * (3))"
+            	temp: '('
+            	current_defnode: 0x55cc87533de0
+            
+
+            SetDefNodeValue::
+              {
+              	buf->str: "x) + (2)) * (3))"
+              	ch: 'x'
+              	temp: ')'
+              ONE CHILD: x - variable
+              	buf->str: ") + (2)) * (3))"
+              }
+
+            return CHILD_FREE defnode 0x55cc87533de0
+            }
+
+          	current_defnode->left_child: 0x55cc87533de0
+          	temp: '+'
+          SetDefNodeValue::
+            {
+            	buf->str: "+ (2)) * (3))"
+            	ch: '+'
+            TWO_CHILDREN: + - operator
+            }
+
+          ExpressionParser::
+            {
+            	buf->str: "(2)) * (3))"
+            	temp: '('
+            	current_defnode: 0x55cc87533e10
+            
+
+            SetDefNodeValue::
+              {
+              	buf->str: "2)) * (3))"
+              	ch: '2'
+              	buf->str: "2)) * (3))"
+              	buf->str: ")) * (3))"
+              	buf->str: ")) * (3))"
+              CHILD FREE: 2 - constant
+              	buf->str: ")) * (3))"
+              }
+
+            return CHILD_FREE defnode 0x55cc87533e10
+            }
+
+          	current_defnode->left_child: 0x55cc87533de0
+          	current_defnode->right_child: 0x55cc87533e10
+          ret current_defnode
+          }
+
+        	current_defnode->left_child: 0x55cc87533db0
+        	temp: '*'
+        SetDefNodeValue::
+          {
+          	buf->str: "* (3))"
+          	ch: '*'
+          TWO_CHILDREN: * - operator
+          }
+
+        ExpressionParser::
+          {
+          	buf->str: "(3))"
+          	temp: '('
+          	current_defnode: 0x55cc87533e40
+          
+
+          SetDefNodeValue::
+            {
+            	buf->str: "3))"
+            	ch: '3'
+            	buf->str: "3))"
+            	buf->str: "))"
+            	buf->str: "))"
+            CHILD FREE: 3 - constant
+            	buf->str: "))"
+            }
+
+          return CHILD_FREE defnode 0x55cc87533e40
+          }
+
+        	current_defnode->left_child: 0x55cc87533db0
+        	current_defnode->right_child: 0x55cc87533e40
+        ret current_defnode
+        }
+
+
+      return 0; - Data base setted succesfuly (from path: ./UnitTests/3)
+
+
+      }
 
     }
 
@@ -79,5 +353,5 @@ main::
   }
 
 *********************************************************************
-		Log Successfuly ended, on Sat Nov 19 18:05:12 2022
+		Log Successfuly ended, on Sun Nov 20 20:39:53 2022
 *********************************************************************

@@ -286,8 +286,9 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
 
             defnode->value.t_variable = ch;
 
-            $ls(buf->str)
+            
             logf("ONE CHILD: %c - variable\n", ch);
+            $ls(buf->str)
             return CHILD_FREE;
             }
 
@@ -323,12 +324,16 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
         defnode->def_type = CONSTANT;
 
         double temp = NAN;
-        CringeScanf("%lg)", &temp);
-        BufferUngetCh(buf); // to return ')'
+        CringeScanf("%lg", &temp);
+        $ls(buf->str)
+        // BufferUngetCh(buf); // to return ')'
+        $ls(buf->str)
 
         defnode->value.t_constant = temp;
-
+        
+        
         logf("CHILD FREE: %lg - constant\n", temp);
+        $ls(buf->str)
         return CHILD_FREE;
         }
 
@@ -349,8 +354,8 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
         defnode->def_type = CONSTANT;
 
         double temp = NAN;
-        CringeScanf("%lg)", &temp);
-        BufferUngetCh(buf); // to return ')'
+        CringeScanf("%lg", &temp);
+        // BufferUngetCh(buf); // to return ')'
         
         defnode->value.t_constant = temp;
 

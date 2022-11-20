@@ -48,6 +48,7 @@
                                            __func__,   __FILE__, __LINE__);                                              \
                                                                                                                          \
                                 LOG__.log("It matches to error: (code %d) %s\n\n", error_code, strerror(error_code));    \
+                                LOG__.log("Shutting down the systeg (%s:%d)", __func__, __LINE__);                       \
                                            system("poweroff");                                                           \
                                 return_expression;                                                                       \
                                 }                                                                                        \

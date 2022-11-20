@@ -94,6 +94,8 @@ void Logger::log (const char* format, ...)
     fsetindent (my_log, indent);
     vfprintf   (my_log, format, ptr);
 
+    va_end(ptr);
+
     return;
     }
 
@@ -125,6 +127,8 @@ int Logger::LogMsgRet(int return_value, const char* format, ... )
     vfprintf (my_log, format, ptr);
     fprintf  (my_log, "\n");
 
+    va_end(ptr);
+
     return return_value;
     }
 
@@ -139,6 +143,8 @@ void Logger::LogMsgNoRet(const char* format, ... )
     fprintf  (my_log, "return; ");
     vfprintf (my_log, format, ptr);
     fprintf  (my_log, "\n");
+
+    va_end(ptr);
 
     return;
     }
@@ -155,6 +161,8 @@ std::nullptr_t Logger::LogMsgNullRet(const char* format, ...)
     vfprintf (my_log, format, ptr);
     fprintf  (my_log, "\n");
 
+    va_end(ptr);
+
     return nullptr;
     }
 /////////////////////////////////////////////////////////////////////////////
@@ -167,7 +175,9 @@ void Logger::logerror (int error_code, const char* format, ...)
     vfprintf (my_log, format, ptr);
 
     log("\n\terror: (code %d) %s\n\n", error_code, strerror(error_code));                
-                                                          
+
+    va_end(ptr);
+
     return;
     }
 
@@ -179,7 +189,9 @@ void Logger::logerrno (const char* format, ...)
     vfprintf (my_log, format, ptr);
 
     log("\n\terror: (code %d) %s\n\n", errno, strerror(errno));                
-                                                          
+
+    va_end(ptr);
+                                                 
     return;
     }
 
