@@ -1,4 +1,4 @@
-#include "DefTree.h"
+ #include "DefTree.h"
 
 #include <malloc.h>
 #include <stdarg.h>
@@ -9,8 +9,11 @@
 #include "ArsLib.h"
 
 #pragma GCC diagnostic ignored "-Wconversion" // for BufferGetChar
-#pragma GCC diagnostic ignored "-Wunused-function" // temprorary
 
+// #define CHECK_CALLOC(ptr, ) 
+                            // if(!ptr)
+                                // {
+                                // logf("Calloc couldn't allocate memmory
 enum
     {
     TWO_CHILDREN,
@@ -20,7 +23,7 @@ enum
 
 const char OPERATORS[] = "+-/*"; 
 
-const int NUMBER_OF_FUNCTIONS = 6;
+const int   NUMBER_OF_FUNCTIONS = 6;
 const char* SUPPORTED_FUNCTIONS[NUMBER_OF_FUNCTIONS] = {
                                      "cos",
                                      "sin",
@@ -29,7 +32,6 @@ const char* SUPPORTED_FUNCTIONS[NUMBER_OF_FUNCTIONS] = {
                                      "tg",
                                      "ctg",
                                     };
-
 
 #define CringeScanf(format, ...)                                           \
         {                                                                  \
@@ -41,14 +43,9 @@ const char* SUPPORTED_FUNCTIONS[NUMBER_OF_FUNCTIONS] = {
         }
 
 static DefNode* NewDefNode();
-static int DeleteBranch         (DefNode* root);
-static int AddChildrenToDefNode (DefNode* defnode);
-static void LogDefNod (const DefNode* defnode);
-static DefNode* ParsingErrorMessage (const char* message, const char* buffer); // return value now is uselles
+static DefNode* ExpressionParser    (Buffer* buf);
 
-static DefNode* ExpressionParser (Buffer* buf);
-int GetDefNodeType (Buffer* buf);
-
+static int DeleteBranch   (DefNode* root);
 static int SetDefNodeValue(DefNode* current_defnode, Buffer* buf);
 
 static int isfunction (const char* str);
@@ -85,7 +82,7 @@ static DefNode* NewDefNode()
     // $log(DEBUG)
 
     DefNode* new_defnode = (DefNode*) calloc (1, sizeof(DefNode));
-    CHECK (new_defnode, return LNULL);
+    CHECK (new_defnode, return logf("Couldn't allocate memory for new node\n"), LNULL);
 
     new_defnode-> parent     = nullptr;
     new_defnode-> left_child = nullptr;
@@ -161,48 +158,19 @@ static DefNode* ExpressionParser (Buffer* buf)
 int CloseDefTree (DefTree* tree)
     {
     assertlog(tree, EFAULT, exit(LFAILURE));
-    // CHECK_STDERR(tree, return NULL_PTR);
 
-    // if (tree->status != ACTIVE)
-    //     return MsgRet(FAILURE, "Ebat, deleting, not active mode\n");
+    if (tree->status != ACTIVE)
+        return MsgRet(LFAILURE, "Ebat, deleting, not active mode\n");
     
-    // int status = DeleteBranch(tree->root);
-    // if (status != SUCCESS)
-    //     return MsgRet(FAILURE, "Ebat, error deleting main branch\n");
+    int status = DeleteBranch(tree->root);
+    if (status != SUCCESS)
+        return MsgRet(FAILURE, "Ebat, error deleting main branch\n");
+    
+    free((void*)tree->buffer);
 
-    // tree->root   = NULL;
-    // tree->size   = 0;
-    // tree->status = DEAD;
-    printf ("@todo\n");
-    return SUCCESS;
-    }
-
-static int AddChildren (DefNode* defnode)
-    {
-    assertlog(defnode, EFAULT, exit(LFAILURE));
-
-    if (defnode->right_child)
-        return MsgRet(FAILURE, "DefNode already has first child\n");
-
-    if (defnode->left_child)
-        return MsgRet(FAILURE, "DefNode already has second child\n");
-
-    DefNode* right_child  = (DefNode*) calloc (1, sizeof(DefNode));
-    CHECK (right_child,  return BAD_CALLOC);
-
-    DefNode* left_child = (DefNode*) calloc (1, sizeof(DefNode));
-    CHECK (left_child, return BAD_CALLOC);
-
-    right_child->parent       = defnode;
-    right_child->right_child  = NULL;
-    right_child->left_child = NULL;
-
-    left_child->parent       = defnode;
-    left_child->right_child  = NULL;
-    left_child->left_child = NULL;
-
-    defnode->right_child  = right_child;
-    defnode->left_child = left_child;
+    tree->root   = NULL;
+    tree->buffer = NULL;
+    tree->status = DEAD;
 
     return LSUCCESS;
     }
@@ -228,17 +196,6 @@ static int  DeleteBranch (DefNode* root)
         return MsgRet (FAILURE, "Could't delete left_child branch\n");
 
     return LSUCCESS;
-    }
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-static DefNode* ParsingErrorMessage (const char* message, const char* buffer)
-    {
-    printf ("Error in line : ");
-    printl (buffer, '\n');
-    printf ("%s", message);
-
-    return NULL;
     }
 
 static int isfunction (const char* str)
@@ -320,25 +277,6 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
 
     if (isdigit(ch))
         goto IS_CONSTANT;
-    //     {
-    //     BufferUngetCh(buf);
-    //     $ls(buf->str)
-
-    //     defnode->def_type = CONSTANT;
-
-    //     double temp = NAN;
-    //     CringeScanf("%lg", &temp);
-    //     $ls(buf->str)
-    //     // BufferUngetCh(buf); // to return ')'
-    //     $ls(buf->str)
-
-    //     defnode->value.t_constant = temp;
-        
-        
-    //     logf("CHILD FREE: %lg - constant\n", temp);
-    //     $ls(buf->str)
-    //     return CHILD_FREE;
-    //     }
 
     // OPERATOR OR CONSTANT
 
@@ -378,3 +316,140 @@ static int SetDefNodeValue (DefNode* defnode, Buffer* buf)
     }    
 
 #undef CringeScanf
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+#define logTODO logf("@todo %s:%d", __func__, __LINE__)
+
+DefNode* Differentiate (DefNode* defnode)
+    {
+    assertlog (defnode, EFAULT, return NULL);
+
+    if (defnode->def_type == CONSTANT)
+        {
+        defnode->value.t_constant = 0;
+        
+        return defnode;
+        }
+
+    if (defnode->def_type == VARIABLE)
+        {
+        if (!defnode->left_child || !defnode->right_child)
+            return logf("Vatiable defnode has not null children\n"), LNULL;
+        
+        DefNode* new_defnode = NewDefNode();
+        if (!new_defnode) return LNULL;
+
+        new_defnode->def_type = CONSTANT;
+        new_defnode->value.t_constant = 1; 
+
+        CHECK(DeleteBranch(defnode) == SUCCESS, return LNULL);
+
+        return new_defnode;
+        }
+
+    if (defnode->def_type == OPERATOR)
+        {
+        switch (defnode->value.t_operator)
+            {
+            case '+':
+            case '-':   defnode->left_child = Differentiate(defnode->left_child);
+                        CHECK (defnode->left_child, return LNULL);
+
+                        defnode->right_child = Differentiate(defnode->right_child);
+                        CHECK (defnode->left_child, return LNULL);   
+                        break;
+            
+            case '*':   DefNode* left_copy = CopyBranch (defnode->left_child);
+                        CHECK (left_copy, return LNULL);
+                        
+                        DefNode* right_copy = CopyBranch (defnode->right_child);
+                        CHECK (right_copy, return LNULL);
+            
+
+                        DefNode* left_branch = NewDefNode();
+                        CHECK (left_branch, return LNULL);
+
+                        left_branch->def_type         = OPERATOR;
+                        left_branch->value.t_operator = '*';
+
+                        left_branch->left_child  = Differentiate (defnode->left_child);
+                        left_branch->right_child = left_copy;
+
+
+                        DefNode* right_branch = NewDefNode();
+                        CHECK (left_branch, return LNULL);
+                        
+                        right_branch->def_type         = OPERATOR;
+                        right_branch->value.t_operator = '*';
+
+                        right_branch->left_child  = left_copy;
+                        right_branch->right_child = Differentiate (defnode->right_child);
+
+            
+                        defnode->value.t_operator = '+';
+                        defnode->left_child  = left_branch;
+                        defnode->right_child = right_branch;
+                        
+                        break;
+            case '/':   
+                        logf("@todo %s%d", __func__, __LINE__);
+                        break;
+            }
+    
+    if (defnode->def_type == FUNCTION)
+        {
+        logTODO;
+        return defnode;
+        }
+    
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+#pragma GCC diagnostic ignored "-Wunused-function" // temprorary
+
+static int AddChildrenToDefNode (DefNode* defnode);
+static DefNode* ParsingErrorMessage (const char* message, const char* buffer); // return value now is uselles
+
+static int AddChildren (DefNode* defnode)
+    {
+    assertlog(defnode, EFAULT, exit(LFAILURE));
+
+    if (defnode->right_child)
+        return MsgRet(FAILURE, "DefNode already has first child\n");
+
+    if (defnode->left_child)
+        return MsgRet(FAILURE, "DefNode already has second child\n");
+
+    DefNode* right_child  = (DefNode*) calloc (1, sizeof(DefNode));
+    CHECK (right_child,  return BAD_CALLOC);
+
+    DefNode* left_child = (DefNode*) calloc (1, sizeof(DefNode));
+    CHECK (left_child, return BAD_CALLOC);
+
+    right_child->parent       = defnode;
+    right_child->right_child  = NULL;
+    right_child->left_child = NULL;
+
+    left_child->parent       = defnode;
+    left_child->right_child  = NULL;
+    left_child->left_child = NULL;
+
+    defnode->right_child  = right_child;
+    defnode->left_child = left_child;
+
+    return LSUCCESS;
+    }
+
+static DefNode* ParsingErrorMessage (const char* message, const char* buffer)
+    {
+    printf ("Error in line : ");
+    printl (buffer, '\n');
+    printf ("%s", message);
+
+    return NULL;
+    }

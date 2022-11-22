@@ -31,7 +31,7 @@
 #define CHECK(condition, what_to_do_if_false, ...)                                        \
                                               do                                          \
                                               {                                           \
-                                              if (!condition)                             \
+                                              if (!(condition))                           \
                                                 {                                         \
                                                 logf("%s:%d::CHECK: " #condition " is false\n", __func__, __LINE__);  \
                                                 what_to_do_if_false ;                     \
@@ -41,7 +41,7 @@
 
 #define assertlog(condition, error_code, return_expression) do                                                           \
                             {                                                                                            \
-                            if (!condition)                                                                              \
+                            if (!(condition))                                                                            \
                                 {                                                                                        \
                                 LOG__.log("Condition (%s) is false\n", #condition);                                      \
                                 LOG__.log("\t(function: %s, file: %s, line: %d)\n",                                      \
@@ -57,11 +57,11 @@
 
 
 #define $li(int_var)     do { logf ("\t%s: %d\n", #int_var, int_var);        } while(0);  
-#define $lc(char_var)    do { logf ("\t%s: '%c'\n", #char_var, char_var);      } while(0);  
+#define $lc(char_var)    do { logf ("\t%s: '%c'\n", #char_var, char_var);    } while(0);  
 #define $ld(double_var)  do { logf ("\t%s: %lg\n", #double_var, double_var); } while(0);  
-#define $ls(string)      do { logf ("\t%s: \"%s\"\n", #string, string);       } while(0);
+#define $ls(string)      do { logf ("\t%s: \"%s\"\n", #string, string);      } while(0);
 //#pragma GCC diagnostic ignored "-Wcast-qual"
-#define $lp(pointer)     do { logf ("\t%s: %p\n", #pointer, (void*)pointer); } while(0);
+#define $lp(pointer)     do { logf ("\t%s: %X\n", #pointer, (void*)pointer); } while(0);
 
 // IDEAS: logif (condition, smt to log) (basiclly its assertlog)
 //! @note if you want to change log file name

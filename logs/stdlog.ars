@@ -1,4 +1,4 @@
-Sun Nov 20 21:08:25 2022
+Sun Nov 20 21:41:23 2022
 
 main::
   {
@@ -16,14 +16,14 @@ main::
         {
         	buf->str: "( (10) / ((8) * (y)) )"
         	temp: '('
-        	current_defnode: 0x5652a62ec740
+        	current_defnode: 10
         
 
         ExpressionParser::
           {
           	buf->str: "(10) / ((8) * (y)) )"
           	temp: '('
-          	current_defnode: 0x5652a62ec790
+          	current_defnode: 50
           
 
           SetDefNodeValue::
@@ -33,10 +33,10 @@ main::
             CHILD FREE: 10 - constant
             }
 
-          return CHILD_FREE defnode 0x5652a62ec790
+          return CHILD_FREE defnode 0x604000000050
           }
 
-        	current_defnode->left_child: 0x5652a62ec790
+        	current_defnode->left_child: 50
         	temp: '/'
         SetDefNodeValue::
           {
@@ -49,14 +49,14 @@ main::
           {
           	buf->str: "((8) * (y)) )"
           	temp: '('
-          	current_defnode: 0x5652a62ec7c0
+          	current_defnode: 90
           
 
           ExpressionParser::
             {
             	buf->str: "(8) * (y)) )"
             	temp: '('
-            	current_defnode: 0x5652a62ec7f0
+            	current_defnode: D0
             
 
             SetDefNodeValue::
@@ -66,10 +66,10 @@ main::
               CHILD FREE: 8 - constant
               }
 
-            return CHILD_FREE defnode 0x5652a62ec7f0
+            return CHILD_FREE defnode 0x6040000000d0
             }
 
-          	current_defnode->left_child: 0x5652a62ec7f0
+          	current_defnode->left_child: D0
           	temp: '*'
           SetDefNodeValue::
             {
@@ -82,7 +82,7 @@ main::
             {
             	buf->str: "(y)) )"
             	temp: '('
-            	current_defnode: 0x5652a62ec820
+            	current_defnode: 110
             
 
             SetDefNodeValue::
@@ -94,16 +94,16 @@ main::
               	buf->str: ")) )"
               }
 
-            return CHILD_FREE defnode 0x5652a62ec820
+            return CHILD_FREE defnode 0x604000000110
             }
 
-          	current_defnode->left_child: 0x5652a62ec7f0
-          	current_defnode->right_child: 0x5652a62ec820
+          	current_defnode->left_child: D0
+          	current_defnode->right_child: 110
           ret current_defnode
           }
 
-        	current_defnode->left_child: 0x5652a62ec790
-        	current_defnode->right_child: 0x5652a62ec7c0
+        	current_defnode->left_child: 50
+        	current_defnode->right_child: 90
         ret current_defnode
         }
 
@@ -113,6 +113,12 @@ main::
 
       }
 
+
+    return 0; - Success (DeleteBranch:194)
+
+    return 0; - Success (DeleteBranch:194)
+
+    return 0; - Success (CloseDefTree:171)
     SetDefTree::
       {
       BufferCtor::
@@ -125,7 +131,7 @@ main::
         {
         	buf->str: "(x)"
         	temp: '('
-        	current_defnode: 0x5652a62ec870
+        	current_defnode: 150
         
 
         SetDefNodeValue::
@@ -137,7 +143,7 @@ main::
           	buf->str: ")"
           }
 
-        return CHILD_FREE defnode 0x5652a62ec870
+        return CHILD_FREE defnode 0x604000000150
         }
 
 
@@ -146,6 +152,8 @@ main::
 
       }
 
+
+    return 0; - Success (CloseDefTree:171)
     SetDefTree::
       {
       BufferCtor::
@@ -158,14 +166,14 @@ main::
         {
         	buf->str: "((x) * (6))"
         	temp: '('
-        	current_defnode: 0x5652a62ec8c0
+        	current_defnode: 190
         
 
         ExpressionParser::
           {
           	buf->str: "(x) * (6))"
           	temp: '('
-          	current_defnode: 0x5652a62ec8f0
+          	current_defnode: 1D0
           
 
           SetDefNodeValue::
@@ -177,10 +185,10 @@ main::
             	buf->str: ") * (6))"
             }
 
-          return CHILD_FREE defnode 0x5652a62ec8f0
+          return CHILD_FREE defnode 0x6040000001d0
           }
 
-        	current_defnode->left_child: 0x5652a62ec8f0
+        	current_defnode->left_child: 1D0
         	temp: '*'
         SetDefNodeValue::
           {
@@ -193,7 +201,7 @@ main::
           {
           	buf->str: "(6))"
           	temp: '('
-          	current_defnode: 0x5652a62ec920
+          	current_defnode: 210
           
 
           SetDefNodeValue::
@@ -203,11 +211,11 @@ main::
             CHILD FREE: 6 - constant
             }
 
-          return CHILD_FREE defnode 0x5652a62ec920
+          return CHILD_FREE defnode 0x604000000210
           }
 
-        	current_defnode->left_child: 0x5652a62ec8f0
-        	current_defnode->right_child: 0x5652a62ec920
+        	current_defnode->left_child: 1D0
+        	current_defnode->right_child: 210
         ret current_defnode
         }
 
@@ -217,6 +225,10 @@ main::
 
       }
 
+
+    return 0; - Success (DeleteBranch:194)
+
+    return 0; - Success (CloseDefTree:171)
     SetDefTree::
       {
       BufferCtor::
@@ -229,21 +241,21 @@ main::
         {
         	buf->str: "(((x) + (2)) * (3))"
         	temp: '('
-        	current_defnode: 0x5652a62ec970
+        	current_defnode: 250
         
 
         ExpressionParser::
           {
           	buf->str: "((x) + (2)) * (3))"
           	temp: '('
-          	current_defnode: 0x5652a62ec9a0
+          	current_defnode: 290
           
 
           ExpressionParser::
             {
             	buf->str: "(x) + (2)) * (3))"
             	temp: '('
-            	current_defnode: 0x5652a62ec9d0
+            	current_defnode: 2D0
             
 
             SetDefNodeValue::
@@ -255,10 +267,10 @@ main::
               	buf->str: ") + (2)) * (3))"
               }
 
-            return CHILD_FREE defnode 0x5652a62ec9d0
+            return CHILD_FREE defnode 0x6040000002d0
             }
 
-          	current_defnode->left_child: 0x5652a62ec9d0
+          	current_defnode->left_child: 2D0
           	temp: '+'
           SetDefNodeValue::
             {
@@ -271,7 +283,7 @@ main::
             {
             	buf->str: "(2)) * (3))"
             	temp: '('
-            	current_defnode: 0x5652a62eca00
+            	current_defnode: 310
             
 
             SetDefNodeValue::
@@ -281,15 +293,15 @@ main::
               CHILD FREE: 2 - constant
               }
 
-            return CHILD_FREE defnode 0x5652a62eca00
+            return CHILD_FREE defnode 0x604000000310
             }
 
-          	current_defnode->left_child: 0x5652a62ec9d0
-          	current_defnode->right_child: 0x5652a62eca00
+          	current_defnode->left_child: 2D0
+          	current_defnode->right_child: 310
           ret current_defnode
           }
 
-        	current_defnode->left_child: 0x5652a62ec9a0
+        	current_defnode->left_child: 290
         	temp: '*'
         SetDefNodeValue::
           {
@@ -302,7 +314,7 @@ main::
           {
           	buf->str: "(3))"
           	temp: '('
-          	current_defnode: 0x5652a62eca30
+          	current_defnode: 350
           
 
           SetDefNodeValue::
@@ -312,11 +324,11 @@ main::
             CHILD FREE: 3 - constant
             }
 
-          return CHILD_FREE defnode 0x5652a62eca30
+          return CHILD_FREE defnode 0x604000000350
           }
 
-        	current_defnode->left_child: 0x5652a62ec9a0
-        	current_defnode->right_child: 0x5652a62eca30
+        	current_defnode->left_child: 290
+        	current_defnode->right_child: 350
         ret current_defnode
         }
 
@@ -326,12 +338,18 @@ main::
 
       }
 
+
+    return 0; - Success (DeleteBranch:194)
+
+    return 0; - Success (DeleteBranch:194)
+
+    return 0; - Success (CloseDefTree:171)
     }
 
 
-  return 0; - Success (main:16)
+  return 0; - Success (main:14)
   }
 
 *********************************************************************
-		Log Successfuly ended, on Sun Nov 20 21:08:25 2022
+		Log Successfuly ended, on Sun Nov 20 21:41:24 2022
 *********************************************************************
