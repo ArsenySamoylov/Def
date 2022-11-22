@@ -50,7 +50,7 @@ DefNode* GetE (Buffer* buf)
         {
         char op = BufferGetCh(buf);
 
-        DefNode* val_2 = GetT(buf);
+        DefNode* val_2 = GetE(buf);
         $lp(val_2)
 
         DefNode* result = NewDefNode();
@@ -85,7 +85,7 @@ DefNode* GetT (Buffer* buf)
         {
         char op = BufferGetCh(buf);
 
-        DefNode* val_2 = GetN(buf);
+        DefNode* val_2 = GetT(buf);
         $lp(val_2)
 
         DefNode* result = NewDefNode();

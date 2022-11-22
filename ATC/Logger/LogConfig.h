@@ -1,6 +1,6 @@
 #pragma once
 
-const char STD_LOG_NAME[] = "stdlog.ars";
+const char STD_LOG_NAME[] = "./logs/stdlog.ars";
 
 #ifndef LOG_LEVEL
 #define LOG_LEVEL (0)

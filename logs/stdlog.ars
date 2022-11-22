@@ -1,10 +1,11 @@
-Sun Nov 20 21:41:23 2022
+Tue Nov 22 18:57:14 2022
 
 main::
   {
   UnitTests::
     {
-    SetDefTree::
+    	num_lines: 32
+    GetG::
       {
       BufferCtor::
         {
@@ -12,114 +13,66 @@ main::
         return 0; - Success (BufferCtor:298)
         }
 
-      ExpressionParser::
+      GetE::
         {
-        	buf->str: "( (10) / ((8) * (y)) )"
-        	temp: '('
-        	current_defnode: 10
-        
-
-        ExpressionParser::
+        GetT::
           {
-          	buf->str: "(10) / ((8) * (y)) )"
-          	temp: '('
-          	current_defnode: 50
-          
-
-          SetDefNodeValue::
+          GetPower::
             {
-            	buf->str: "10) / ((8) * (y)) )"
-            	ch: '1'
-            CHILD FREE: 10 - constant
-            }
-
-          return CHILD_FREE defnode 0x604000000050
-          }
-
-        	current_defnode->left_child: 50
-        	temp: '/'
-        SetDefNodeValue::
-          {
-          	buf->str: "/ ((8) * (y)) )"
-          	ch: '/'
-          TWO_CHILDREN: / - operator
-          }
-
-        ExpressionParser::
-          {
-          	buf->str: "((8) * (y)) )"
-          	temp: '('
-          	current_defnode: 90
-          
-
-          ExpressionParser::
-            {
-            	buf->str: "(8) * (y)) )"
-            	temp: '('
-            	current_defnode: D0
-            
-
-            SetDefNodeValue::
+            GetP::
               {
-              	buf->str: "8) * (y)) )"
-              	ch: '8'
-              CHILD FREE: 8 - constant
+              GetN::
+                {
+                	val: 123
+                	result: 0x562867cf79e0
+                }
+
+              	val: 0x562867cf79e0
               }
 
-            return CHILD_FREE defnode 0x6040000000d0
+            	val: 0x562867cf79e0
             }
 
-          	current_defnode->left_child: D0
-          	temp: '*'
-          SetDefNodeValue::
-            {
-            	buf->str: "* (y)) )"
-            	ch: '*'
-            TWO_CHILDREN: * - operator
-            }
-
-          ExpressionParser::
-            {
-            	buf->str: "(y)) )"
-            	temp: '('
-            	current_defnode: 110
-            
-
-            SetDefNodeValue::
-              {
-              	buf->str: "y)) )"
-              	ch: 'y'
-              	temp: ')'
-              ONE CHILD: y - variable
-              	buf->str: ")) )"
-              }
-
-            return CHILD_FREE defnode 0x604000000110
-            }
-
-          	current_defnode->left_child: D0
-          	current_defnode->right_child: 110
-          ret current_defnode
+          	val: 0x562867cf79e0
           }
 
-        	current_defnode->left_child: 50
-        	current_defnode->right_child: 90
-        ret current_defnode
+        	val: 0x562867cf79e0
+        GetE::
+          {
+          GetT::
+            {
+            GetPower::
+              {
+              GetP::
+                {
+                GetN::
+                  {
+                  	val: 23
+                  	result: 0x562867cf7a40
+                  }
+
+                	val: 0x562867cf7a40
+                }
+
+              	val: 0x562867cf7a40
+              }
+
+            	val: 0x562867cf7a40
+            }
+
+          	val: 0x562867cf7a40
+          }
+
+        	val_2: 0x562867cf7a40
+        	result: 0x562867cf7a70
         }
 
+      	val: 1741650544
 
-      return 0; - Data base setted succesfuly (from path: ./UnitTests/0)
-
-
+      return 0; - Success (GetG:38)
       }
 
-
-    return 0; - Success (DeleteBranch:194)
-
-    return 0; - Success (DeleteBranch:194)
-
-    return 0; - Success (CloseDefTree:171)
-    SetDefTree::
+    GetG::
       {
       BufferCtor::
         {
@@ -127,34 +80,94 @@ main::
         return 0; - Success (BufferCtor:298)
         }
 
-      ExpressionParser::
+      GetE::
         {
-        	buf->str: "(x)"
-        	temp: '('
-        	current_defnode: 150
-        
-
-        SetDefNodeValue::
+        GetT::
           {
-          	buf->str: "x)"
-          	ch: 'x'
-          	temp: ')'
-          ONE CHILD: x - variable
-          	buf->str: ")"
+          GetPower::
+            {
+            GetP::
+              {
+              GetN::
+                {
+                	val: 123
+                	result: 0x562867cf7ad0
+                }
+
+              	val: 0x562867cf7ad0
+              }
+
+            	val: 0x562867cf7ad0
+            }
+
+          	val: 0x562867cf7ad0
           }
 
-        return CHILD_FREE defnode 0x604000000150
+        	val: 0x562867cf7ad0
+        GetE::
+          {
+          GetT::
+            {
+            GetPower::
+              {
+              GetP::
+                {
+                GetN::
+                  {
+                  	val: 23
+                  	result: 0x562867cf7b30
+                  }
+
+                	val: 0x562867cf7b30
+                }
+
+              	val: 0x562867cf7b30
+              }
+
+            	val: 0x562867cf7b30
+            }
+
+          	val: 0x562867cf7b30
+          GetE::
+            {
+            GetT::
+              {
+              GetPower::
+                {
+                GetP::
+                  {
+                  GetN::
+                    {
+                    	val: 10
+                    	result: 0x562867cf7b90
+                    }
+
+                  	val: 0x562867cf7b90
+                  }
+
+                	val: 0x562867cf7b90
+                }
+
+              	val: 0x562867cf7b90
+              }
+
+            	val: 0x562867cf7b90
+            }
+
+          	val_2: 0x562867cf7b90
+          	result: 0x562867cf7bc0
+          }
+
+        	val_2: 0x562867cf7bc0
+        	result: 0x562867cf7bf0
         }
 
+      	val: 1741650928
 
-      return 0; - Data base setted succesfuly (from path: ./UnitTests/1)
-
-
+      return 0; - Success (GetG:38)
       }
 
-
-    return 0; - Success (CloseDefTree:171)
-    SetDefTree::
+    GetG::
       {
       BufferCtor::
         {
@@ -162,74 +175,61 @@ main::
         return 0; - Success (BufferCtor:298)
         }
 
-      ExpressionParser::
+      GetE::
         {
-        	buf->str: "((x) * (6))"
-        	temp: '('
-        	current_defnode: 190
-        
-
-        ExpressionParser::
+        GetT::
           {
-          	buf->str: "(x) * (6))"
-          	temp: '('
-          	current_defnode: 1D0
-          
-
-          SetDefNodeValue::
+          GetPower::
             {
-            	buf->str: "x) * (6))"
-            	ch: 'x'
-            	temp: ')'
-            ONE CHILD: x - variable
-            	buf->str: ") * (6))"
+            GetP::
+              {
+              GetN::
+                {
+                	val: 123
+                	result: 0x562867cf7c50
+                }
+
+              	val: 0x562867cf7c50
+              }
+
+            	val: 0x562867cf7c50
             }
 
-          return CHILD_FREE defnode 0x6040000001d0
-          }
-
-        	current_defnode->left_child: 1D0
-        	temp: '*'
-        SetDefNodeValue::
-          {
-          	buf->str: "* (6))"
-          	ch: '*'
-          TWO_CHILDREN: * - operator
-          }
-
-        ExpressionParser::
-          {
-          	buf->str: "(6))"
-          	temp: '('
-          	current_defnode: 210
-          
-
-          SetDefNodeValue::
+          	val: 0x562867cf7c50
+          GetT::
             {
-            	buf->str: "6))"
-            	ch: '6'
-            CHILD FREE: 6 - constant
+            GetPower::
+              {
+              GetP::
+                {
+                GetN::
+                  {
+                  	val: 1
+                  	result: 0x562867cf7cb0
+                  }
+
+                	val: 0x562867cf7cb0
+                }
+
+              	val: 0x562867cf7cb0
+              }
+
+            	val: 0x562867cf7cb0
             }
 
-          return CHILD_FREE defnode 0x604000000210
+          	val_2: 0x562867cf7cb0
+          	result: 0x562867cf7ce0
           }
 
-        	current_defnode->left_child: 1D0
-        	current_defnode->right_child: 210
-        ret current_defnode
+        	val: 0x562867cf7ce0
         }
 
+      	val: 1741651168
 
-      return 0; - Data base setted succesfuly (from path: ./UnitTests/2)
-
-
+      return 0; - Success (GetG:38)
       }
 
-
-    return 0; - Success (DeleteBranch:194)
-
-    return 0; - Success (CloseDefTree:171)
-    SetDefTree::
+    GetG::
       {
       BufferCtor::
         {
@@ -237,113 +237,997 @@ main::
         return 0; - Success (BufferCtor:298)
         }
 
-      ExpressionParser::
+      GetE::
         {
-        	buf->str: "(((x) + (2)) * (3))"
-        	temp: '('
-        	current_defnode: 250
-        
-
-        ExpressionParser::
+        GetT::
           {
-          	buf->str: "((x) + (2)) * (3))"
-          	temp: '('
-          	current_defnode: 290
-          
-
-          ExpressionParser::
+          GetPower::
             {
-            	buf->str: "(x) + (2)) * (3))"
-            	temp: '('
-            	current_defnode: 2D0
-            
-
-            SetDefNodeValue::
+            GetP::
               {
-              	buf->str: "x) + (2)) * (3))"
-              	ch: 'x'
-              	temp: ')'
-              ONE CHILD: x - variable
-              	buf->str: ") + (2)) * (3))"
+              GetN::
+                {
+                	val: 123
+                	result: 0x562867cf7d40
+                }
+
+              	val: 0x562867cf7d40
               }
 
-            return CHILD_FREE defnode 0x6040000002d0
+            	val: 0x562867cf7d40
             }
 
-          	current_defnode->left_child: 2D0
-          	temp: '+'
-          SetDefNodeValue::
+          	val: 0x562867cf7d40
+          GetT::
             {
-            	buf->str: "+ (2)) * (3))"
-            	ch: '+'
-            TWO_CHILDREN: + - operator
-            }
-
-          ExpressionParser::
-            {
-            	buf->str: "(2)) * (3))"
-            	temp: '('
-            	current_defnode: 310
-            
-
-            SetDefNodeValue::
+            GetPower::
               {
-              	buf->str: "2)) * (3))"
-              	ch: '2'
-              CHILD FREE: 2 - constant
+              GetP::
+                {
+                GetN::
+                  {
+                  	val: 1
+                  	result: 0x562867cf7da0
+                  }
+
+                	val: 0x562867cf7da0
+                }
+
+              	val: 0x562867cf7da0
               }
 
-            return CHILD_FREE defnode 0x604000000310
+            	val: 0x562867cf7da0
+            GetT::
+              {
+              GetPower::
+                {
+                GetP::
+                  {
+                  GetN::
+                    {
+                    	val: 10
+                    	result: 0x562867cf7e00
+                    }
+
+                  	val: 0x562867cf7e00
+                  }
+
+                	val: 0x562867cf7e00
+                }
+
+              	val: 0x562867cf7e00
+              }
+
+            	val_2: 0x562867cf7e00
+            	result: 0x562867cf7e30
             }
 
-          	current_defnode->left_child: 2D0
-          	current_defnode->right_child: 310
-          ret current_defnode
+          	val_2: 0x562867cf7e30
+          	result: 0x562867cf7e60
           }
 
-        	current_defnode->left_child: 290
-        	temp: '*'
-        SetDefNodeValue::
-          {
-          	buf->str: "* (3))"
-          	ch: '*'
-          TWO_CHILDREN: * - operator
-          }
-
-        ExpressionParser::
-          {
-          	buf->str: "(3))"
-          	temp: '('
-          	current_defnode: 350
-          
-
-          SetDefNodeValue::
-            {
-            	buf->str: "3))"
-            	ch: '3'
-            CHILD FREE: 3 - constant
-            }
-
-          return CHILD_FREE defnode 0x604000000350
-          }
-
-        	current_defnode->left_child: 290
-        	current_defnode->right_child: 350
-        ret current_defnode
+        	val: 0x562867cf7e60
         }
 
+      	val: 1741651552
 
-      return 0; - Data base setted succesfuly (from path: ./UnitTests/3)
-
-
+      return 0; - Success (GetG:38)
       }
 
+    GetG::
+      {
+      BufferCtor::
+        {
 
-    return 0; - Success (DeleteBranch:194)
+        return 0; - Success (BufferCtor:298)
+        }
 
-    return 0; - Success (DeleteBranch:194)
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetN::
+                {
+                	val: 123
+                	result: 0x562867cf7ec0
+                }
 
-    return 0; - Success (CloseDefTree:171)
+              	val: 0x562867cf7ec0
+              }
+
+            	val: 0x562867cf7ec0
+            }
+
+          	val: 0x562867cf7ec0
+          }
+
+        	val: 0x562867cf7ec0
+        GetE::
+          {
+          GetT::
+            {
+            GetPower::
+              {
+              GetP::
+                {
+                GetE::
+                  {
+                  GetT::
+                    {
+                    GetPower::
+                      {
+                      GetP::
+                        {
+                        GetN::
+                          {
+                          	val: 200
+                          	result: 0x562867cf7f50
+                          }
+
+                        	val: 0x562867cf7f50
+                        }
+
+                      	val: 0x562867cf7f50
+                      }
+
+                    	val: 0x562867cf7f50
+                    }
+
+                  	val: 0x562867cf7f50
+                  GetE::
+                    {
+                    GetT::
+                      {
+                      GetPower::
+                        {
+                        GetP::
+                          {
+                          GetN::
+                            {
+                            	val: 3
+                            	result: 0x562867cf7fb0
+                            }
+
+                          	val: 0x562867cf7fb0
+                          }
+
+                        	val: 0x562867cf7fb0
+                        }
+
+                      	val: 0x562867cf7fb0
+                      GetT::
+                        {
+                        GetPower::
+                          {
+                          GetP::
+                            {
+                            GetN::
+                              {
+                              	val: 10
+                              	result: 0x562867cf8010
+                              }
+
+                            	val: 0x562867cf8010
+                            }
+
+                          	val: 0x562867cf8010
+                          }
+
+                        	val: 0x562867cf8010
+                        }
+
+                      	val_2: 0x562867cf8010
+                      	result: 0x562867cf8040
+                      }
+
+                    	val: 0x562867cf8040
+                    }
+
+                  	val_2: 0x562867cf8040
+                  	result: 0x562867cf8070
+                  }
+
+                	val: 0x562867cf8070
+                }
+
+              	val: 0x562867cf8070
+              }
+
+            	val: 0x562867cf8070
+            GetT::
+              {
+              GetPower::
+                {
+                GetP::
+                  {
+                  GetN::
+                    {
+                    	val: 10
+                    	result: 0x562867cf80d0
+                    }
+
+                  	val: 0x562867cf80d0
+                  }
+
+                	val: 0x562867cf80d0
+                }
+
+              	val: 0x562867cf80d0
+              }
+
+            	val_2: 0x562867cf80d0
+            	result: 0x562867cf8100
+            }
+
+          	val: 0x562867cf8100
+          GetE::
+            {
+            GetT::
+              {
+              GetPower::
+                {
+                GetP::
+                  {
+                  GetN::
+                    {
+                    	val: 1
+                    	result: 0x562867cf8160
+                    }
+
+                  	val: 0x562867cf8160
+                  }
+
+                	val: 0x562867cf8160
+                }
+
+              	val: 0x562867cf8160
+              }
+
+            	val: 0x562867cf8160
+            }
+
+          	val_2: 0x562867cf8160
+          	result: 0x562867cf8190
+          }
+
+        	val_2: 0x562867cf8190
+        	result: 0x562867cf81c0
+        }
+
+      	val: 1741652416
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetN::
+                {
+                	val: 10
+                	result: 0x562867cf8220
+                }
+
+              	val: 0x562867cf8220
+              }
+
+            	val: 0x562867cf8220
+            }
+
+          	val: 0x562867cf8220
+          }
+
+        	val: 0x562867cf8220
+        }
+
+      	val: 1741652512
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetN::
+                {
+                	val: 123
+                	result: 0x562867cf8320
+                }
+
+              	val: 0x562867cf8320
+              }
+
+            	val: 0x562867cf8320
+            }
+
+          	val: 0x562867cf8320
+          }
+
+        	val: 0x562867cf8320
+        GetE::
+          {
+          GetT::
+            {
+            GetPower::
+              {
+              GetP::
+                {
+                GetN::
+                  {
+                  	val: 230
+                  	result: 0x562867cf8380
+                  }
+
+                	val: 0x562867cf8380
+                }
+
+              	val: 0x562867cf8380
+              }
+
+            	val: 0x562867cf8380
+            GetT::
+              {
+              GetPower::
+                {
+                GetP::
+                  {
+                  GetN::
+                    {
+                    	val: 10
+                    	result: 0x562867cf83e0
+                    }
+
+                  	val: 0x562867cf83e0
+                  }
+
+                	val: 0x562867cf83e0
+                }
+
+              	val: 0x562867cf83e0
+              }
+
+            	val_2: 0x562867cf83e0
+            	result: 0x562867cf8410
+            }
+
+          	val: 0x562867cf8410
+          GetE::
+            {
+            GetT::
+              {
+              GetPower::
+                {
+                GetP::
+                  {
+                  GetN::
+                    {
+                    	val: 2
+                    	result: 0x562867cf8470
+                    }
+
+                  	val: 0x562867cf8470
+                  }
+
+                	val: 0x562867cf8470
+                }
+
+              	val: 0x562867cf8470
+              }
+
+            	val: 0x562867cf8470
+            }
+
+          	val_2: 0x562867cf8470
+          	result: 0x562867cf84a0
+          }
+
+        	val_2: 0x562867cf84a0
+        	result: 0x562867cf84d0
+        }
+
+      	val: 1741653200
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetN::
+                {
+                	val: 2
+                	result: 0x562867cf8530
+                }
+
+              	val: 0x562867cf8530
+              }
+
+            	val: 0x562867cf8530
+            GetP::
+              {
+              GetN::
+                {
+                	val: 4
+                	result: 0x562867cf8590
+                }
+
+              	val: 0x562867cf8590
+              }
+
+            	result: 0x562867cf85c0
+            }
+
+          	val: 0x562867cf85c0
+          }
+
+        	val: 0x562867cf85c0
+        }
+
+      	val: 1741653440
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetN::
+                {
+                	val: 2
+                	result: 0x562867cf8620
+                }
+
+              	val: 0x562867cf8620
+              }
+
+            	val: 0x562867cf8620
+            GetP::
+              {
+              GetE::
+                {
+                GetT::
+                  {
+                  GetPower::
+                    {
+                    GetP::
+                      {
+                      GetN::
+                        {
+                        	val: 1
+                        	result: 0x562867cf86b0
+                        }
+
+                      	val: 0x562867cf86b0
+                      }
+
+                    	val: 0x562867cf86b0
+                    }
+
+                  	val: 0x562867cf86b0
+                  }
+
+                	val: 0x562867cf86b0
+                GetE::
+                  {
+                  GetT::
+                    {
+                    GetPower::
+                      {
+                      GetP::
+                        {
+                        GetN::
+                          {
+                          	val: 3
+                          	result: 0x562867cf8710
+                          }
+
+                        	val: 0x562867cf8710
+                        }
+
+                      	val: 0x562867cf8710
+                      }
+
+                    	val: 0x562867cf8710
+                    }
+
+                  	val: 0x562867cf8710
+                  }
+
+                	val_2: 0x562867cf8710
+                	result: 0x562867cf8740
+                }
+
+              	val: 0x562867cf8740
+              }
+
+            	result: 0x562867cf8770
+            }
+
+          	val: 0x562867cf8770
+          }
+
+        	val: 0x562867cf8770
+        }
+
+      	val: 1741653872
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetE::
+                {
+                GetT::
+                  {
+                  GetPower::
+                    {
+                    GetP::
+                      {
+                      GetN::
+                        {
+                        	val: 0
+                        	result: 0x562867cf8800
+                        }
+
+                      	val: 0x562867cf8800
+                      }
+
+                    	val: 0x562867cf8800
+                    }
+
+                  	val: 0x562867cf8800
+                  }
+
+                	val: 0x562867cf8800
+                }
+
+              Check this place to improve it (GetP184)              }
+
+            	val: 0x562867cf87a0
+            }
+
+          	val: 0x562867cf87a0
+          }
+
+        	val: 0x562867cf87a0
+        }
+
+      	val: 1741653920
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetE::
+                {
+                GetT::
+                  {
+                  GetPower::
+                    {
+                    GetP::
+                      {
+                      GetN::
+                        {
+                        	val: 4
+                        	result: 0x562867cf8890
+                        }
+
+                      	val: 0x562867cf8890
+                      }
+
+                    	val: 0x562867cf8890
+                    }
+
+                  	val: 0x562867cf8890
+                  }
+
+                	val: 0x562867cf8890
+                }
+
+              Check this place to improve it (GetP184)              }
+
+            	val: 0x562867cf8830
+            }
+
+          	val: 0x562867cf8830
+          }
+
+        	val: 0x562867cf8830
+        }
+
+      	val: 1741654064
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetE::
+                {
+                GetT::
+                  {
+                  GetPower::
+                    {
+                    GetP::
+                      {
+                      GetE::
+                        {
+                        GetT::
+                          {
+                          GetPower::
+                            {
+                            GetP::
+                              {
+                              GetN::
+                                {
+                                	val: 1
+                                	result: 0x562867cf8950
+                                }
+
+                              	val: 0x562867cf8950
+                              }
+
+                            	val: 0x562867cf8950
+                            }
+
+                          	val: 0x562867cf8950
+                          }
+
+                        	val: 0x562867cf8950
+                        GetE::
+                          {
+                          GetT::
+                            {
+                            GetPower::
+                              {
+                              GetP::
+                                {
+                                GetN::
+                                  {
+                                  	val: 20
+                                  	result: 0x562867cf89b0
+                                  }
+
+                                	val: 0x562867cf89b0
+                                }
+
+                              	val: 0x562867cf89b0
+                              }
+
+                            	val: 0x562867cf89b0
+                            }
+
+                          	val: 0x562867cf89b0
+                          }
+
+                        	val_2: 0x562867cf89b0
+                        	result: 0x562867cf89e0
+                        }
+
+                      	val: 0x562867cf89e0
+                      }
+
+                    	val: 0x562867cf89e0
+                    }
+
+                  	val: 0x562867cf89e0
+                  }
+
+                	val: 0x562867cf89e0
+                }
+
+              Check this place to improve it (GetP184)              }
+
+            	val: 0x562867cf88c0
+            }
+
+          	val: 0x562867cf88c0
+          }
+
+        	val: 0x562867cf88c0
+        }
+
+      	val: 1741654208
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetE::
+                {
+                GetT::
+                  {
+                  GetPower::
+                    {
+                    GetP::
+                      {
+                      GetN::
+                        {
+                        	val: 6
+                        	result: 0x562867cf8a70
+                        }
+
+                      	val: 0x562867cf8a70
+                      }
+
+                    	val: 0x562867cf8a70
+                    }
+
+                  	val: 0x562867cf8a70
+                  }
+
+                	val: 0x562867cf8a70
+                }
+
+              Check this place to improve it (GetP184)              }
+
+            	val: 0x562867cf8a10
+            }
+
+          	val: 0x562867cf8a10
+          }
+
+        	val: 0x562867cf8a10
+        }
+
+      	val: 1741654544
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              }
+
+            	val: 0x562867cf8aa0
+            }
+
+          	val: 0x562867cf8aa0
+          }
+
+        	val: 0x562867cf8aa0
+        }
+
+      	val: 1741654688
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              }
+
+            	val: 0x562867cf8ad0
+            }
+
+          	val: 0x562867cf8ad0
+          }
+
+        	val: 0x562867cf8ad0
+        }
+
+      	val: 1741654736
+
+      return 0; - Success (GetG:38)
+      }
+
+    GetG::
+      {
+      BufferCtor::
+        {
+
+        return 0; - Success (BufferCtor:298)
+        }
+
+      GetE::
+        {
+        GetT::
+          {
+          GetPower::
+            {
+            GetP::
+              {
+              GetE::
+                {
+                GetT::
+                  {
+                  GetPower::
+                    {
+                    GetP::
+                      {
+                      GetE::
+                        {
+                        GetT::
+                          {
+                          GetPower::
+                            {
+                            GetP::
+                              {
+                              }
+
+                            	val: 0x562867cf8b60
+                            }
+
+                          	val: 0x562867cf8b60
+                          }
+
+                        	val: 0x562867cf8b60
+                        }
+
+                      	val: 0x562867cf8b60
+                      }
+
+                    	val: 0x562867cf8b60
+                    }
+
+                  	val: 0x562867cf8b60
+                  }
+
+                	val: 0x562867cf8b60
+                }
+
+              Check this place to improve it (GetP184)              }
+
+            	val: 0x562867cf8b00
+            }
+
+          	val: 0x562867cf8b00
+          }
+
+        	val: 0x562867cf8b00
+        }
+
+      	val: 1741654784
+
+      return 0; - Success (GetG:38)
+      }
+
+    TESTING ENDED SUCCESFULLY
+
+    return 0; - Success (UnitTests:59)
     }
 
 
@@ -351,6 +1235,5 @@ main::
   }
 
 *********************************************************************
-		Log Successfuly ended, on Sun Nov 20 21:41:24 2022
+		Log Successfuly ended, on Tue Nov 22 18:57:16 2022
 *********************************************************************
-  
