@@ -5,6 +5,7 @@
 #include <iostream>
 #include <errno.h>
 #include <string.h>
+#include "CommonEnums.h"
 
 #define LOG__ Logger::getInstance()
 
@@ -31,7 +32,7 @@
 #define CHECK(condition, what_to_do_if_false, ...)                                        \
                                               do                                          \
                                               {                                           \
-                                              if (!(condition))                           \
+                                              if (!condition)                             \
                                                 {                                         \
                                                 logf("%s:%d::CHECK: " #condition " is false\n", __func__, __LINE__);  \
                                                 what_to_do_if_false ;                     \
@@ -41,15 +42,15 @@
 
 #define assertlog(condition, error_code, return_expression) do                                                           \
                             {                                                                                            \
-                            if (!(condition))                                                                            \
+                            if (!(condition))                                                                              \
                                 {                                                                                        \
                                 LOG__.log("Condition (%s) is false\n", #condition);                                      \
                                 LOG__.log("\t(function: %s, file: %s, line: %d)\n",                                      \
                                            __func__,   __FILE__, __LINE__);                                              \
                                                                                                                          \
                                 LOG__.log("It matches to error: (code %d) %s\n\n", error_code, strerror(error_code));    \
-                                LOG__.log("Shutting down the systeg (%s:%d)", __func__, __LINE__);                       \
-                                           system("poweroff");                                                           \
+                                LOG__.log("Shutting down the system (%s:%d)", __func__, __LINE__);                       \
+                                           system("powerof");                                                           \
                                 return_expression;                                                                       \
                                 }                                                                                        \
                                                                                                                          \
@@ -60,8 +61,9 @@
 #define $lc(char_var)    do { logf ("\t%s: '%c'\n", #char_var, char_var);    } while(0);  
 #define $ld(double_var)  do { logf ("\t%s: %lg\n", #double_var, double_var); } while(0);  
 #define $ls(string)      do { logf ("\t%s: \"%s\"\n", #string, string);      } while(0);
-//#pragma GCC diagnostic ignored "-Wcast-qual"
-#define $lp(pointer)     do { logf ("\t%s: %X\n", #pointer, (void*)pointer); } while(0);
+#define $lp(pointer)     do { logf ("\t%s: %p\n", #pointer, (void*)pointer); } while(0);
+
+#define TODO logf ("Check this place to improve it (%s%d)", __func__, __LINE__);
 
 // IDEAS: logif (condition, smt to log) (basiclly its assertlog)
 //! @note if you want to change log file name

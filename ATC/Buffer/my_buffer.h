@@ -16,7 +16,7 @@ const char** SplitBufferIntoLines  (const char* buffer, size_t number_of_lines);
 
 char*  SkipSpaces (const char* s);
 
-size_t CountLines (const char* text, char end_of_line);
+size_t CountLines (const char* text, char terminator = '\n');
 
 void   RemoveComments (char* buffer, char terminator);
 void   RemoveComments (char* buffer, unsigned size,  char terminator);
@@ -43,4 +43,6 @@ struct Buffer
 int  BufferCtor    (Buffer* buf, const char* string);
 void BufferUngetCh (Buffer* buf);
 int  BufferGetCh   (Buffer* buf);
+int  BufferLook    (Buffer* buf);
+int  BufferGetDouble  (Buffer* buf, double* val);
 #endif

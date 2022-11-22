@@ -132,7 +132,7 @@ void PrintNode (DefNode* node)
 
     //node 1 | {<next1> next 2} | {data 14} | {<prev1> prev 0}
 
-    switch (node->def_type)
+    switch (node->type)
         {
         case OPERATOR: sprintf(def_data, "Operator | {%c}", node->value.t_operator);
                        break;
@@ -143,7 +143,7 @@ void PrintNode (DefNode* node)
         case CONSTANT: sprintf(def_data, "Constant | {%lg}", node->value.t_constant);
                        break;
 
-        case FUNCTION: sprintf(def_data, "Function | {%d}", node->value.t_function);
+        case FUNCTOR: sprintf(def_data, "Functor | {%d}", node->value.t_functor);
                        break;
         default: break;
         }

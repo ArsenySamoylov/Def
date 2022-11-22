@@ -308,7 +308,7 @@ void BufferUngetCh (Buffer* buf)
     return;
     }
 
-int  BufferGetCh (Buffer* buf)
+int BufferGetCh (Buffer* buf)
     {
     assert(buf);
 
@@ -321,4 +321,35 @@ int  BufferGetCh (Buffer* buf)
     buf->str += n;
 
     return *(buf->str++);
+    }
+
+int BufferLook (Buffer* buf)
+    {
+    assert(buf);
+
+    int n = 0;
+    sscanf(buf->str, "%*[ \t\n\v]%n", &n);
+
+    // $li(n)
+    // $lc(*buf->str)
+    // $ls(buf->str)
+
+    return *(buf->str + n);
+    }
+
+int  BufferGetDouble (Buffer* buf, double* val)
+    {
+    assert(buf);
+
+    int n   = 0;
+
+    // logf("before: %s\n", buf->str);
+
+    if (sscanf(buf->str, "%lg%n", val, &n) == 0)
+        return FAILURE;
+
+    buf->str += n;
+    // logf("after: %s\n", buf->str);
+
+    return SUCCESS;
     }
