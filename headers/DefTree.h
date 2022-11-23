@@ -1,5 +1,4 @@
 #pragma once
-#include "my_buffer.h"
 
 enum DefNodeType
     {
@@ -8,11 +7,20 @@ enum DefNodeType
     CONSTANT,
     FUNCTOR,
     // /////////
+    NOT_A_TYPE   = -12,
     NOT_A_OPERATOR,
     NOT_A_FUNCTOR = -1,
     };
 
 const int FUNCTION_LENGTH = 16;
+
+union DefNodeValue
+    {
+    char   t_operator;
+    char   t_variable;
+    double t_constant;
+    int    t_functor;
+    };
 
 struct DefNode
     {
@@ -23,14 +31,7 @@ struct DefNode
 
     int type; 
 
-    union
-        {
-        char   t_operator;
-        char   t_variable;
-        double t_constant;
-        int    t_functor;
-        }
-    value;
+    DefNodeValue value;
     };
 
 struct DefTree
@@ -45,6 +46,8 @@ struct DefTree
 int SetDefTree    (DefTree* def_tree, const char* path);
 int CloseDefTree  (DefTree* def_tree);
 
-// DefNode* BufferToDefTree (const char* buffer);
+DefNode* NewDefNode (int      type       = 0,       DefNodeValue value       = {0},
+                     DefNode* left_child = nullptr, DefNode*     right_child = nullptr, 
+                     DefNode* parent     = nullptr);
 
-int GetG (DefTree* def_tree, const char* buffer);
+int DeleteBranch  (DefNode* def_node);

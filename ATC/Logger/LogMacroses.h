@@ -22,7 +22,7 @@
 
 #define $log(level) FunctionLogger NAME(func) {level, __func__};
 
-#define LSUCCESS LOG__.LogMsgRet (SUCCESS, "Success (%s:%d)", __func__, __LINE__)
+#define LSUCCESS LOG__.LogMsgRet (SUCCESS, "%s:%d returned SUCCESS ", __func__, __LINE__)
 #define LFAILURE LOG__.LogMsgRet (FAILURE, "Failed (%s:%d)",  __func__, __LINE__)
 
 #define LNULL    LOG__.LogMsgNullRet (" Returnig null ptr (%s:%d)", __func__, __LINE__)

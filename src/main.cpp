@@ -1,4 +1,5 @@
 #include "Def.h"
+#include "ExpressionParser.h"
 
 #include "ArsLib.h"
 #include "DefGraphVis.h"
@@ -17,6 +18,7 @@ int main()
 
 int NUMBER_O_TESTS = 4;
 
+#pragma GCC diagnostic ignored "-Wunused-variable"
 int UnitTests()
     {
     $log(DEBUG)
@@ -36,8 +38,8 @@ int UnitTests()
        {
        DefTree def_tree = {};
 
-        $s(tests[i])
-        $s(tests[i+1])
+        // $s(tests[i])
+        // $s(tests[i+1])
 
        CHECK (GetG(&def_tree, tests[i]) == SUCCESS, printf(redcolor "TESTING ENDED WITH ERROR\n" resetconsole), return LFAILURE);
 
@@ -49,9 +51,10 @@ int UnitTests()
        sprintf(GraphicName, "./UnitTests/graphics/%zu", i);
        const char* img = MakeImg(GraphicName, &def_tree);
 
-       SYSTEM("xdg-open %s", img);
+    //    SYSTEM("xdg-open %s", img);
        
-      //  CHECK (CloseDefTree(&def_tree) == SUCCESS, return LFAILURE);
+       
+       CHECK (CloseDefTree(&def_tree) == SUCCESS, return LFAILURE);
        }
     
     logf  ("TESTING ENDED SUCCESFULLY\n");

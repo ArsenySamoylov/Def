@@ -290,7 +290,7 @@ void setindent (int indent)
 
 int BufferCtor (Buffer* buf, const char* string)
     {
-    $log(DEBUG)
+    $log(DEBUG_ALL)
     CHECK (buf, return LFAILURE);
 
     buf->buffer = buf->str = string;

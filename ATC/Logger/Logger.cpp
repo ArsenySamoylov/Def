@@ -123,8 +123,9 @@ int Logger::LogMsgRet(int return_value, const char* format, ... )
     fprintf    (my_log, "\n");
     fsetindent (my_log, indent);
 
-    fprintf  (my_log, "return %d; - ", return_value);
     vfprintf (my_log, format, ptr);
+    fprintf  (my_log, "(return %d;)", return_value);
+   
     fprintf  (my_log, "\n");
 
     va_end(ptr);
