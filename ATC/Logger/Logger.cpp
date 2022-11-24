@@ -11,6 +11,8 @@
 #include "my_buffer.h" // for fsettindent
 #include "LinuxColors.h"
 
+// #define CONSOLE(format, ptr)  vprintf(format, ptr)
+#define CONSOLE(format, ptr) 
 ////////////// constructor and destructor ////////////////////////////////////
 // @todo try and catch
 Logger::Logger (const char* log_name) : my_log(NULL), level(0), indent(0), logname(log_name) 
@@ -94,6 +96,8 @@ void Logger::log (const char* format, ...)
     fsetindent (my_log, indent);
     vfprintf   (my_log, format, ptr);
 
+    CONSOLE (format, ptr);
+
     va_end(ptr);
 
     return;
@@ -128,6 +132,8 @@ int Logger::LogMsgRet(int return_value, const char* format, ... )
    
     fprintf  (my_log, "\n");
 
+    CONSOLE (format, ptr);
+
     va_end(ptr);
 
     return return_value;
@@ -144,6 +150,8 @@ void Logger::LogMsgNoRet(const char* format, ... )
     fprintf  (my_log, "return; ");
     vfprintf (my_log, format, ptr);
     fprintf  (my_log, "\n");
+
+    CONSOLE (format, ptr);
 
     va_end(ptr);
 
@@ -162,6 +170,7 @@ std::nullptr_t Logger::LogMsgNullRet(const char* format, ...)
     vfprintf (my_log, format, ptr);
     fprintf  (my_log, "\n");
 
+    CONSOLE (format, ptr);
     va_end(ptr);
 
     return nullptr;
@@ -176,6 +185,8 @@ void Logger::logerror (int error_code, const char* format, ...)
     vfprintf (my_log, format, ptr);
 
     log("\n\terror: (code %d) %s\n\n", error_code, strerror(error_code));                
+    
+    CONSOLE (format, ptr);
 
     va_end(ptr);
 
@@ -191,6 +202,7 @@ void Logger::logerrno (const char* format, ...)
 
     log("\n\terror: (code %d) %s\n\n", errno, strerror(errno));                
 
+    CONSOLE (format, ptr);
     va_end(ptr);
                                                  
     return;

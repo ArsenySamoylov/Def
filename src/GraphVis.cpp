@@ -126,7 +126,13 @@ void DotTreeBranch (DefNode* node)
 
 void PrintNode (DefNode* node)
     {
+    $log(3)
     assertlog (node, EFAULT, abort());
+
+    $lp(node)
+    $lp(node->left_child)
+    $lp(node->right_child)
+    $lc(node->value.t_operator)
 
     char def_data[333]   = "";
 

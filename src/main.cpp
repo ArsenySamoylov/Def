@@ -32,29 +32,47 @@ int UnitTests()
 
     const char** tests = DivideBufferIntoLines (sample, num_lines);
 
-    SYSTEM("rm -r ./UnitTests/graphics/*");
+    // SYSTEM("rm -r ./UnitTests/graphics/*.png");
+    
 
     for (size_t i = 0; i < num_lines; i++)
        {
        DefTree def_tree = {};
-
+       static char GraphicName[99] = "";
+    
         // $s(tests[i])
         // $s(tests[i+1])
 
        CHECK (GetG(&def_tree, tests[i]) == SUCCESS, printf(redcolor "TESTING ENDED WITH ERROR\n" resetconsole), return LFAILURE);
 
+        SYSTEM("rm -r ./UnitTests/graphics/*.png");
+
+        sprintf(GraphicName, "%zu__pars", i/2);
+        const char* expression = MakeImg(GraphicName, &def_tree);
+
         int ans = 0;
         sscanf (tests[++i] + 1, "%d\n", &ans);
 
-       static char GraphicName[99] = "";
-    
-       sprintf(GraphicName, "./UnitTests/graphics/%zu", i);
-       const char* img = MakeImg(GraphicName, &def_tree);
+        DefTree d {};
+        d.status = ACTIVE;
+        d.root   = Differentiate (def_tree.root);
 
-    //    SYSTEM("xdg-open %s", img);
+       sprintf(GraphicName, "%zu_diff", i/2);
+       const char* diff = MakeImg(GraphicName, &d);
+
+        // $lp(d.root->right_child->left_child)
+       d.root   = Simplify (d.root);
        
-       
+    //    $lp(d.root)
+       sprintf(GraphicName, "%zu_simple_dif", i/2);
+       const char* simple_dif = MakeImg(GraphicName, &d);
+
+       SYSTEM("xdg-open %s", simple_dif);
+       $$
+
        CHECK (CloseDefTree(&def_tree) == SUCCESS, return LFAILURE);
+       CHECK (CloseDefTree(&d)        == SUCCESS, return LFAILURE);
+       return 0;
        }
     
     logf  ("TESTING ENDED SUCCESFULLY\n");

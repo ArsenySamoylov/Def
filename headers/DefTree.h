@@ -50,4 +50,6 @@ DefNode* NewDefNode (int      type       = 0,       DefNodeValue value       = {
                      DefNode* left_child = nullptr, DefNode*     right_child = nullptr, 
                      DefNode* parent     = nullptr);
 
-int DeleteBranch  (DefNode* def_node);
+DefNode* CopyDefNode (const DefNode* original);
+DefNode* CopyBranch  (const DefNode* source);
+int      DeleteBranch      (DefNode* def_node);

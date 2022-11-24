@@ -1,4 +1,5 @@
 #pragma once
+#include "DefTree.h"
 
 enum Functions
     {
@@ -6,15 +7,23 @@ enum Functions
     COS,
     SQRT,
     };
-    
+
 enum T_OPERATORS
     {
     SUM = '+',
     SUB = '-',
-    MUL = '*', 
+    MUL = '*',
+    DIV = '/', 
     POW = '^',
     };
 
+
 const int NUMBER_OF_SUPPORTED_FUNCTIONS = 3;
-const char *const SUPPORTED_FUNCTIONS[] = { "sin", "cos", "sqrt"};
+const char *const SUPPORTED_FUNCTIONS[] = {"sin", "cos", "sqrt"};
 #define NOT_A_FUNCTION (-1)
+
+// static_assert (array[sin] == to_str[sin]);
+
+DefNode* Differentiate   (const DefNode *const def_node);
+DefNode* Simplify (DefNode* def_node);
+// DefTree* SimplifyDefTree (DefNode* def_node);

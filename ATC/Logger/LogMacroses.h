@@ -63,7 +63,8 @@
 #define $ls(string)      do { logf ("\t%s: \"%s\"\n", #string, string);      } while(0);
 #define $lp(pointer)     do { logf ("\t%s: %p\n", #pointer, (void*)pointer); } while(0);
 
-#define TODO logf ("Check this place to improve it (%s%d)", __func__, __LINE__);
+#include "LinuxColors.h"
+#define TODO printf(redcolor "#TODO Check this place to improve it (%s::%d)\n" resetconsole , __func__, __LINE__); logf("#TODO Check this place to improve it (%s%d)\n", __func__, __LINE__);
 
 // IDEAS: logif (condition, smt to log) (basiclly its assertlog)
 //! @note if you want to change log file name

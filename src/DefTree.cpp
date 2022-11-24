@@ -23,9 +23,51 @@ DefNode* NewDefNode (int      type,       DefNodeValue value,
     return new_defnode;
     }
 
-int CloseDefTree (DefTree* def_tree)
+DefNode* CopyDefNode (const DefNode* original)
+    {
+    $log(DEBUG_ALL)
+
+    assertlog (original, EFAULT, return LNULL);
+
+    DefNode* copy = NewDefNode ();
+    if (!copy)
+        return logf("Couldn't copy (%p) node\n", original), LNULL;
+
+    copy->parent      = original->parent;
+    copy->left_child  = original->left_child;
+    copy->right_child = original->right_child;
+
+    copy->type  = original->type;
+    copy->value = original->value;
+
+    return copy;
+    }
+
+DefNode* CopyBranch (const DefNode* source)
     {
     $log(DEBUG)
+    assertlog (source, EFAULT, return LNULL);
+
+    DefNode* new_defnode = NewDefNode(source->type, source->value);
+
+    if (source->left_child != 0)
+        new_defnode->left_child = CopyBranch (source->left_child);
+    
+    if (source->right_child != 0)
+        new_defnode->right_child = CopyBranch (source->right_child);
+
+    if (!new_defnode-> left_child && source-> left_child)
+        return DeleteBranch(new_defnode), LNULL;
+
+    if (!new_defnode->right_child && source->right_child)
+        return DeleteBranch(new_defnode), LNULL;
+
+    return new_defnode;
+    }
+    
+int CloseDefTree (DefTree* def_tree)
+    {
+    $log(DEBUG_ALL)
     assertlog (def_tree, EFAULT, return LFAILURE);
 
     if (def_tree->status != ACTIVE)
