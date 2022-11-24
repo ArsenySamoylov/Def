@@ -7,10 +7,10 @@
 int UnitTests();
 
 int main()
-    {
-    $log(RELEASE);
-
+    {    $log(RELEASE);
+    
     UnitTests();
+
 
     return LSUCCESS;    
     }              

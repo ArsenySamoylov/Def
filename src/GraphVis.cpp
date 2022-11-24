@@ -76,6 +76,8 @@ void DotPrint (const char* format, ...)
 
     vfprintf (Dot, format, ptr);
 
+    va_end(ptr);
+    
     return;
     }
 
