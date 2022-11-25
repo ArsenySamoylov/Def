@@ -6,6 +6,8 @@
 #include <errno.h>
 #include <string.h>
 #include "CommonEnums.h"
+#include "LinuxColors.h"
+#include "Utils.h"
 
 #define LOG__ Logger::getInstance()
 
@@ -15,6 +17,7 @@
 // .log("") to set indent
 #define flog LOG__.log(""); LOG__ 
 #define logf(format, ...)   LOG__.log(format __VA_OPT__(,) __VA_ARGS__)
+#define logf_ni(format, ...)   LOG__.log_no_indent(format __VA_OPT__(,) __VA_ARGS__)
 
 #define PASTE(x, y) x ## _ ## y
 #define EVAL(x,y) PASTE(x,y)
@@ -23,9 +26,9 @@
 #define $log(level) FunctionLogger NAME(func) {level, __func__};
 
 #define LSUCCESS LOG__.LogMsgRet (SUCCESS, "%s:%d returned SUCCESS ", __func__, __LINE__)
-#define LFAILURE LOG__.LogMsgRet (FAILURE, "Failed (%s:%d)",  __func__, __LINE__)
+#define LFAILURE LOG__.LogMsgRet (MsgRet(FAILURE, redcolor "Failed (%s:%d)" resetconsole,  __func__, __LINE__), "Failed (%s:%d)",  __func__, __LINE__);
 
-#define LNULL    LOG__.LogMsgNullRet (" Returnig null ptr (%s:%d)", __func__, __LINE__)
+#define LNULL    LOG__.LogMsgNullRet(LogMsgNullRet(redcolor "Returnig null ptr (%s:%d)" resetconsole, __func__, __LINE__), "Returnig null ptr (%s:%d)", __func__, __LINE__);
 
 #define LogMsgRet(ret_val, format, ...) LOG__.LogMsgRet (ret_val, format __VA_OPT__(,) __VA_ARGS__)
 
@@ -42,15 +45,17 @@
 
 #define assertlog(condition, error_code, return_expression) do                                                           \
                             {                                                                                            \
-                            if (!(condition))                                                                              \
+                            if (!(condition))                                                                            \
                                 {                                                                                        \
                                 LOG__.log("Condition (%s) is false\n", #condition);                                      \
+                                printf("Condition" redcolor " (%s) is false\n" resetconsole, #condition);                \
                                 LOG__.log("\t(function: %s, file: %s, line: %d)\n",                                      \
                                            __func__,   __FILE__, __LINE__);                                              \
-                                                                                                                         \
+                                printf("\t(function: %s, file: %s, line: %d)\n",                                         \
+                                           __func__,   __FILE__, __LINE__);                                              \
                                 LOG__.log("It matches to error: (code %d) %s\n\n", error_code, strerror(error_code));    \
                                 LOG__.log("Shutting down the system (%s:%d)", __func__, __LINE__);                       \
-                                           system("powerof");                                                           \
+                                           system("powerof");                                                            \
                                 return_expression;                                                                       \
                                 }                                                                                        \
                                                                                                                          \
@@ -63,8 +68,13 @@
 #define $ls(string)      do { logf ("\t%s: \"%s\"\n", #string, string);      } while(0);
 #define $lp(pointer)     do { logf ("\t%s: %p\n", #pointer, (void*)pointer); } while(0);
 
-#include "LinuxColors.h"
-#define TODO printf(redcolor "#TODO Check this place to improve it (%s::%d)\n" resetconsole , __func__, __LINE__); logf("#TODO Check this place to improve it (%s%d)\n", __func__, __LINE__);
+
+#define TODO(message) printf(redcolor "#TODO Check this place to improve it (%s::%d)\n%s" resetconsole , __func__, __LINE__, message);      \
+                                 logf("#TODO Check this place to improve it (%s%d)\n", __func__, __LINE__);                                 \
+                                 logf(message);
+
+#define YOU_SHALL_NOT_PASS printf(purplecolor "You shouldn't be able to reach this place (%s::%d)\n" resetconsole , __func__, __LINE__);     \
+                                         logf("You shouldn't be able to reach this place (%s::%d)\n", __func__, __LINE__);
 
 // IDEAS: logif (condition, smt to log) (basiclly its assertlog)
 //! @note if you want to change log file name

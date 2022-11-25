@@ -33,8 +33,9 @@ class Logger : public std::ostream
         
         FILE* getlog ();
             
-        void log    (const char* format, ...);
-        void logmsg (char* message);
+        void log           (const char* format, ...);
+        void log_no_indent (const char* format, ...);
+        void logmsg        (char* message);
 
         void checkerrno (const char* format, ...);
         void logerror   (int error_code, const char* format, ...);

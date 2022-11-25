@@ -103,6 +103,24 @@ void Logger::log (const char* format, ...)
     return;
     }
 
+void Logger::log_no_indent (const char* format, ...)
+    {
+    if (level < LOG_LEVEL)
+        return;
+
+    va_list ptr;
+    va_start(ptr, format);
+
+    // fsetindent (my_log, indent);
+    vfprintf   (my_log, format, ptr);
+
+    CONSOLE (format, ptr);
+
+    va_end(ptr);
+
+    return;
+    }
+    
 void Logger::logmsg (char* message)
     {
     assert(message);

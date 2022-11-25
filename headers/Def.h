@@ -27,3 +27,5 @@ const char *const SUPPORTED_FUNCTIONS[] = {"sin", "cos", "sqrt"};
 DefNode* Differentiate   (const DefNode *const def_node);
 DefNode* Simplify (DefNode* def_node);
 // DefTree* SimplifyDefTree (DefNode* def_node);
+int DefineVariable (char var, double value, DefNode* def_node);
+

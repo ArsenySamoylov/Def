@@ -4,6 +4,8 @@
 #include "ArsLib.h"
 #include "DefGraphVis.h"
 
+#include "LaTex.h"
+
 int UnitTests();
 
 int main()
@@ -21,8 +23,7 @@ int NUMBER_O_TESTS = 4;
 #pragma GCC diagnostic ignored "-Wunused-variable"
 int UnitTests()
     {
-    $log(DEBUG)
-
+    $log(4)
     
     char* sample = GetSrcFile ("UnitTests/sample.txt");
     CHECK (sample, logf("Couldn't open file with test\n"), return LFAILURE);
@@ -45,7 +46,14 @@ int UnitTests()
 
        CHECK (GetG(&def_tree, tests[i]) == SUCCESS, printf(redcolor "TESTING ENDED WITH ERROR\n" resetconsole), return LFAILURE);
 
-        SYSTEM("rm -r ./UnitTests/graphics/*.png");
+        SYSTEM("rm -rf ./UnitTests/graphics/*.png");
+        SYSTEM("rm -rf ./UnitTests/graphics/dot/*.dot");
+
+        SYSTEM("rm -rf ./UnitTests/LaTex/*.log");
+        SYSTEM("rm -rf ./UnitTests/LaTex/*.aux");
+        SYSTEM("rm -rf ./UnitTests/LaTex/*.tex");
+        SYSTEM("rm -rf ./UnitTests/LaTex/*.pdf");
+
 
         sprintf(GraphicName, "%zu__pars", i/2);
         const char* expression = MakeImg(GraphicName, &def_tree);
@@ -60,20 +68,25 @@ int UnitTests()
        sprintf(GraphicName, "%zu_diff", i/2);
        const char* diff = MakeImg(GraphicName, &d);
 
-        // $lp(d.root->right_child->left_child)
+       // $lp(d.root->right_child->left_child)
        d.root   = Simplify (d.root);
        
-    //    $lp(d.root)
+       //$lp(d.root)
        sprintf(GraphicName, "%zu_simple_dif", i/2);
        const char* simple_dif = MakeImg(GraphicName, &d);
+      
+      ///////////////////////////////// LATEX
+      static char tex_name[128] = "";
+      sprintf (tex_name, "result_%zu", i/2); 
+      MakeLatex (tex_name, d.root);
 
-       SYSTEM("xdg-open %s", simple_dif);
-       $$
+      // SYSTEM("xdg-open %s", simple_dif);
+      SYSTEM("open UnitTests/LaTex/result_%zu.pdf", i/2);
+      $$
 
-       CHECK (CloseDefTree(&def_tree) == SUCCESS, return LFAILURE);
-       CHECK (CloseDefTree(&d)        == SUCCESS, return LFAILURE);
-       return 0;
-       }
+      CHECK (CloseDefTree(&def_tree) == SUCCESS, return LFAILURE);
+      CHECK (CloseDefTree(&d)        == SUCCESS, return LFAILURE);
+      }
     
     logf  ("TESTING ENDED SUCCESFULLY\n");
     printf(greencolor "TESTING ENDED SUCCESFULLY\n" resetconsole);

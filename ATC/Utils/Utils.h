@@ -3,8 +3,9 @@
 #include <stdarg.h>
 #include <stdio.h>
 
-int  MsgRet   (int return_value, const char* format, ... );
-void MsgNoRet (const char* format, ... );
+int  MsgRet   (int return_value, const char* format, ...);
+void MsgNoRet (const char* format, ...);
+std::nullptr_t LogMsgNullRet(const char* format, ...);
 
 #define func_message(...)  {                              \
                             printf("\t%s: ", __func__);   \

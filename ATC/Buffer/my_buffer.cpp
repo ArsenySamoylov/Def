@@ -293,7 +293,8 @@ int BufferCtor (Buffer* buf, const char* string)
     $log(DEBUG_ALL)
     CHECK (buf, return LFAILURE);
 
-    buf->buffer = buf->str = string;
+    buf->buffer = string; 
+    buf->str = (char*) string;
 
     return LSUCCESS;
     }
@@ -341,7 +342,7 @@ int  BufferGetDouble (Buffer* buf, double* val)
     {
     assert(buf);
 
-    int n   = 0;
+    int n = 0;
 
     // logf("before: %s\n", buf->str);
 
@@ -352,4 +353,44 @@ int  BufferGetDouble (Buffer* buf, double* val)
     // logf("after: %s\n", buf->str);
 
     return SUCCESS;
+    }
+
+int  BufferPutDouble (Buffer* buf, double val)
+    {
+    assert(buf);
+
+    int n = 0;
+    if ((sprintf(buf->str, "%lg%n", val, &n) == 0) && n == 0)
+        return LFAILURE;
+    
+    buf->str += n;
+
+    return LSUCCESS;
+    }
+
+int  BufferPutChar   (Buffer* buf, char   ch)
+    {
+    assert(buf);
+
+    int n = 0;
+    if ((sprintf(buf->str, "%c%n", ch, &n) == 0) && n == 0)
+        return LFAILURE;
+    
+    buf->str += n;
+
+    return LSUCCESS;
+    }
+
+int  BufferPutString (Buffer* buf, const char*  str)
+    {
+    assert(buf);
+    assert(str);
+
+    int n = 0;
+    if ((sprintf(buf->str, "%s%n", str, &n) == 0) && n == 0)
+        return LFAILURE;
+    
+    buf->str += n;
+
+    return LSUCCESS;
     }

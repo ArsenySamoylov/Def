@@ -9,6 +9,7 @@ static FILE* Dot = NULL;
 
 const char* MakeImg (const char* img_name, const DefTree* data_tree) 
     {
+    $log(2)
     assert (img_name);
 
     char      dot_file [MAX_GRAPH_NAME_LENGTH + 16] = {};
@@ -125,20 +126,16 @@ void DotTreeBranch (DefNode* node)
     }
 
 #include <string.h>
+#include "DSL.h"
 
 void PrintNode (DefNode* node)
     {
-    $log(3)
+    $log(1) 
     assertlog (node, EFAULT, abort());
-
-    $lp(node)
-    $lp(node->left_child)
-    $lp(node->right_child)
-    $lc(node->value.t_operator)
+    $LOG_NODE(node)
 
     char def_data[333]   = "";
 
-    //node 1 | {<next1> next 2} | {data 14} | {<prev1> prev 0}
 
     switch (node->type)
         {

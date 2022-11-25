@@ -8,6 +8,8 @@ int MsgRet (int return_value, const char* format, ... )
 
     vprintf (format, ptr);
 
+    va_end(ptr);
+
     return return_value;
     }
 
@@ -17,6 +19,8 @@ void MsgNoRet (const char* format, ... )
     va_start(ptr, format);
 
     vprintf (format, ptr);
+    
+    va_end(ptr);
 
     return;
     }
@@ -37,4 +41,16 @@ int SYSTEM(const char* format, ...)
     va_end(ptr);
 
     return system   (system_command);
+    }
+
+std::nullptr_t LogMsgNullRet(const char* format, ...)
+    {
+    va_list ptr;
+    va_start(ptr, format);
+
+    vprintf (format, ptr);
+
+    va_end(ptr);
+
+    return nullptr;
     }

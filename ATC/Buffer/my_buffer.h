@@ -37,12 +37,17 @@ void setindent  (int indent);
 struct Buffer
     { 
     const char* buffer;
-    const char* str;
+    char* str;
     };
 
 int  BufferCtor    (Buffer* buf, const char* string);
+
 void BufferUngetCh (Buffer* buf);
 int  BufferGetCh   (Buffer* buf);
 int  BufferLook    (Buffer* buf);
 int  BufferGetDouble  (Buffer* buf, double* val);
+
+int  BufferPutDouble (Buffer* buf, double val);
+int  BufferPutChar   (Buffer* buf, char   ch);
+int  BufferPutString (Buffer* buf, const char*  str);
 #endif

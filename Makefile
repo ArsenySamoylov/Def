@@ -48,7 +48,7 @@ clean:
 	@rm -rf $(OBJECTS) $(DEPENDENCES) $(DEPDIR) $(NAME)  #$(shell ls build/*.ii -t | head -1) $(shell ls build/*.s -t | head -1)
 
 cleanLog:
-	@rm -rd Logs/*.txt
+	@rm -rd logs/*.ars
 
 openLog:
 	@xdg-open $(shell ls Logs/*.html -t | head -1)
