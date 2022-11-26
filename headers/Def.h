@@ -24,8 +24,9 @@ const char *const SUPPORTED_FUNCTIONS[] = {"sin", "cos", "sqrt"};
 
 // static_assert (array[sin] == to_str[sin]);
 
-DefNode* Differentiate   (const DefNode *const def_node);
+DefNode* Differentiate   (const DefNode *const def_node, char variable);
 DefNode* Simplify (DefNode* def_node);
 // DefTree* SimplifyDefTree (DefNode* def_node);
 int DefineVariable (char var, double value, DefNode* def_node);
 
+double CountConstants (DefNode* def_node);

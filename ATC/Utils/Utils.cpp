@@ -1,6 +1,8 @@
 #include "Utils.h"
 #include "EasyDebug.h"
 
+#include <stddef.h>
+
 int MsgRet (int return_value, const char* format, ... )
     {
     va_list ptr;
@@ -43,7 +45,7 @@ int SYSTEM(const char* format, ...)
     return system   (system_command);
     }
 
-std::nullptr_t LogMsgNullRet(const char* format, ...)
+decltype(nullptr) LogMsgNullRet(const char* format, ...)
     {
     va_list ptr;
     va_start(ptr, format);

@@ -5,7 +5,8 @@
 
 int  MsgRet   (int return_value, const char* format, ...);
 void MsgNoRet (const char* format, ...);
-std::nullptr_t LogMsgNullRet(const char* format, ...);
+
+decltype(nullptr) LogMsgNullRet(const char* format, ...);
 
 #define func_message(...)  {                              \
                             printf("\t%s: ", __func__);   \
@@ -13,5 +14,3 @@ std::nullptr_t LogMsgNullRet(const char* format, ...);
                             } 
 
 int SYSTEM(const char* format, ...);
-
-// what??  baclslash at new line warning

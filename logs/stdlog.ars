@@ -1,10 +1,10 @@
-Fri Nov 25 21:03:00 2022
+Sat Nov 26 16:45:46 2022
 
 main::
   {
   UnitTests::
     {
-    	num_lines: 30
+    	num_lines: 36
     GetG::
       {
       BufferCtor::
@@ -51,190 +51,59 @@ main::
                   {
                   }
 
-                GetE::
+                GetFunctor::
                   {
-                  GetT::
-                    {
-                    GetPower::
-                      {
-                      GetP::
-                        {
-                        NewDefNode::
-                          {
-                          }
-
-                        GetFunctor::
-                          {
-                          	NOT_A_FUNCTION: -1
-                          }
-
-                        }
-
-                      	val: 0x604000000090
-                      }
-
-                    DefNode val
-                    (0x604000000090)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: VARIABLE | {x}
-
-                    return node:
-                    DefNode val
-                    (0x604000000090)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: VARIABLE | {x}
-
-                    }
-
-                  DefNode val
-                  (0x604000000090)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: VARIABLE | {x}
-
-                  GetE::
-                    {
-                    GetT::
-                      {
-                      GetPower::
-                        {
-                        GetP::
-                          {
-                          NewDefNode::
-                            {
-                            }
-
-                          GetFunctor::
-                            {
-                            	NOT_A_FUNCTION: -1
-                            }
-
-                          }
-
-                        	val: 0x6040000000d0
-                        }
-
-                      DefNode val
-                      (0x6040000000d0)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: VARIABLE | {x}
-
-                      return node:
-                      DefNode val
-                      (0x6040000000d0)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: VARIABLE | {x}
-
-                      }
-
-                    DefNode val
-                    (0x6040000000d0)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: VARIABLE | {x}
-
-                    }
-
-                  	val_2: 0x6040000000d0
-                  NewDefNode::
-                    {
-                    }
-
-                  	result: 0x604000000110
+                  	NOT_A_FUNCTION: -1
                   }
 
-                	val: 0x604000000110
                 }
 
-              	val: 0x604000000110
+              	val: 0x604000000050
               }
 
             DefNode val
-            (0x604000000110)::::::::::::::::
-            		  left_child: 0x604000000090
-            		 right_child: 0x6040000000d0
-            		        type: OPERATOR | {+}
-
-            GetT::
-              {
-              GetPower::
-                {
-                GetP::
-                  {
-                  NewDefNode::
-                    {
-                    }
-
-                  GetFunctor::
-                    {
-                    	NOT_A_FUNCTION: -1
-                    }
-
-                  }
-
-                	val: 0x604000000150
-                }
-
-              DefNode val
-              (0x604000000150)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: VARIABLE | {x}
-
-              return node:
-              DefNode val
-              (0x604000000150)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: VARIABLE | {x}
-
-              }
-
-            DefNode val_2
-            (0x604000000150)::::::::::::::::
+            (0x604000000050)::::::::::::::::
             		  left_child: (nil)
             		 right_child: (nil)
             		        type: VARIABLE | {x}
 
-            NewDefNode::
-              {
-              }
+            return node:
+            DefNode val
+            (0x604000000050)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: VARIABLE | {x}
 
-            	result: 0x604000000190
             }
 
           DefNode val_2
-          (0x604000000190)::::::::::::::::
-          		  left_child: 0x604000000110
-          		 right_child: 0x604000000150
-          		        type: OPERATOR | {/}
+          (0x604000000050)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: VARIABLE | {x}
 
           NewDefNode::
             {
             }
 
-          	result: 0x6040000001d0
+          	result: 0x604000000090
           }
 
         DefNode val
-        (0x6040000001d0)::::::::::::::::
+        (0x604000000090)::::::::::::::::
         		  left_child: 0x604000000010
-        		 right_child: 0x604000000190
+        		 right_child: 0x604000000050
         		        type: OPERATOR | {*}
 
         }
 
       DefNode val
-      (0x6040000001d0)::::::::::::::::
+      (0x604000000090)::::::::::::::::
       		  left_child: 0x604000000010
-      		 right_child: 0x604000000190
+      		 right_child: 0x604000000050
       		        type: OPERATOR | {*}
 
-      	val: 0x6040000001d0
+      	val: 0x604000000090
 
       GetG:44 returned SUCCESS (return 0;)
       }
@@ -244,9 +113,9 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x6040000001d0)::::::::::::::::
+        (0x604000000090)::::::::::::::::
         		  left_child: 0x604000000010
-        		 right_child: 0x604000000190
+        		 right_child: 0x604000000050
         		        type: OPERATOR | {*}
 
         }
@@ -274,47 +143,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000190)::::::::::::::::
-        		  left_child: 0x604000000110
-        		 right_child: 0x604000000150
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000190)::::::::::::::::
-        		  left_child: 0x604000000110
-        		 right_child: 0x604000000150
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000110)::::::::::::::::
-        		  left_child: 0x604000000090
-        		 right_child: 0x6040000000d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000110)::::::::::::::::
-        		  left_child: 0x604000000090
-        		 right_child: 0x6040000000d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000090)::::::::::::::::
+        (0x604000000050)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: VARIABLE | {x}
@@ -324,47 +153,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000090)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000000d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000000d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000150)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000150)::::::::::::::::
+        (0x604000000050)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: VARIABLE | {x}
@@ -376,9 +165,9 @@ main::
     Differentiate::
       {
       DefNode def_node
-      (0x6040000001d0)::::::::::::::::
+      (0x604000000090)::::::::::::::::
       		  left_child: 0x604000000010
-      		 right_child: 0x604000000190
+      		 right_child: 0x604000000050
       		        type: OPERATOR | {*}
 
       CopyDefNode::
@@ -395,38 +184,6 @@ main::
           {
           }
 
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          CopyBranch::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          CopyBranch::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          }
-
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
         }
 
       Differentiate::
@@ -458,140 +215,12 @@ main::
       Differentiate::
         {
         DefNode def_node
-        (0x604000000190)::::::::::::::::
-        		  left_child: 0x604000000110
-        		 right_child: 0x604000000150
-        		        type: OPERATOR | {/}
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
 
         CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        Differentiate::
-          {
-          DefNode def_node
-          (0x604000000110)::::::::::::::::
-          		  left_child: 0x604000000090
-          		 right_child: 0x6040000000d0
-          		        type: OPERATOR | {+}
-
-          CopyDefNode::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          Differentiate::
-            {
-            DefNode def_node
-            (0x604000000090)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            CopyDefNode::
-              {
-              NewDefNode::
-                {
-                }
-
-              }
-
-            NewDefNode::
-              {
-              }
-
-            }
-
-          Differentiate::
-            {
-            DefNode def_node
-            (0x6040000000d0)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            CopyDefNode::
-              {
-              NewDefNode::
-                {
-                }
-
-              }
-
-            NewDefNode::
-              {
-              }
-
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        Differentiate::
-          {
-          DefNode def_node
-          (0x604000000150)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          CopyDefNode::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          }
-
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        CopyBranch::
           {
           NewDefNode::
             {
@@ -624,9 +253,9 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000210)::::::::::::::::
-        		  left_child: 0x604000000410
-        		 right_child: 0x604000000890
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: 0x6040000001d0
+        		 right_child: 0x6040000002d0
         		        type: OPERATOR | {+}
 
         }
@@ -634,9 +263,9 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000410)::::::::::::::::
-        		  left_child: 0x6040000003d0
-        		 right_child: 0x604000000250
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: 0x604000000190
+        		 right_child: 0x604000000110
         		        type: OPERATOR | {*}
 
         }
@@ -644,9 +273,9 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000410)::::::::::::::::
-        		  left_child: 0x6040000003d0
-        		 right_child: 0x604000000250
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: 0x604000000190
+        		 right_child: 0x604000000110
         		        type: OPERATOR | {*}
 
         }
@@ -654,7 +283,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x6040000003d0)::::::::::::::::
+        (0x604000000190)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: CONSTANT | {1}
@@ -664,7 +293,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x6040000003d0)::::::::::::::::
+        (0x604000000190)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: CONSTANT | {1}
@@ -674,47 +303,17 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000250)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000350
-        		        type: OPERATOR | {/}
+        (0x604000000110)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
 
         }
 
       PrintNode::
         {
         DefNode node
-        (0x604000000250)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000350
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000290)::::::::::::::::
-        		  left_child: 0x6040000002d0
-        		 right_child: 0x604000000310
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000290)::::::::::::::::
-        		  left_child: 0x6040000002d0
-        		 right_child: 0x604000000310
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
+        (0x604000000110)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: VARIABLE | {x}
@@ -725,58 +324,8 @@ main::
         {
         DefNode node
         (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000310)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000310)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000890)::::::::::::::::
-        		  left_child: 0x604000000850
-        		 right_child: 0x604000000450
+        		  left_child: 0x604000000290
+        		 right_child: 0x604000000250
         		        type: OPERATOR | {*}
 
         }
@@ -784,9 +333,9 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000890)::::::::::::::::
-        		  left_child: 0x604000000850
-        		 right_child: 0x604000000450
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000290
+        		 right_child: 0x604000000250
         		        type: OPERATOR | {*}
 
         }
@@ -794,7 +343,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000850)::::::::::::::::
+        (0x604000000290)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: VARIABLE | {x}
@@ -804,7 +353,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000850)::::::::::::::::
+        (0x604000000290)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: VARIABLE | {x}
@@ -814,87 +363,7 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000450)::::::::::::::::
-        		  left_child: 0x604000000490
-        		 right_child: 0x604000000810
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000450)::::::::::::::::
-        		  left_child: 0x604000000490
-        		 right_child: 0x604000000810
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000490)::::::::::::::::
-        		  left_child: 0x604000000650
-        		 right_child: 0x604000000750
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000490)::::::::::::::::
-        		  left_child: 0x604000000650
-        		 right_child: 0x604000000750
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000650)::::::::::::::::
-        		  left_child: 0x604000000510
-        		 right_child: 0x6040000004d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000650)::::::::::::::::
-        		  left_child: 0x604000000510
-        		 right_child: 0x6040000004d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000510)::::::::::::::::
-        		  left_child: 0x604000000590
-        		 right_child: 0x604000000610
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000510)::::::::::::::::
-        		  left_child: 0x604000000590
-        		 right_child: 0x604000000610
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000590)::::::::::::::::
+        (0x604000000250)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: CONSTANT | {1}
@@ -904,170 +373,10 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000590)::::::::::::::::
+        (0x604000000250)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
         		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000610)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000610)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000004d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000004d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000750)::::::::::::::::
-        		  left_child: 0x604000000710
-        		 right_child: 0x6040000006d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000750)::::::::::::::::
-        		  left_child: 0x604000000710
-        		 right_child: 0x6040000006d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000710)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000710)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000006d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000006d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000810)::::::::::::::::
-        		  left_child: 0x6040000007d0
-        		 right_child: 0x604000000790
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000810)::::::::::::::::
-        		  left_child: 0x6040000007d0
-        		 right_child: 0x604000000790
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000007d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000007d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000790)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000790)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
 
         }
 
@@ -1076,23 +385,23 @@ main::
     Simplify::
       {
       DefNode def_node
-      (0x604000000210)::::::::::::::::
-      		  left_child: 0x604000000410
-      		 right_child: 0x604000000890
+      (0x6040000000d0)::::::::::::::::
+      		  left_child: 0x6040000001d0
+      		 right_child: 0x6040000002d0
       		        type: OPERATOR | {+}
 
       Simplify::
         {
         DefNode def_node
-        (0x604000000410)::::::::::::::::
-        		  left_child: 0x6040000003d0
-        		 right_child: 0x604000000250
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: 0x604000000190
+        		 right_child: 0x604000000110
         		        type: OPERATOR | {*}
 
         Simplify::
           {
           DefNode def_node
-          (0x6040000003d0)::::::::::::::::
+          (0x604000000190)::::::::::::::::
           		  left_child: (nil)
           		 right_child: (nil)
           		        type: CONSTANT | {1}
@@ -1102,45 +411,41 @@ main::
         Simplify::
           {
           DefNode def_node
-          (0x604000000250)::::::::::::::::
-          		  left_child: 0x604000000290
-          		 right_child: 0x604000000350
-          		        type: OPERATOR | {/}
+          (0x604000000110)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: VARIABLE | {x}
 
-          Simplify::
+          }
+
+        PromoteChild::
+          {
+          DefNode step_mom
+          (0x6040000001d0)::::::::::::::::
+          		  left_child: 0x604000000190
+          		 right_child: 0x604000000110
+          		        type: OPERATOR | {*}
+
+          DefNode son
+          (0x604000000110)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: VARIABLE | {x}
+
+          DeleteBranch::
             {
-            DefNode def_node
-            (0x604000000290)::::::::::::::::
-            		  left_child: 0x6040000002d0
-            		 right_child: 0x604000000310
-            		        type: OPERATOR | {+}
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x6040000002d0)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: VARIABLE | {x}
-
-              }
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000000310)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: VARIABLE | {x}
-
-              }
-
             }
 
-          Simplify::
+          DefReplaceWith::
             {
-            DefNode def_node
-            (0x604000000350)::::::::::::::::
+            DefNode destination
+            (0x6040000001d0)::::::::::::::::
+            		  left_child: 0x604000000190
+            		 right_child: 0x604000000110
+            		        type: OPERATOR | {*}
+
+            DefNode source
+            (0x604000000110)::::::::::::::::
             		  left_child: (nil)
             		 right_child: (nil)
             		        type: VARIABLE | {x}
@@ -1149,19 +454,49 @@ main::
 
           }
 
+        }
+
+      Simplify::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000290
+        		 right_child: 0x604000000250
+        		        type: OPERATOR | {*}
+
+        Simplify::
+          {
+          DefNode def_node
+          (0x604000000290)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: VARIABLE | {x}
+
+          }
+
+        Simplify::
+          {
+          DefNode def_node
+          (0x604000000250)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {1}
+
+          }
+
         PromoteChild::
           {
           DefNode step_mom
-          (0x604000000410)::::::::::::::::
-          		  left_child: 0x6040000003d0
+          (0x6040000002d0)::::::::::::::::
+          		  left_child: 0x604000000290
           		 right_child: 0x604000000250
           		        type: OPERATOR | {*}
 
           DefNode son
-          (0x604000000250)::::::::::::::::
-          		  left_child: 0x604000000290
-          		 right_child: 0x604000000350
-          		        type: OPERATOR | {/}
+          (0x604000000290)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: VARIABLE | {x}
 
           DeleteBranch::
             {
@@ -1170,223 +505,16 @@ main::
           DefReplaceWith::
             {
             DefNode destination
-            (0x604000000410)::::::::::::::::
-            		  left_child: 0x6040000003d0
+            (0x6040000002d0)::::::::::::::::
+            		  left_child: 0x604000000290
             		 right_child: 0x604000000250
             		        type: OPERATOR | {*}
 
             DefNode source
-            (0x604000000250)::::::::::::::::
-            		  left_child: 0x604000000290
-            		 right_child: 0x604000000350
-            		        type: OPERATOR | {/}
-
-            }
-
-          }
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000000890)::::::::::::::::
-        		  left_child: 0x604000000850
-        		 right_child: 0x604000000450
-        		        type: OPERATOR | {*}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000850)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000450)::::::::::::::::
-          		  left_child: 0x604000000490
-          		 right_child: 0x604000000810
-          		        type: OPERATOR | {/}
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000490)::::::::::::::::
-            		  left_child: 0x604000000650
-            		 right_child: 0x604000000750
-            		        type: OPERATOR | {-}
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000000650)::::::::::::::::
-              		  left_child: 0x604000000510
-              		 right_child: 0x6040000004d0
-              		        type: OPERATOR | {*}
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x604000000510)::::::::::::::::
-                		  left_child: 0x604000000590
-                		 right_child: 0x604000000610
-                		        type: OPERATOR | {+}
-
-                Simplify::
-                  {
-                  DefNode def_node
-                  (0x604000000590)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: CONSTANT | {1}
-
-                  }
-
-                Simplify::
-                  {
-                  DefNode def_node
-                  (0x604000000610)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: CONSTANT | {1}
-
-                  }
-
-                DefToConst::
-                  {
-                  DefNode def_node
-                  (0x604000000510)::::::::::::::::
-                  		  left_child: 0x604000000590
-                  		 right_child: 0x604000000610
-                  		        type: OPERATOR | {+}
-
-                  DeleteBranch::
-                    {
-                    }
-
-                  DeleteBranch::
-                    {
-                    }
-
-                  	LEFT(def_node): 0x604000000590
-                  	RIGHT(def_node): 0x604000000610
-                  	def_node: 0x604000000510
-                  }
-
-                }
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x6040000004d0)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: VARIABLE | {x}
-
-                }
-
-              }
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000000750)::::::::::::::::
-              		  left_child: 0x604000000710
-              		 right_child: 0x6040000006d0
-              		        type: OPERATOR | {*}
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x604000000710)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: VARIABLE | {x}
-
-                }
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x6040000006d0)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {1}
-
-                }
-
-              PromoteChild::
-                {
-                DefNode step_mom
-                (0x604000000750)::::::::::::::::
-                		  left_child: 0x604000000710
-                		 right_child: 0x6040000006d0
-                		        type: OPERATOR | {*}
-
-                DefNode son
-                (0x604000000710)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: VARIABLE | {x}
-
-                DeleteBranch::
-                  {
-                  }
-
-                DefReplaceWith::
-                  {
-                  DefNode destination
-                  (0x604000000750)::::::::::::::::
-                  		  left_child: 0x604000000710
-                  		 right_child: 0x6040000006d0
-                  		        type: OPERATOR | {*}
-
-                  DefNode source
-                  (0x604000000710)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: VARIABLE | {x}
-
-                  }
-
-                }
-
-              }
-
-            }
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000810)::::::::::::::::
-            		  left_child: 0x6040000007d0
-            		 right_child: 0x604000000790
-            		        type: OPERATOR | {*}
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x6040000007d0)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: VARIABLE | {x}
-
-              }
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000000790)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: VARIABLE | {x}
-
-              }
+            (0x604000000290)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: VARIABLE | {x}
 
             }
 
@@ -1401,9 +529,9 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000210)::::::::::::::::
-        		  left_child: 0x604000000410
-        		 right_child: 0x604000000890
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: 0x6040000001d0
+        		 right_child: 0x6040000002d0
         		        type: OPERATOR | {+}
 
         }
@@ -1411,40 +539,20 @@ main::
       PrintNode::
         {
         DefNode node
-        (0x604000000410)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000350
-        		        type: OPERATOR | {/}
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
 
         }
 
       PrintNode::
         {
         DefNode node
-        (0x604000000410)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000350
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000290)::::::::::::::::
-        		  left_child: 0x6040000002d0
-        		 right_child: 0x604000000310
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000290)::::::::::::::::
-        		  left_child: 0x6040000002d0
-        		 right_child: 0x604000000310
-        		        type: OPERATOR | {+}
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
 
         }
 
@@ -1468,12 +576,286 @@ main::
 
         }
 
+      }
+
+
+    OpenTexFile:161 returned SUCCESS (return 0;)
+    BufferCtor::
+      {
+
+      BufferCtor:299 returned SUCCESS (return 0;)
+      }
+
+    DefTreeToTex::
+      {
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutString:408 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      }
+
+    BufferCtor::
+      {
+
+      BufferCtor:299 returned SUCCESS (return 0;)
+      }
+
+    DefTreeToTex::
+      {
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      }
+
+    BufferCtor::
+      {
+
+      BufferCtor:299 returned SUCCESS (return 0;)
+      }
+
+    DefTreeToTex::
+      {
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      }
+
+    BufferCtor::
+      {
+
+      BufferCtor:312 returned SUCCESS (return 0;)
+      }
+
+    DefTreeToGnuFormula::
+      {
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToGnuFormula::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToGnuFormula::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      }
+
+    MakeGraphic::
+      {
+      }
+
+    DefineVariable::
+      {
+      DefNode def_node
+      (0x6040000000d0)::::::::::::::::
+      		  left_child: 0x6040000001d0
+      		 right_child: 0x6040000002d0
+      		        type: OPERATOR | {+}
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        NewDefNode::
+          {
+          }
+
+
+        DefineVariable:263 returned SUCCESS (return 0;)
+        }
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        NewDefNode::
+          {
+          }
+
+
+        DefineVariable:263 returned SUCCESS (return 0;)
+        }
+
+      }
+
+    DefineVariable::
+      {
+      DefNode def_node
+      (0x6040000000d0)::::::::::::::::
+      		  left_child: 0x6040000001d0
+      		 right_child: 0x6040000002d0
+      		        type: OPERATOR | {+}
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: VARIABLE | {x}
+
+        DefineVariable::
+          {
+          }
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000310)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {3.14}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            }
+
+          }
+
+        }
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000350
+        		        type: VARIABLE | {x}
+
+        DefineVariable::
+          {
+          }
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000350)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {3.14}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            }
+
+          }
+
+        }
+
+      }
+
+    MakeImg::
+      {
       PrintNode::
         {
         DefNode node
-        (0x604000000310)::::::::::::::::
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: 0x6040000001d0
+        		 right_child: 0x6040000002d0
+        		        type: OPERATOR | {+}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
         		  left_child: (nil)
-        		 right_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
         		        type: VARIABLE | {x}
 
         }
@@ -1484,6 +866,36 @@ main::
         (0x604000000310)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
+        		        type: CONSTANT | {3.14}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3.14}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000350
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000350
         		        type: VARIABLE | {x}
 
         }
@@ -1494,7 +906,7 @@ main::
         (0x604000000350)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
-        		        type: VARIABLE | {x}
+        		        type: CONSTANT | {3.14}
 
         }
 
@@ -1504,5430 +916,39 @@ main::
         (0x604000000350)::::::::::::::::
         		  left_child: (nil)
         		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000890)::::::::::::::::
-        		  left_child: 0x604000000850
-        		 right_child: 0x604000000450
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000890)::::::::::::::::
-        		  left_child: 0x604000000850
-        		 right_child: 0x604000000450
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000850)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000850)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000450)::::::::::::::::
-        		  left_child: 0x604000000490
-        		 right_child: 0x604000000810
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000450)::::::::::::::::
-        		  left_child: 0x604000000490
-        		 right_child: 0x604000000810
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000490)::::::::::::::::
-        		  left_child: 0x604000000650
-        		 right_child: 0x604000000750
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000490)::::::::::::::::
-        		  left_child: 0x604000000650
-        		 right_child: 0x604000000750
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000650)::::::::::::::::
-        		  left_child: 0x604000000510
-        		 right_child: 0x6040000004d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000650)::::::::::::::::
-        		  left_child: 0x604000000510
-        		 right_child: 0x6040000004d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000510)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {2}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000510)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {2}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000004d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000004d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000750)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000750)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000810)::::::::::::::::
-        		  left_child: 0x6040000007d0
-        		 right_child: 0x604000000790
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000810)::::::::::::::::
-        		  left_child: 0x6040000007d0
-        		 right_child: 0x604000000790
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000007d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000007d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000790)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000790)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
+        		        type: CONSTANT | {3.14}
 
         }
 
       }
 
-    MakeLatex::
+    CountConstants::
       {
-      	tex_file: "UnitTests/LaTex/result_0.tex"
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      DefTreeToTex::
-        {
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-        DefTreeToTex::
-          {
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          DefTreeToTex::
-            {
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            DefTreeToTex::
-              {
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              }
-
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            DefTreeToTex::
-              {
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              }
-
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            }
-
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-
-          BufferPutString:395 returned SUCCESS (return 0;)
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          DefTreeToTex::
-            {
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            }
-
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          }
-
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-        DefTreeToTex::
-          {
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          DefTreeToTex::
-            {
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            }
-
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-
-          BufferPutString:395 returned SUCCESS (return 0;)
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          DefTreeToTex::
-            {
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            DefTreeToTex::
-              {
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              DefTreeToTex::
-                {
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-                DefTreeToTex::
-                  {
-
-                  BufferPutDouble:368 returned SUCCESS (return 0;)
-                  }
-
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-
-                BufferPutString:395 returned SUCCESS (return 0;)
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-                DefTreeToTex::
-                  {
-
-                  BufferPutChar:381 returned SUCCESS (return 0;)
-                  }
-
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-                }
-
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              DefTreeToTex::
-                {
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-                }
-
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              }
-
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-
-            BufferPutString:395 returned SUCCESS (return 0;)
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            DefTreeToTex::
-              {
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              DefTreeToTex::
-                {
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-                }
-
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-
-              BufferPutString:395 returned SUCCESS (return 0;)
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              DefTreeToTex::
-                {
-
-                BufferPutChar:381 returned SUCCESS (return 0;)
-                }
-
-
-              BufferPutChar:381 returned SUCCESS (return 0;)
-              }
-
-
-            BufferPutChar:381 returned SUCCESS (return 0;)
-            }
-
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          }
-
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          DeleteBranch::
-            {
-            DeleteBranch::
-              {
-              }
-
-            DeleteBranch::
-              {
-              }
-
-            }
-
-          DeleteBranch::
-            {
-            }
-
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          DeleteBranch::
-            {
-            DeleteBranch::
-              {
-              }
-
-            DeleteBranch::
-              {
-              }
-
-            }
-
-          DeleteBranch::
-            {
-            }
-
-          }
-
-        DeleteBranch::
-          {
-          DeleteBranch::
-            {
-            }
-
-          DeleteBranch::
-            {
-            DeleteBranch::
-              {
-              DeleteBranch::
-                {
-                DeleteBranch::
-                  {
-                  }
-
-                DeleteBranch::
-                  {
-                  }
-
-                }
-
-              DeleteBranch::
-                {
-                }
-
-              }
-
-            DeleteBranch::
-              {
-              DeleteBranch::
-                {
-                }
-
-              DeleteBranch::
-                {
-                }
-
-              }
-
-            }
-
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    GetG::
-      {
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      GetE::
-        {
-        GetT::
-          {
-          GetPower::
-            {
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetN::
-                {
-                	val: 5
-                NewDefNode::
-                  {
-                  }
-
-                DefNode result
-                (0x604000000910)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {5}
-
-                }
-
-              	val: 0x604000000910
-              }
-
-            	val: 0x604000000910
-            }
-
-          DefNode val
-          (0x604000000910)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {5}
-
-          return node:
-          DefNode val
-          (0x604000000910)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {5}
-
-          }
-
-        DefNode val
-        (0x604000000910)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {5}
-
-        GetE::
-          {
-          GetT::
-            {
-            GetPower::
-              {
-              GetP::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                GetE::
-                  {
-                  GetT::
-                    {
-                    GetPower::
-                      {
-                      GetP::
-                        {
-                        NewDefNode::
-                          {
-                          }
-
-                        GetN::
-                          {
-                          	val: 4
-                          NewDefNode::
-                            {
-                            }
-
-                          DefNode result
-                          (0x6040000009d0)::::::::::::::::
-                          		  left_child: (nil)
-                          		 right_child: (nil)
-                          		        type: CONSTANT | {4}
-
-                          }
-
-                        	val: 0x6040000009d0
-                        }
-
-                      	val: 0x6040000009d0
-                      }
-
-                    DefNode val
-                    (0x6040000009d0)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {4}
-
-                    GetT::
-                      {
-                      GetPower::
-                        {
-                        GetP::
-                          {
-                          NewDefNode::
-                            {
-                            }
-
-                          GetFunctor::
-                            {
-                            	NOT_A_FUNCTION: -1
-                            }
-
-                          }
-
-                        	val: 0x604000000a10
-                        }
-
-                      DefNode val
-                      (0x604000000a10)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: VARIABLE | {x}
-
-                      return node:
-                      DefNode val
-                      (0x604000000a10)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: VARIABLE | {x}
-
-                      }
-
-                    DefNode val_2
-                    (0x604000000a10)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: VARIABLE | {x}
-
-                    NewDefNode::
-                      {
-                      }
-
-                    	result: 0x604000000a50
-                    }
-
-                  DefNode val
-                  (0x604000000a50)::::::::::::::::
-                  		  left_child: 0x6040000009d0
-                  		 right_child: 0x604000000a10
-                  		        type: OPERATOR | {*}
-
-                  }
-
-                	val: 0x604000000a50
-                }
-
-              	val: 0x604000000a50
-              }
-
-            DefNode val
-            (0x604000000a50)::::::::::::::::
-            		  left_child: 0x6040000009d0
-            		 right_child: 0x604000000a10
-            		        type: OPERATOR | {*}
-
-            return node:
-            DefNode val
-            (0x604000000a50)::::::::::::::::
-            		  left_child: 0x6040000009d0
-            		 right_child: 0x604000000a10
-            		        type: OPERATOR | {*}
-
-            }
-
-          DefNode val
-          (0x604000000a50)::::::::::::::::
-          		  left_child: 0x6040000009d0
-          		 right_child: 0x604000000a10
-          		        type: OPERATOR | {*}
-
-          }
-
-        	val_2: 0x604000000a50
-        NewDefNode::
-          {
-          }
-
-        	result: 0x604000000a90
-        }
-
-      DefNode val
-      (0x604000000a90)::::::::::::::::
-      		  left_child: 0x604000000910
-      		 right_child: 0x604000000a50
+      DefNode def_node
+      (0x6040000000d0)::::::::::::::::
+      		  left_child: 0x6040000001d0
+      		 right_child: 0x6040000002d0
       		        type: OPERATOR | {+}
 
-      	val: 0x604000000a90
-
-      GetG:44 returned SUCCESS (return 0;)
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000a90)::::::::::::::::
-        		  left_child: 0x604000000910
-        		 right_child: 0x604000000a50
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000910)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {5}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000910)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {5}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000a50)::::::::::::::::
-        		  left_child: 0x6040000009d0
-        		 right_child: 0x604000000a10
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000a50)::::::::::::::::
-        		  left_child: 0x6040000009d0
-        		 right_child: 0x604000000a10
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000009d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000009d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000a10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000a10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000000a90)::::::::::::::::
-      		  left_child: 0x604000000910
-      		 right_child: 0x604000000a50
-      		        type: OPERATOR | {+}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
+      CountConstants::
         {
         DefNode def_node
-        (0x604000000910)::::::::::::::::
+        (0x6040000001d0)::::::::::::::::
         		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {5}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
+        		 right_child: 0x604000000310
+        		        type: VARIABLE | {x}
 
         }
 
-      Differentiate::
+      CountConstants::
         {
         DefNode def_node
-        (0x604000000a50)::::::::::::::::
-        		  left_child: 0x6040000009d0
-        		 right_child: 0x604000000a10
-        		        type: OPERATOR | {*}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        Differentiate::
-          {
-          DefNode def_node
-          (0x6040000009d0)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          CopyDefNode::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        Differentiate::
-          {
-          DefNode def_node
-          (0x604000000a10)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          CopyDefNode::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          }
-
-        CopyBranch::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000ad0)::::::::::::::::
-        		  left_child: 0x604000000b50
-        		 right_child: 0x604000000b90
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000b50)::::::::::::::::
+        (0x6040000002d0)::::::::::::::::
         		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000b50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000b90)::::::::::::::::
-        		  left_child: 0x604000000c90
-        		 right_child: 0x604000000d90
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000b90)::::::::::::::::
-        		  left_child: 0x604000000c90
-        		 right_child: 0x604000000d90
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000c90)::::::::::::::::
-        		  left_child: 0x604000000c50
-        		 right_child: 0x604000000bd0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000c90)::::::::::::::::
-        		  left_child: 0x604000000c50
-        		 right_child: 0x604000000bd0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000c50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000c50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000bd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000bd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000d90)::::::::::::::::
-        		  left_child: 0x604000000d50
-        		 right_child: 0x604000000d10
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000d90)::::::::::::::::
-        		  left_child: 0x604000000d50
-        		 right_child: 0x604000000d10
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000d50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000d50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000d10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000d10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      }
-
-    Simplify::
-      {
-      DefNode def_node
-      (0x604000000ad0)::::::::::::::::
-      		  left_child: 0x604000000b50
-      		 right_child: 0x604000000b90
-      		        type: OPERATOR | {+}
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000000b50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000000b90)::::::::::::::::
-        		  left_child: 0x604000000c90
-        		 right_child: 0x604000000d90
-        		        type: OPERATOR | {+}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000c90)::::::::::::::::
-          		  left_child: 0x604000000c50
-          		 right_child: 0x604000000bd0
-          		        type: OPERATOR | {*}
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000c50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {0}
-
-            }
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000bd0)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          DefToConst::
-            {
-            DefNode def_node
-            (0x604000000c90)::::::::::::::::
-            		  left_child: 0x604000000c50
-            		 right_child: 0x604000000bd0
-            		        type: OPERATOR | {*}
-
-            DeleteBranch::
-              {
-              }
-
-            DeleteBranch::
-              {
-              }
-
-            	LEFT(def_node): 0x604000000c50
-            	RIGHT(def_node): 0x604000000bd0
-            	def_node: 0x604000000c90
-            }
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000d90)::::::::::::::::
-          		  left_child: 0x604000000d50
-          		 right_child: 0x604000000d10
-          		        type: OPERATOR | {*}
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000d50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            }
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000d10)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {1}
-
-            }
-
-          PromoteChild::
-            {
-            DefNode step_mom
-            (0x604000000d90)::::::::::::::::
-            		  left_child: 0x604000000d50
-            		 right_child: 0x604000000d10
-            		        type: OPERATOR | {*}
-
-            DefNode son
-            (0x604000000d50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            DeleteBranch::
-              {
-              }
-
-            DefReplaceWith::
-              {
-              DefNode destination
-              (0x604000000d90)::::::::::::::::
-              		  left_child: 0x604000000d50
-              		 right_child: 0x604000000d10
-              		        type: OPERATOR | {*}
-
-              DefNode source
-              (0x604000000d50)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {4}
-
-              }
-
-            }
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x604000000b90)::::::::::::::::
-          		  left_child: 0x604000000c90
-          		 right_child: 0x604000000d90
-          		        type: OPERATOR | {+}
-
-          DefNode son
-          (0x604000000d90)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x604000000b90)::::::::::::::::
-            		  left_child: 0x604000000c90
-            		 right_child: 0x604000000d90
-            		        type: OPERATOR | {+}
-
-            DefNode source
-            (0x604000000d90)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            }
-
-          }
-
-        }
-
-      PromoteChild::
-        {
-        DefNode step_mom
-        (0x604000000ad0)::::::::::::::::
-        		  left_child: 0x604000000b50
-        		 right_child: 0x604000000b90
-        		        type: OPERATOR | {+}
-
-        DefNode son
-        (0x604000000b90)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        DeleteBranch::
-          {
-          }
-
-        DefReplaceWith::
-          {
-          DefNode destination
-          (0x604000000ad0)::::::::::::::::
-          		  left_child: 0x604000000b50
-          		 right_child: 0x604000000b90
-          		        type: OPERATOR | {+}
-
-          DefNode source
-          (0x604000000b90)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000ad0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      }
-
-    MakeLatex::
-      {
-      	tex_file: "UnitTests/LaTex/result_1.tex"
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      DefTreeToTex::
-        {
-
-        BufferPutDouble:368 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          DeleteBranch::
-            {
-            }
-
-          DeleteBranch::
-            {
-            }
-
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    GetG::
-      {
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      GetE::
-        {
-        GetT::
-          {
-          GetPower::
-            {
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetFunctor::
-                {
-                	NOT_A_FUNCTION: -1
-                }
-
-              }
-
-            	val: 0x604000000dd0
-            }
-
-          DefNode val
-          (0x604000000dd0)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          GetT::
-            {
-            GetPower::
-              {
-              GetP::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                GetN::
-                  {
-                  	val: 4
-                  NewDefNode::
-                    {
-                    }
-
-                  DefNode result
-                  (0x604000000e50)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: CONSTANT | {4}
-
-                  }
-
-                	val: 0x604000000e50
-                }
-
-              	val: 0x604000000e50
-              }
-
-            DefNode val
-            (0x604000000e50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            return node:
-            DefNode val
-            (0x604000000e50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            }
-
-          DefNode val_2
-          (0x604000000e50)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          NewDefNode::
-            {
-            }
-
-          	result: 0x604000000e90
-          }
-
-        DefNode val
-        (0x604000000e90)::::::::::::::::
-        		  left_child: 0x604000000dd0
-        		 right_child: 0x604000000e50
-        		        type: OPERATOR | {/}
-
-        }
-
-      DefNode val
-      (0x604000000e90)::::::::::::::::
-      		  left_child: 0x604000000dd0
-      		 right_child: 0x604000000e50
-      		        type: OPERATOR | {/}
-
-      	val: 0x604000000e90
-
-      GetG:44 returned SUCCESS (return 0;)
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000e90)::::::::::::::::
-        		  left_child: 0x604000000dd0
-        		 right_child: 0x604000000e50
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000dd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000dd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000e50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000e50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000000e90)::::::::::::::::
-      		  left_child: 0x604000000dd0
-      		 right_child: 0x604000000e50
-      		        type: OPERATOR | {/}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      NewDefNode::
-        {
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000000dd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      NewDefNode::
-        {
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000000e50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      NewDefNode::
-        {
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      NewDefNode::
-        {
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000ed0)::::::::::::::::
-        		  left_child: 0x604000000f10
-        		 right_child: 0x6040000011d0
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000f10)::::::::::::::::
-        		  left_child: 0x604000001010
-        		 right_child: 0x604000001110
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000f10)::::::::::::::::
-        		  left_child: 0x604000001010
-        		 right_child: 0x604000001110
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001010)::::::::::::::::
-        		  left_child: 0x604000000fd0
-        		 right_child: 0x604000000f50
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001010)::::::::::::::::
-        		  left_child: 0x604000000fd0
-        		 right_child: 0x604000000f50
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000fd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000fd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000f50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000f50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001110)::::::::::::::::
-        		  left_child: 0x6040000010d0
-        		 right_child: 0x604000001090
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001110)::::::::::::::::
-        		  left_child: 0x6040000010d0
-        		 right_child: 0x604000001090
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000010d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000010d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001090)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001090)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000011d0)::::::::::::::::
-        		  left_child: 0x604000001190
-        		 right_child: 0x604000001150
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000011d0)::::::::::::::::
-        		  left_child: 0x604000001190
-        		 right_child: 0x604000001150
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001190)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001190)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001150)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001150)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      }
-
-    Simplify::
-      {
-      DefNode def_node
-      (0x604000000ed0)::::::::::::::::
-      		  left_child: 0x604000000f10
-      		 right_child: 0x6040000011d0
-      		        type: OPERATOR | {/}
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000000f10)::::::::::::::::
-        		  left_child: 0x604000001010
-        		 right_child: 0x604000001110
-        		        type: OPERATOR | {-}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001010)::::::::::::::::
-          		  left_child: 0x604000000fd0
-          		 right_child: 0x604000000f50
-          		        type: OPERATOR | {*}
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000fd0)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {1}
-
-            }
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000000f50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            }
-
-          PromoteChild::
-            {
-            DefNode step_mom
-            (0x604000001010)::::::::::::::::
-            		  left_child: 0x604000000fd0
-            		 right_child: 0x604000000f50
-            		        type: OPERATOR | {*}
-
-            DefNode son
-            (0x604000000f50)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            DeleteBranch::
-              {
-              }
-
-            DefReplaceWith::
-              {
-              DefNode destination
-              (0x604000001010)::::::::::::::::
-              		  left_child: 0x604000000fd0
-              		 right_child: 0x604000000f50
-              		        type: OPERATOR | {*}
-
-              DefNode source
-              (0x604000000f50)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {4}
-
-              }
-
-            }
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001110)::::::::::::::::
-          		  left_child: 0x6040000010d0
-          		 right_child: 0x604000001090
-          		        type: OPERATOR | {*}
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x6040000010d0)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            }
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000001090)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {0}
-
-            }
-
-          DefToConst::
-            {
-            DefNode def_node
-            (0x604000001110)::::::::::::::::
-            		  left_child: 0x6040000010d0
-            		 right_child: 0x604000001090
-            		        type: OPERATOR | {*}
-
-            DeleteBranch::
-              {
-              }
-
-            DeleteBranch::
-              {
-              }
-
-            	LEFT(def_node): 0x6040000010d0
-            	RIGHT(def_node): 0x604000001090
-            	def_node: 0x604000001110
-            }
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x604000000f10)::::::::::::::::
-          		  left_child: 0x604000001010
-          		 right_child: 0x604000001110
-          		        type: OPERATOR | {-}
-
-          DefNode son
-          (0x604000001010)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x604000000f10)::::::::::::::::
-            		  left_child: 0x604000001010
-            		 right_child: 0x604000001110
-            		        type: OPERATOR | {-}
-
-            DefNode source
-            (0x604000001010)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {4}
-
-            }
-
-          }
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x6040000011d0)::::::::::::::::
-        		  left_child: 0x604000001190
-        		 right_child: 0x604000001150
-        		        type: OPERATOR | {*}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001190)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001150)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {4}
-
-          }
-
-        DefToConst::
-          {
-          DefNode def_node
-          (0x6040000011d0)::::::::::::::::
-          		  left_child: 0x604000001190
-          		 right_child: 0x604000001150
-          		        type: OPERATOR | {*}
-
-          DeleteBranch::
-            {
-            }
-
-          DeleteBranch::
-            {
-            }
-
-          	LEFT(def_node): 0x604000001190
-          	RIGHT(def_node): 0x604000001150
-          	def_node: 0x6040000011d0
-          }
-
-        }
-
-      DefToConst::
-        {
-        DefNode def_node
-        (0x604000000ed0)::::::::::::::::
-        		  left_child: 0x604000000f10
-        		 right_child: 0x6040000011d0
-        		        type: OPERATOR | {/}
-
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          }
-
-        	LEFT(def_node): 0x604000000f10
-        	RIGHT(def_node): 0x6040000011d0
-        	def_node: 0x604000000ed0
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000ed0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0.25}
-
-        }
-
-      }
-
-    MakeLatex::
-      {
-      	tex_file: "UnitTests/LaTex/result_2.tex"
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      DefTreeToTex::
-        {
-
-        BufferPutDouble:368 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    GetG::
-      {
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      GetE::
-        {
-        GetT::
-          {
-          GetPower::
-            {
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetFunctor::
-                {
-                	NOT_A_FUNCTION: -1
-                }
-
-              }
-
-            	val: 0x604000001210
-            }
-
-          DefNode val
-          (0x604000001210)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          return node:
-          DefNode val
-          (0x604000001210)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        DefNode val
-        (0x604000001210)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        GetE::
-          {
-          GetT::
-            {
-            GetPower::
-              {
-              GetP::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                GetFunctor::
-                  {
-                  	NOT_A_FUNCTION: -1
-                  }
-
-                }
-
-              	val: 0x604000001250
-              }
-
-            DefNode val
-            (0x604000001250)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            return node:
-            DefNode val
-            (0x604000001250)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          DefNode val
-          (0x604000001250)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        	val_2: 0x604000001250
-        NewDefNode::
-          {
-          }
-
-        	result: 0x604000001290
-        }
-
-      DefNode val
-      (0x604000001290)::::::::::::::::
-      		  left_child: 0x604000001210
-      		 right_child: 0x604000001250
-      		        type: OPERATOR | {+}
-
-      	val: 0x604000001290
-
-      GetG:44 returned SUCCESS (return 0;)
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001290)::::::::::::::::
-        		  left_child: 0x604000001210
-        		 right_child: 0x604000001250
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001210)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001210)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001250)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001250)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
+        		 right_child: 0x604000000350
         		        type: VARIABLE | {x}
 
         }
 
       }
 
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000001290)::::::::::::::::
-      		  left_child: 0x604000001210
-      		 right_child: 0x604000001250
-      		        type: OPERATOR | {+}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000001210)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000001250)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000012d0)::::::::::::::::
-        		  left_child: 0x604000001350
-        		 right_child: 0x6040000013d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000013d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000013d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      }
-
-    Simplify::
-      {
-      DefNode def_node
-      (0x6040000012d0)::::::::::::::::
-      		  left_child: 0x604000001350
-      		 right_child: 0x6040000013d0
-      		        type: OPERATOR | {+}
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000001350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x6040000013d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      DefToConst::
-        {
-        DefNode def_node
-        (0x6040000012d0)::::::::::::::::
-        		  left_child: 0x604000001350
-        		 right_child: 0x6040000013d0
-        		        type: OPERATOR | {+}
-
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          }
-
-        	LEFT(def_node): 0x604000001350
-        	RIGHT(def_node): 0x6040000013d0
-        	def_node: 0x6040000012d0
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000012d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {2}
-
-        }
-
-      }
-
-    MakeLatex::
-      {
-      	tex_file: "UnitTests/LaTex/result_3.tex"
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      DefTreeToTex::
-        {
-
-        BufferPutDouble:368 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    GetG::
-      {
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      GetE::
-        {
-        GetT::
-          {
-          GetPower::
-            {
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetFunctor::
-                {
-                	NOT_A_FUNCTION: -1
-                }
-
-              }
-
-            	val: 0x604000001410
-            }
-
-          DefNode val
-          (0x604000001410)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          GetT::
-            {
-            GetPower::
-              {
-              GetP::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                GetFunctor::
-                  {
-                  	NOT_A_FUNCTION: -1
-                  }
-
-                }
-
-              	val: 0x604000001450
-              }
-
-            DefNode val
-            (0x604000001450)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            return node:
-            DefNode val
-            (0x604000001450)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          DefNode val_2
-          (0x604000001450)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          NewDefNode::
-            {
-            }
-
-          	result: 0x604000001490
-          }
-
-        DefNode val
-        (0x604000001490)::::::::::::::::
-        		  left_child: 0x604000001410
-        		 right_child: 0x604000001450
-        		        type: OPERATOR | {*}
-
-        }
-
-      DefNode val
-      (0x604000001490)::::::::::::::::
-      		  left_child: 0x604000001410
-      		 right_child: 0x604000001450
-      		        type: OPERATOR | {*}
-
-      	val: 0x604000001490
-
-      GetG:44 returned SUCCESS (return 0;)
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001490)::::::::::::::::
-        		  left_child: 0x604000001410
-        		 right_child: 0x604000001450
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001410)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001410)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001450)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001450)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000001490)::::::::::::::::
-      		  left_child: 0x604000001410
-      		 right_child: 0x604000001450
-      		        type: OPERATOR | {*}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000001410)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      NewDefNode::
-        {
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000001450)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      NewDefNode::
-        {
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000014d0)::::::::::::::::
-        		  left_child: 0x6040000015d0
-        		 right_child: 0x6040000016d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000015d0)::::::::::::::::
-        		  left_child: 0x604000001590
-        		 right_child: 0x604000001510
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000015d0)::::::::::::::::
-        		  left_child: 0x604000001590
-        		 right_child: 0x604000001510
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001590)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001590)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001510)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001510)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000016d0)::::::::::::::::
-        		  left_child: 0x604000001690
-        		 right_child: 0x604000001650
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000016d0)::::::::::::::::
-        		  left_child: 0x604000001690
-        		 right_child: 0x604000001650
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001690)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001690)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001650)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001650)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      }
-
-    Simplify::
-      {
-      DefNode def_node
-      (0x6040000014d0)::::::::::::::::
-      		  left_child: 0x6040000015d0
-      		 right_child: 0x6040000016d0
-      		        type: OPERATOR | {+}
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x6040000015d0)::::::::::::::::
-        		  left_child: 0x604000001590
-        		 right_child: 0x604000001510
-        		        type: OPERATOR | {*}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001590)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {1}
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001510)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x6040000015d0)::::::::::::::::
-          		  left_child: 0x604000001590
-          		 right_child: 0x604000001510
-          		        type: OPERATOR | {*}
-
-          DefNode son
-          (0x604000001510)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x6040000015d0)::::::::::::::::
-            		  left_child: 0x604000001590
-            		 right_child: 0x604000001510
-            		        type: OPERATOR | {*}
-
-            DefNode source
-            (0x604000001510)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          }
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x6040000016d0)::::::::::::::::
-        		  left_child: 0x604000001690
-        		 right_child: 0x604000001650
-        		        type: OPERATOR | {*}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001690)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001650)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {1}
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x6040000016d0)::::::::::::::::
-          		  left_child: 0x604000001690
-          		 right_child: 0x604000001650
-          		        type: OPERATOR | {*}
-
-          DefNode son
-          (0x604000001690)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x6040000016d0)::::::::::::::::
-            		  left_child: 0x604000001690
-            		 right_child: 0x604000001650
-            		        type: OPERATOR | {*}
-
-            DefNode source
-            (0x604000001690)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000014d0)::::::::::::::::
-        		  left_child: 0x6040000015d0
-        		 right_child: 0x6040000016d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000015d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000015d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000016d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000016d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      }
-
-    MakeLatex::
-      {
-      	tex_file: "UnitTests/LaTex/result_4.tex"
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      DefTreeToTex::
-        {
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-        DefTreeToTex::
-          {
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          }
-
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-        DefTreeToTex::
-          {
-
-          BufferPutChar:381 returned SUCCESS (return 0;)
-          }
-
-
-        BufferPutChar:381 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    GetG::
-      {
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      GetE::
-        {
-        GetT::
-          {
-          GetPower::
-            {
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetN::
-                {
-                	val: 123
-                NewDefNode::
-                  {
-                  }
-
-                DefNode result
-                (0x604000001750)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {123}
-
-                }
-
-              	val: 0x604000001750
-              }
-
-            	val: 0x604000001750
-            }
-
-          DefNode val
-          (0x604000001750)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {123}
-
-          return node:
-          DefNode val
-          (0x604000001750)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {123}
-
-          }
-
-        DefNode val
-        (0x604000001750)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {123}
-
-        GetE::
-          {
-          GetT::
-            {
-            GetPower::
-              {
-              GetP::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                GetE::
-                  {
-                  GetT::
-                    {
-                    GetPower::
-                      {
-                      GetP::
-                        {
-                        NewDefNode::
-                          {
-                          }
-
-                        GetN::
-                          {
-                          	val: 200
-                          NewDefNode::
-                            {
-                            }
-
-                          DefNode result
-                          (0x604000001810)::::::::::::::::
-                          		  left_child: (nil)
-                          		 right_child: (nil)
-                          		        type: CONSTANT | {200}
-
-                          }
-
-                        	val: 0x604000001810
-                        }
-
-                      	val: 0x604000001810
-                      }
-
-                    DefNode val
-                    (0x604000001810)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {200}
-
-                    return node:
-                    DefNode val
-                    (0x604000001810)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {200}
-
-                    }
-
-                  DefNode val
-                  (0x604000001810)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: CONSTANT | {200}
-
-                  GetE::
-                    {
-                    GetT::
-                      {
-                      GetPower::
-                        {
-                        GetP::
-                          {
-                          NewDefNode::
-                            {
-                            }
-
-                          GetN::
-                            {
-                            	val: 3
-                            NewDefNode::
-                              {
-                              }
-
-                            DefNode result
-                            (0x604000001890)::::::::::::::::
-                            		  left_child: (nil)
-                            		 right_child: (nil)
-                            		        type: CONSTANT | {3}
-
-                            }
-
-                          	val: 0x604000001890
-                          }
-
-                        	val: 0x604000001890
-                        }
-
-                      DefNode val
-                      (0x604000001890)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {3}
-
-                      GetT::
-                        {
-                        GetPower::
-                          {
-                          GetP::
-                            {
-                            NewDefNode::
-                              {
-                              }
-
-                            GetN::
-                              {
-                              	val: 10
-                              NewDefNode::
-                                {
-                                }
-
-                              DefNode result
-                              (0x604000001910)::::::::::::::::
-                              		  left_child: (nil)
-                              		 right_child: (nil)
-                              		        type: CONSTANT | {10}
-
-                              }
-
-                            	val: 0x604000001910
-                            }
-
-                          	val: 0x604000001910
-                          }
-
-                        DefNode val
-                        (0x604000001910)::::::::::::::::
-                        		  left_child: (nil)
-                        		 right_child: (nil)
-                        		        type: CONSTANT | {10}
-
-                        return node:
-                        DefNode val
-                        (0x604000001910)::::::::::::::::
-                        		  left_child: (nil)
-                        		 right_child: (nil)
-                        		        type: CONSTANT | {10}
-
-                        }
-
-                      DefNode val_2
-                      (0x604000001910)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {10}
-
-                      NewDefNode::
-                        {
-                        }
-
-                      	result: 0x604000001950
-                      }
-
-                    DefNode val
-                    (0x604000001950)::::::::::::::::
-                    		  left_child: 0x604000001890
-                    		 right_child: 0x604000001910
-                    		        type: OPERATOR | {*}
-
-                    }
-
-                  	val_2: 0x604000001950
-                  NewDefNode::
-                    {
-                    }
-
-                  	result: 0x604000001990
-                  }
-
-                	val: 0x604000001990
-                }
-
-              	val: 0x604000001990
-              }
-
-            DefNode val
-            (0x604000001990)::::::::::::::::
-            		  left_child: 0x604000001810
-            		 right_child: 0x604000001950
-            		        type: OPERATOR | {+}
-
-            GetT::
-              {
-              GetPower::
-                {
-                GetP::
-                  {
-                  NewDefNode::
-                    {
-                    }
-
-                  GetN::
-                    {
-                    	val: 10
-                    NewDefNode::
-                      {
-                      }
-
-                    DefNode result
-                    (0x604000001a10)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {10}
-
-                    }
-
-                  	val: 0x604000001a10
-                  }
-
-                	val: 0x604000001a10
-                }
-
-              DefNode val
-              (0x604000001a10)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {10}
-
-              return node:
-              DefNode val
-              (0x604000001a10)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {10}
-
-              }
-
-            DefNode val_2
-            (0x604000001a10)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {10}
-
-            NewDefNode::
-              {
-              }
-
-            	result: 0x604000001a50
-            }
-
-          DefNode val
-          (0x604000001a50)::::::::::::::::
-          		  left_child: 0x604000001990
-          		 right_child: 0x604000001a10
-          		        type: OPERATOR | {/}
-
-          GetE::
-            {
-            GetT::
-              {
-              GetPower::
-                {
-                GetP::
-                  {
-                  NewDefNode::
-                    {
-                    }
-
-                  GetN::
-                    {
-                    	val: 1
-                    NewDefNode::
-                      {
-                      }
-
-                    DefNode result
-                    (0x604000001ad0)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {1}
-
-                    }
-
-                  	val: 0x604000001ad0
-                  }
-
-                	val: 0x604000001ad0
-                }
-
-              DefNode val
-              (0x604000001ad0)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {1}
-
-              return node:
-              DefNode val
-              (0x604000001ad0)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {1}
-
-              }
-
-            DefNode val
-            (0x604000001ad0)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {1}
-
-            }
-
-          	val_2: 0x604000001ad0
-          NewDefNode::
-            {
-            }
-
-          	result: 0x604000001b10
-          }
-
-        	val_2: 0x604000001b10
-        NewDefNode::
-          {
-          }
-
-        	result: 0x604000001b50
-        }
-
-      DefNode val
-      (0x604000001b50)::::::::::::::::
-      		  left_child: 0x604000001750
-      		 right_child: 0x604000001b10
-      		        type: OPERATOR | {-}
-
-      	val: 0x604000001b50
-
-      GetG:44 returned SUCCESS (return 0;)
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001b50)::::::::::::::::
-        		  left_child: 0x604000001750
-        		 right_child: 0x604000001b10
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001750)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {123}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001750)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {123}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001b10)::::::::::::::::
-        		  left_child: 0x604000001a50
-        		 right_child: 0x604000001ad0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001b10)::::::::::::::::
-        		  left_child: 0x604000001a50
-        		 right_child: 0x604000001ad0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001a50)::::::::::::::::
-        		  left_child: 0x604000001990
-        		 right_child: 0x604000001a10
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001a50)::::::::::::::::
-        		  left_child: 0x604000001990
-        		 right_child: 0x604000001a10
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001990)::::::::::::::::
-        		  left_child: 0x604000001810
-        		 right_child: 0x604000001950
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001990)::::::::::::::::
-        		  left_child: 0x604000001810
-        		 right_child: 0x604000001950
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001810)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {200}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001810)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {200}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001950)::::::::::::::::
-        		  left_child: 0x604000001890
-        		 right_child: 0x604000001910
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001950)::::::::::::::::
-        		  left_child: 0x604000001890
-        		 right_child: 0x604000001910
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001890)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001890)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001910)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001910)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001a10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001a10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001ad0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001ad0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000001b50)::::::::::::::::
-      		  left_child: 0x604000001750
-      		 right_child: 0x604000001b10
-      		        type: OPERATOR | {-}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000001750)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {123}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000001b10)::::::::::::::::
-        		  left_child: 0x604000001a50
-        		 right_child: 0x604000001ad0
-        		        type: OPERATOR | {+}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        Differentiate::
-          {
-          DefNode def_node
-          (0x604000001a50)::::::::::::::::
-          		  left_child: 0x604000001990
-          		 right_child: 0x604000001a10
-          		        type: OPERATOR | {/}
-
-          CopyDefNode::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          CopyBranch::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          Differentiate::
-            {
-            DefNode def_node
-            (0x604000001990)::::::::::::::::
-            		  left_child: 0x604000001810
-            		 right_child: 0x604000001950
-            		        type: OPERATOR | {+}
-
-            CopyDefNode::
-              {
-              NewDefNode::
-                {
-                }
-
-              }
-
-            Differentiate::
-              {
-              DefNode def_node
-              (0x604000001810)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {200}
-
-              CopyDefNode::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                }
-
-              NewDefNode::
-                {
-                }
-
-              }
-
-            Differentiate::
-              {
-              DefNode def_node
-              (0x604000001950)::::::::::::::::
-              		  left_child: 0x604000001890
-              		 right_child: 0x604000001910
-              		        type: OPERATOR | {*}
-
-              CopyDefNode::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                }
-
-              CopyBranch::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                }
-
-              Differentiate::
-                {
-                DefNode def_node
-                (0x604000001890)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {3}
-
-                CopyDefNode::
-                  {
-                  NewDefNode::
-                    {
-                    }
-
-                  }
-
-                NewDefNode::
-                  {
-                  }
-
-                }
-
-              NewDefNode::
-                {
-                }
-
-              Differentiate::
-                {
-                DefNode def_node
-                (0x604000001910)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {10}
-
-                CopyDefNode::
-                  {
-                  NewDefNode::
-                    {
-                    }
-
-                  }
-
-                NewDefNode::
-                  {
-                  }
-
-                }
-
-              CopyBranch::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                }
-
-              NewDefNode::
-                {
-                }
-
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          Differentiate::
-            {
-            DefNode def_node
-            (0x604000001a10)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {10}
-
-            CopyDefNode::
-              {
-              NewDefNode::
-                {
-                }
-
-              }
-
-            NewDefNode::
-              {
-              }
-
-            }
-
-          CopyBranch::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          CopyBranch::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          CopyBranch::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          }
-
-        Differentiate::
-          {
-          DefNode def_node
-          (0x604000001ad0)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {1}
-
-          CopyDefNode::
-            {
-            NewDefNode::
-              {
-              }
-
-            }
-
-          NewDefNode::
-            {
-            }
-
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001b90)::::::::::::::::
-        		  left_child: 0x604000001c10
-        		 right_child: 0x604000001c50
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001c10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001c10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001c50)::::::::::::::::
-        		  left_child: 0x604000001c90
-        		 right_child: 0x604000002290
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001c50)::::::::::::::::
-        		  left_child: 0x604000001c90
-        		 right_child: 0x604000002290
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001c90)::::::::::::::::
-        		  left_child: 0x604000001cd0
-        		 right_child: 0x604000002210
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001c90)::::::::::::::::
-        		  left_child: 0x604000001cd0
-        		 right_child: 0x604000002210
-        		        type: OPERATOR | {/}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001cd0)::::::::::::::::
-        		  left_child: 0x604000002050
-        		 right_child: 0x604000002150
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001cd0)::::::::::::::::
-        		  left_child: 0x604000002050
-        		 right_child: 0x604000002150
-        		        type: OPERATOR | {-}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002050)::::::::::::::::
-        		  left_child: 0x604000001d50
-        		 right_child: 0x604000001d10
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002050)::::::::::::::::
-        		  left_child: 0x604000001d50
-        		 right_child: 0x604000001d10
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001d50)::::::::::::::::
-        		  left_child: 0x604000001dd0
-        		 right_child: 0x604000001e10
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001d50)::::::::::::::::
-        		  left_child: 0x604000001dd0
-        		 right_child: 0x604000001e10
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001dd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001dd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001e10)::::::::::::::::
-        		  left_child: 0x604000001f10
-        		 right_child: 0x604000002010
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001e10)::::::::::::::::
-        		  left_child: 0x604000001f10
-        		 right_child: 0x604000002010
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001f10)::::::::::::::::
-        		  left_child: 0x604000001ed0
-        		 right_child: 0x604000001e50
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001f10)::::::::::::::::
-        		  left_child: 0x604000001ed0
-        		 right_child: 0x604000001e50
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001ed0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001ed0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001e50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001e50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002010)::::::::::::::::
-        		  left_child: 0x604000001fd0
-        		 right_child: 0x604000001f90
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002010)::::::::::::::::
-        		  left_child: 0x604000001fd0
-        		 right_child: 0x604000001f90
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001fd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001fd0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001f90)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001f90)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001d10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001d10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002150)::::::::::::::::
-        		  left_child: 0x604000002110
-        		 right_child: 0x6040000020d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002150)::::::::::::::::
-        		  left_child: 0x604000002110
-        		 right_child: 0x6040000020d0
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002110)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002110)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000020d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000020d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002210)::::::::::::::::
-        		  left_child: 0x6040000021d0
-        		 right_child: 0x604000002190
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002210)::::::::::::::::
-        		  left_child: 0x6040000021d0
-        		 right_child: 0x604000002190
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000021d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000021d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002190)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002190)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {10}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002290)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002290)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      }
-
-    Simplify::
-      {
-      DefNode def_node
-      (0x604000001b90)::::::::::::::::
-      		  left_child: 0x604000001c10
-      		 right_child: 0x604000001c50
-      		        type: OPERATOR | {-}
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000001c10)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x604000001c50)::::::::::::::::
-        		  left_child: 0x604000001c90
-        		 right_child: 0x604000002290
-        		        type: OPERATOR | {+}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000001c90)::::::::::::::::
-          		  left_child: 0x604000001cd0
-          		 right_child: 0x604000002210
-          		        type: OPERATOR | {/}
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000001cd0)::::::::::::::::
-            		  left_child: 0x604000002050
-            		 right_child: 0x604000002150
-            		        type: OPERATOR | {-}
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000002050)::::::::::::::::
-              		  left_child: 0x604000001d50
-              		 right_child: 0x604000001d10
-              		        type: OPERATOR | {*}
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x604000001d50)::::::::::::::::
-                		  left_child: 0x604000001dd0
-                		 right_child: 0x604000001e10
-                		        type: OPERATOR | {+}
-
-                Simplify::
-                  {
-                  DefNode def_node
-                  (0x604000001dd0)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: CONSTANT | {0}
-
-                  }
-
-                Simplify::
-                  {
-                  DefNode def_node
-                  (0x604000001e10)::::::::::::::::
-                  		  left_child: 0x604000001f10
-                  		 right_child: 0x604000002010
-                  		        type: OPERATOR | {+}
-
-                  Simplify::
-                    {
-                    DefNode def_node
-                    (0x604000001f10)::::::::::::::::
-                    		  left_child: 0x604000001ed0
-                    		 right_child: 0x604000001e50
-                    		        type: OPERATOR | {*}
-
-                    Simplify::
-                      {
-                      DefNode def_node
-                      (0x604000001ed0)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {0}
-
-                      }
-
-                    Simplify::
-                      {
-                      DefNode def_node
-                      (0x604000001e50)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {10}
-
-                      }
-
-                    DefToConst::
-                      {
-                      DefNode def_node
-                      (0x604000001f10)::::::::::::::::
-                      		  left_child: 0x604000001ed0
-                      		 right_child: 0x604000001e50
-                      		        type: OPERATOR | {*}
-
-                      DeleteBranch::
-                        {
-                        }
-
-                      DeleteBranch::
-                        {
-                        }
-
-                      	LEFT(def_node): 0x604000001ed0
-                      	RIGHT(def_node): 0x604000001e50
-                      	def_node: 0x604000001f10
-                      }
-
-                    }
-
-                  Simplify::
-                    {
-                    DefNode def_node
-                    (0x604000002010)::::::::::::::::
-                    		  left_child: 0x604000001fd0
-                    		 right_child: 0x604000001f90
-                    		        type: OPERATOR | {*}
-
-                    Simplify::
-                      {
-                      DefNode def_node
-                      (0x604000001fd0)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {3}
-
-                      }
-
-                    Simplify::
-                      {
-                      DefNode def_node
-                      (0x604000001f90)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {0}
-
-                      }
-
-                    DefToConst::
-                      {
-                      DefNode def_node
-                      (0x604000002010)::::::::::::::::
-                      		  left_child: 0x604000001fd0
-                      		 right_child: 0x604000001f90
-                      		        type: OPERATOR | {*}
-
-                      DeleteBranch::
-                        {
-                        }
-
-                      DeleteBranch::
-                        {
-                        }
-
-                      	LEFT(def_node): 0x604000001fd0
-                      	RIGHT(def_node): 0x604000001f90
-                      	def_node: 0x604000002010
-                      }
-
-                    }
-
-                  PromoteChild::
-                    {
-                    DefNode step_mom
-                    (0x604000001e10)::::::::::::::::
-                    		  left_child: 0x604000001f10
-                    		 right_child: 0x604000002010
-                    		        type: OPERATOR | {+}
-
-                    DefNode son
-                    (0x604000002010)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {0}
-
-                    DeleteBranch::
-                      {
-                      }
-
-                    DefReplaceWith::
-                      {
-                      DefNode destination
-                      (0x604000001e10)::::::::::::::::
-                      		  left_child: 0x604000001f10
-                      		 right_child: 0x604000002010
-                      		        type: OPERATOR | {+}
-
-                      DefNode source
-                      (0x604000002010)::::::::::::::::
-                      		  left_child: (nil)
-                      		 right_child: (nil)
-                      		        type: CONSTANT | {0}
-
-                      }
-
-                    }
-
-                  }
-
-                PromoteChild::
-                  {
-                  DefNode step_mom
-                  (0x604000001d50)::::::::::::::::
-                  		  left_child: 0x604000001dd0
-                  		 right_child: 0x604000001e10
-                  		        type: OPERATOR | {+}
-
-                  DefNode son
-                  (0x604000001e10)::::::::::::::::
-                  		  left_child: (nil)
-                  		 right_child: (nil)
-                  		        type: CONSTANT | {0}
-
-                  DeleteBranch::
-                    {
-                    }
-
-                  DefReplaceWith::
-                    {
-                    DefNode destination
-                    (0x604000001d50)::::::::::::::::
-                    		  left_child: 0x604000001dd0
-                    		 right_child: 0x604000001e10
-                    		        type: OPERATOR | {+}
-
-                    DefNode source
-                    (0x604000001e10)::::::::::::::::
-                    		  left_child: (nil)
-                    		 right_child: (nil)
-                    		        type: CONSTANT | {0}
-
-                    }
-
-                  }
-
-                }
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x604000001d10)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {10}
-
-                }
-
-              DefToConst::
-                {
-                DefNode def_node
-                (0x604000002050)::::::::::::::::
-                		  left_child: 0x604000001d50
-                		 right_child: 0x604000001d10
-                		        type: OPERATOR | {*}
-
-                DeleteBranch::
-                  {
-                  }
-
-                DeleteBranch::
-                  {
-                  }
-
-                	LEFT(def_node): 0x604000001d50
-                	RIGHT(def_node): 0x604000001d10
-                	def_node: 0x604000002050
-                }
-
-              }
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000002150)::::::::::::::::
-              		  left_child: 0x604000002110
-              		 right_child: 0x6040000020d0
-              		        type: OPERATOR | {*}
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x604000002110)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {10}
-
-                }
-
-              Simplify::
-                {
-                DefNode def_node
-                (0x6040000020d0)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {0}
-
-                }
-
-              DefToConst::
-                {
-                DefNode def_node
-                (0x604000002150)::::::::::::::::
-                		  left_child: 0x604000002110
-                		 right_child: 0x6040000020d0
-                		        type: OPERATOR | {*}
-
-                DeleteBranch::
-                  {
-                  }
-
-                DeleteBranch::
-                  {
-                  }
-
-                	LEFT(def_node): 0x604000002110
-                	RIGHT(def_node): 0x6040000020d0
-                	def_node: 0x604000002150
-                }
-
-              }
-
-            PromoteChild::
-              {
-              DefNode step_mom
-              (0x604000001cd0)::::::::::::::::
-              		  left_child: 0x604000002050
-              		 right_child: 0x604000002150
-              		        type: OPERATOR | {-}
-
-              DefNode son
-              (0x604000002150)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {0}
-
-              DeleteBranch::
-                {
-                }
-
-              DefReplaceWith::
-                {
-                DefNode destination
-                (0x604000001cd0)::::::::::::::::
-                		  left_child: 0x604000002050
-                		 right_child: 0x604000002150
-                		        type: OPERATOR | {-}
-
-                DefNode source
-                (0x604000002150)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {0}
-
-                }
-
-              }
-
-            }
-
-          Simplify::
-            {
-            DefNode def_node
-            (0x604000002210)::::::::::::::::
-            		  left_child: 0x6040000021d0
-            		 right_child: 0x604000002190
-            		        type: OPERATOR | {*}
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x6040000021d0)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {10}
-
-              }
-
-            Simplify::
-              {
-              DefNode def_node
-              (0x604000002190)::::::::::::::::
-              		  left_child: (nil)
-              		 right_child: (nil)
-              		        type: CONSTANT | {10}
-
-              }
-
-            DefToConst::
-              {
-              DefNode def_node
-              (0x604000002210)::::::::::::::::
-              		  left_child: 0x6040000021d0
-              		 right_child: 0x604000002190
-              		        type: OPERATOR | {*}
-
-              DeleteBranch::
-                {
-                }
-
-              DeleteBranch::
-                {
-                }
-
-              	LEFT(def_node): 0x6040000021d0
-              	RIGHT(def_node): 0x604000002190
-              	def_node: 0x604000002210
-              }
-
-            }
-
-          DefToConst::
-            {
-            DefNode def_node
-            (0x604000001c90)::::::::::::::::
-            		  left_child: 0x604000001cd0
-            		 right_child: 0x604000002210
-            		        type: OPERATOR | {/}
-
-            DeleteBranch::
-              {
-              }
-
-            DeleteBranch::
-              {
-              }
-
-            	LEFT(def_node): 0x604000001cd0
-            	RIGHT(def_node): 0x604000002210
-            	def_node: 0x604000001c90
-            }
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000002290)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {0}
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x604000001c50)::::::::::::::::
-          		  left_child: 0x604000001c90
-          		 right_child: 0x604000002290
-          		        type: OPERATOR | {+}
-
-          DefNode son
-          (0x604000002290)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {0}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x604000001c50)::::::::::::::::
-            		  left_child: 0x604000001c90
-            		 right_child: 0x604000002290
-            		        type: OPERATOR | {+}
-
-            DefNode source
-            (0x604000002290)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: CONSTANT | {0}
-
-            }
-
-          }
-
-        }
-
-      PromoteChild::
-        {
-        DefNode step_mom
-        (0x604000001b90)::::::::::::::::
-        		  left_child: 0x604000001c10
-        		 right_child: 0x604000001c50
-        		        type: OPERATOR | {-}
-
-        DefNode son
-        (0x604000001c50)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        DeleteBranch::
-          {
-          }
-
-        DefReplaceWith::
-          {
-          DefNode destination
-          (0x604000001b90)::::::::::::::::
-          		  left_child: 0x604000001c10
-          		 right_child: 0x604000001c50
-          		        type: OPERATOR | {-}
-
-          DefNode source
-          (0x604000001c50)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {0}
-
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x604000001b90)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {0}
-
-        }
-
-      }
-
-    MakeLatex::
-      {
-      	tex_file: "UnitTests/LaTex/result_5.tex"
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      DefTreeToTex::
-        {
-
-        BufferPutDouble:368 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        DeleteBranch::
-          {
-          }
-
-        DeleteBranch::
-          {
-          DeleteBranch::
-            {
-            DeleteBranch::
-              {
-              DeleteBranch::
-                {
-                }
-
-              DeleteBranch::
-                {
-                DeleteBranch::
-                  {
-                  }
-
-                DeleteBranch::
-                  {
-                  }
-
-                }
-
-              }
-
-            DeleteBranch::
-              {
-              }
-
-            }
-
-          DeleteBranch::
-            {
-            }
-
-          }
-
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    CloseDefTree::
-      {
-      DeleteBranch::
-        {
-        }
-
-
-      CloseDefTree:81 returned SUCCESS (return 0;)
-      }
-
-    GetG::
-      {
-      BufferCtor::
-        {
-
-        BufferCtor:299 returned SUCCESS (return 0;)
-        }
-
-      GetE::
-        {
-        GetT::
-          {
-          GetPower::
-            {
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetN::
-                {
-                	val: 2
-                NewDefNode::
-                  {
-                  }
-
-                DefNode result
-                (0x604000002310)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {2}
-
-                }
-
-              	val: 0x604000002310
-              }
-
-            	val: 0x604000002310
-            GetP::
-              {
-              NewDefNode::
-                {
-                }
-
-              GetN::
-                {
-                	val: 4
-                NewDefNode::
-                  {
-                  }
-
-                DefNode result
-                (0x604000002390)::::::::::::::::
-                		  left_child: (nil)
-                		 right_child: (nil)
-                		        type: CONSTANT | {4}
-
-                }
-
-              	val: 0x604000002390
-              }
-
-            NewDefNode::
-              {
-              }
-
-            DefNode result
-            (0x6040000023d0)::::::::::::::::
-            		  left_child: 0x604000002310
-            		 right_child: 0x604000002390
-            		        type: OPERATOR | {^}
-
-            }
-
-          DefNode val
-          (0x6040000023d0)::::::::::::::::
-          		  left_child: 0x604000002310
-          		 right_child: 0x604000002390
-          		        type: OPERATOR | {^}
-
-          return node:
-          DefNode val
-          (0x6040000023d0)::::::::::::::::
-          		  left_child: 0x604000002310
-          		 right_child: 0x604000002390
-          		        type: OPERATOR | {^}
-
-          }
-
-        DefNode val
-        (0x6040000023d0)::::::::::::::::
-        		  left_child: 0x604000002310
-        		 right_child: 0x604000002390
-        		        type: OPERATOR | {^}
-
-        }
-
-      DefNode val
-      (0x6040000023d0)::::::::::::::::
-      		  left_child: 0x604000002310
-      		 right_child: 0x604000002390
-      		        type: OPERATOR | {^}
-
-      	val: 0x6040000023d0
-
-      GetG:44 returned SUCCESS (return 0;)
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000023d0)::::::::::::::::
-        		  left_child: 0x604000002310
-        		 right_child: 0x604000002390
-        		        type: OPERATOR | {^}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002310)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {2}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002310)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {2}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002390)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000002390)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {4}
-
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x6040000023d0)::::::::::::::::
-      		  left_child: 0x604000002310
-      		 right_child: 0x604000002390
-      		        type: OPERATOR | {^}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      #TODO Check this place to improve it (Differentiate85)
-
-      return Null ptr; Returnig null ptr (Differentiate:87)
-      }
-
-    MakeImg::
-      {
-      Condition (node) is false
-      	(function: DotTreeBranch, file: ./src/GraphVis.cpp, line: 101)
-      It matches to error: (code 14) Bad address
-
-      Shutting down the system (DotTreeBranch:101)

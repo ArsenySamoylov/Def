@@ -40,7 +40,8 @@ struct Buffer
     char* str;
     };
 
-int  BufferCtor    (Buffer* buf, const char* string);
+int BufferCtor  (Buffer* buf, const char* string);
+int BufferCtor  (Buffer* buf, int size);
 
 void BufferUngetCh (Buffer* buf);
 int  BufferGetCh   (Buffer* buf);

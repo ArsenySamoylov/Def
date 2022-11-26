@@ -26,9 +26,9 @@
 #define $log(level) FunctionLogger NAME(func) {level, __func__};
 
 #define LSUCCESS LOG__.LogMsgRet (SUCCESS, "%s:%d returned SUCCESS ", __func__, __LINE__)
-#define LFAILURE LOG__.LogMsgRet (MsgRet(FAILURE, redcolor "Failed (%s:%d)" resetconsole,  __func__, __LINE__), "Failed (%s:%d)",  __func__, __LINE__);
+#define LFAILURE LOG__.LogMsgRet (MsgRet(FAILURE, redcolor "Failed (%s:%d)" resetconsole,  __func__, __LINE__), "Failed (%s:%d)",  __func__, __LINE__)
 
-#define LNULL    LOG__.LogMsgNullRet(LogMsgNullRet(redcolor "Returnig null ptr (%s:%d)" resetconsole, __func__, __LINE__), "Returnig null ptr (%s:%d)", __func__, __LINE__);
+#define LNULL    LOG__.LogMsgNullRet(LogMsgNullRet(redcolor "Returnig null ptr (%s:%d)" resetconsole, __func__, __LINE__), "Returnig null ptr (%s:%d)", __func__, __LINE__)
 
 #define LogMsgRet(ret_val, format, ...) LOG__.LogMsgRet (ret_val, format __VA_OPT__(,) __VA_ARGS__)
 

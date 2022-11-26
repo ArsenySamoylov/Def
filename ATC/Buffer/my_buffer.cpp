@@ -299,6 +299,19 @@ int BufferCtor (Buffer* buf, const char* string)
     return LSUCCESS;
     }
 
+int BufferCtor (Buffer* buf, int size)
+    {
+    $log(DEBUG_ALL)
+    assertlog (buf, EFAULT, return LFAILURE);
+
+    buf->buffer = (const char*) calloc (size, sizeof(buf->buffer[0])); 
+    if (!buf->buffer) return LFAILURE;
+
+    buf->str = (char*) buf->buffer;
+
+    return LSUCCESS;
+    }
+
 void BufferUngetCh (Buffer* buf)
     {
     assert(buf);
