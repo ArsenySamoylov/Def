@@ -1,17 +1,58 @@
-Sat Nov 26 16:45:46 2022
+Sun Nov 27 11:58:31 2022
 
 main::
   {
-  UnitTests::
+  GetG::
     {
-    	num_lines: 36
-    GetG::
+    BufferCtor::
       {
-      BufferCtor::
-        {
 
-        BufferCtor:299 returned SUCCESS (return 0;)
+      BufferCtor:299 returned SUCCESS (return 0;)
+      }
+
+    GetE::
+      {
+      GetT::
+        {
+        GetPower::
+          {
+          GetP::
+            {
+            NewDefNode::
+              {
+              LOG CALLOC:     {0x604000000010} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
+              }
+
+            GetFunctor::
+              {
+              	NOT_A_FUNCTION: -1
+              }
+
+            }
+
+          	val: 0x604000000010
+          }
+
+        DefNode val
+        (0x604000000010)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        return node:
+        DefNode val
+        (0x604000000010)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
         }
+
+      DefNode val
+      (0x604000000010)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: VARIABLE | {x}
 
       GetE::
         {
@@ -23,6 +64,7 @@ main::
               {
               NewDefNode::
                 {
+                LOG CALLOC:     {0x604000000050} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
                 }
 
               GetFunctor::
@@ -32,132 +74,65 @@ main::
 
               }
 
-            	val: 0x604000000010
+            	val: 0x604000000050
             }
 
           DefNode val
-          (0x604000000010)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          GetT::
-            {
-            GetPower::
-              {
-              GetP::
-                {
-                NewDefNode::
-                  {
-                  }
-
-                GetFunctor::
-                  {
-                  	NOT_A_FUNCTION: -1
-                  }
-
-                }
-
-              	val: 0x604000000050
-              }
-
-            DefNode val
-            (0x604000000050)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            return node:
-            DefNode val
-            (0x604000000050)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          DefNode val_2
           (0x604000000050)::::::::::::::::
           		  left_child: (nil)
           		 right_child: (nil)
           		        type: VARIABLE | {x}
 
-          NewDefNode::
-            {
-            }
+          return node:
+          DefNode val
+          (0x604000000050)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: VARIABLE | {x}
 
-          	result: 0x604000000090
           }
 
         DefNode val
-        (0x604000000090)::::::::::::::::
-        		  left_child: 0x604000000010
-        		 right_child: 0x604000000050
-        		        type: OPERATOR | {*}
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
 
         }
 
-      DefNode val
-      (0x604000000090)::::::::::::::::
-      		  left_child: 0x604000000010
-      		 right_child: 0x604000000050
-      		        type: OPERATOR | {*}
+      	val_2: 0x604000000050
+      NewDefNode::
+        {
+        LOG CALLOC:     {0x604000000090} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
+        }
 
-      	val: 0x604000000090
-
-      GetG:44 returned SUCCESS (return 0;)
+      	result: 0x604000000090
       }
 
-    MakeImg::
+    DefNode val
+    (0x604000000090)::::::::::::::::
+    		  left_child: 0x604000000010
+    		 right_child: 0x604000000050
+    		        type: OPERATOR | {+}
+
+    	val: 0x604000000090
+
+    GetG:44 returned SUCCESS (return 0;)
+    }
+
+  Differentiate::
+    {
+    DefNode def_node
+    (0x604000000090)::::::::::::::::
+    		  left_child: 0x604000000010
+    		 right_child: 0x604000000050
+    		        type: OPERATOR | {+}
+
+    CopyDefNode::
       {
-      PrintNode::
+      NewDefNode::
         {
-        DefNode node
-        (0x604000000090)::::::::::::::::
-        		  left_child: 0x604000000010
-        		 right_child: 0x604000000050
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000010)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000010)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000050)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000050)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
+        LOG CALLOC:     {0x6040000000d0} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
         }
 
       }
@@ -165,790 +140,93 @@ main::
     Differentiate::
       {
       DefNode def_node
-      (0x604000000090)::::::::::::::::
-      		  left_child: 0x604000000010
-      		 right_child: 0x604000000050
-      		        type: OPERATOR | {*}
+      (0x604000000010)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: VARIABLE | {x}
 
       CopyDefNode::
         {
         NewDefNode::
           {
-          }
-
-        }
-
-      CopyBranch::
-        {
-        NewDefNode::
-          {
-          }
-
-        }
-
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000000010)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
-
-          }
-
-        NewDefNode::
-          {
+          LOG CALLOC:     {0x604000000110} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
           }
 
         }
 
       NewDefNode::
         {
+        LOG CALLOC:     {0x604000000150} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
         }
 
-      Differentiate::
-        {
-        DefNode def_node
-        (0x604000000050)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
+      }
 
-        CopyDefNode::
-          {
-          NewDefNode::
-            {
-            }
+    Differentiate::
+      {
+      DefNode def_node
+      (0x604000000050)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: VARIABLE | {x}
 
-          }
-
-        NewDefNode::
-          {
-          }
-
-        }
-
-      CopyBranch::
+      CopyDefNode::
         {
         NewDefNode::
           {
+          LOG CALLOC:     {0x604000000190} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
           }
 
         }
 
       NewDefNode::
         {
+        LOG CALLOC:     {0x6040000001d0} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
         }
 
       }
 
-    MakeImg::
+    }
+
+  CloseDefTree::
+    {
+    DeleteBranch::
       {
-      PrintNode::
+      DeleteBranch::
         {
-        DefNode node
-        (0x6040000000d0)::::::::::::::::
-        		  left_child: 0x6040000001d0
-        		 right_child: 0x6040000002d0
-        		        type: OPERATOR | {+}
-
+        LOG FREE(kill): {0x604000000010} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
         }
 
-      PrintNode::
+      DeleteBranch::
         {
-        DefNode node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: 0x604000000190
-        		 right_child: 0x604000000110
-        		        type: OPERATOR | {*}
-
+        LOG FREE(kill): {0x604000000050} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
         }
 
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: 0x604000000190
-        		 right_child: 0x604000000110
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000190)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000190)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000110)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000110)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000250
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000250
-        		        type: OPERATOR | {*}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000290)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000290)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000250)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000250)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {1}
-
-        }
-
+      LOG FREE(kill): {0x604000000090} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
       }
 
-    Simplify::
+
+    CloseDefTree:81 returned SUCCESS (return 0;)
+    }
+
+  DeleteBranch::
+    {
+    DeleteBranch::
       {
-      DefNode def_node
-      (0x6040000000d0)::::::::::::::::
-      		  left_child: 0x6040000001d0
-      		 right_child: 0x6040000002d0
-      		        type: OPERATOR | {+}
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: 0x604000000190
-        		 right_child: 0x604000000110
-        		        type: OPERATOR | {*}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000190)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {1}
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000110)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x6040000001d0)::::::::::::::::
-          		  left_child: 0x604000000190
-          		 right_child: 0x604000000110
-          		        type: OPERATOR | {*}
-
-          DefNode son
-          (0x604000000110)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x6040000001d0)::::::::::::::::
-            		  left_child: 0x604000000190
-            		 right_child: 0x604000000110
-            		        type: OPERATOR | {*}
-
-            DefNode source
-            (0x604000000110)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          }
-
-        }
-
-      Simplify::
-        {
-        DefNode def_node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: 0x604000000290
-        		 right_child: 0x604000000250
-        		        type: OPERATOR | {*}
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000290)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        Simplify::
-          {
-          DefNode def_node
-          (0x604000000250)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {1}
-
-          }
-
-        PromoteChild::
-          {
-          DefNode step_mom
-          (0x6040000002d0)::::::::::::::::
-          		  left_child: 0x604000000290
-          		 right_child: 0x604000000250
-          		        type: OPERATOR | {*}
-
-          DefNode son
-          (0x604000000290)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          DeleteBranch::
-            {
-            }
-
-          DefReplaceWith::
-            {
-            DefNode destination
-            (0x6040000002d0)::::::::::::::::
-            		  left_child: 0x604000000290
-            		 right_child: 0x604000000250
-            		        type: OPERATOR | {*}
-
-            DefNode source
-            (0x604000000290)::::::::::::::::
-            		  left_child: (nil)
-            		 right_child: (nil)
-            		        type: VARIABLE | {x}
-
-            }
-
-          }
-
-        }
-
+      LOG FREE(kill): {0x604000000150} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
       }
 
-    MakeImg::
+    DeleteBranch::
       {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000000d0)::::::::::::::::
-        		  left_child: 0x6040000001d0
-        		 right_child: 0x6040000002d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
+      LOG FREE(kill): {0x6040000001d0} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
       }
 
+    LOG FREE(kill): {0x6040000000d0} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
+    }
 
-    OpenTexFile:161 returned SUCCESS (return 0;)
-    BufferCtor::
-      {
 
-      BufferCtor:299 returned SUCCESS (return 0;)
-      }
+  main:28 returned SUCCESS (return 0;)
+  }
 
-    DefTreeToTex::
-      {
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToTex::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutString:408 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToTex::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      }
-
-    BufferCtor::
-      {
-
-      BufferCtor:299 returned SUCCESS (return 0;)
-      }
-
-    DefTreeToTex::
-      {
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToTex::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToTex::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      }
-
-    BufferCtor::
-      {
-
-      BufferCtor:299 returned SUCCESS (return 0;)
-      }
-
-    DefTreeToTex::
-      {
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToTex::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToTex::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      }
-
-    BufferCtor::
-      {
-
-      BufferCtor:312 returned SUCCESS (return 0;)
-      }
-
-    DefTreeToGnuFormula::
-      {
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToGnuFormula::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      DefTreeToGnuFormula::
-        {
-
-        BufferPutChar:394 returned SUCCESS (return 0;)
-        }
-
-
-      BufferPutChar:394 returned SUCCESS (return 0;)
-      }
-
-    MakeGraphic::
-      {
-      }
-
-    DefineVariable::
-      {
-      DefNode def_node
-      (0x6040000000d0)::::::::::::::::
-      		  left_child: 0x6040000001d0
-      		 right_child: 0x6040000002d0
-      		        type: OPERATOR | {+}
-
-      DefineVariable::
-        {
-        DefNode def_node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        NewDefNode::
-          {
-          }
-
-
-        DefineVariable:263 returned SUCCESS (return 0;)
-        }
-
-      DefineVariable::
-        {
-        DefNode def_node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        NewDefNode::
-          {
-          }
-
-
-        DefineVariable:263 returned SUCCESS (return 0;)
-        }
-
-      }
-
-    DefineVariable::
-      {
-      DefNode def_node
-      (0x6040000000d0)::::::::::::::::
-      		  left_child: 0x6040000001d0
-      		 right_child: 0x6040000002d0
-      		        type: OPERATOR | {+}
-
-      DefineVariable::
-        {
-        DefNode def_node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000310
-        		        type: VARIABLE | {x}
-
-        DefineVariable::
-          {
-          }
-
-        DefineVariable::
-          {
-          DefNode def_node
-          (0x604000000310)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {3.14}
-
-          DefineVariable::
-            {
-            }
-
-          DefineVariable::
-            {
-            }
-
-          }
-
-        }
-
-      DefineVariable::
-        {
-        DefNode def_node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000350
-        		        type: VARIABLE | {x}
-
-        DefineVariable::
-          {
-          }
-
-        DefineVariable::
-          {
-          DefNode def_node
-          (0x604000000350)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: CONSTANT | {3.14}
-
-          DefineVariable::
-            {
-            }
-
-          DefineVariable::
-            {
-            }
-
-          }
-
-        }
-
-      }
-
-    MakeImg::
-      {
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000000d0)::::::::::::::::
-        		  left_child: 0x6040000001d0
-        		 right_child: 0x6040000002d0
-        		        type: OPERATOR | {+}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000310
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000310
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000310)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3.14}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000310)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3.14}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000350
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000350
-        		        type: VARIABLE | {x}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3.14}
-
-        }
-
-      PrintNode::
-        {
-        DefNode node
-        (0x604000000350)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: CONSTANT | {3.14}
-
-        }
-
-      }
-
-    CountConstants::
-      {
-      DefNode def_node
-      (0x6040000000d0)::::::::::::::::
-      		  left_child: 0x6040000001d0
-      		 right_child: 0x6040000002d0
-      		        type: OPERATOR | {+}
-
-      CountConstants::
-        {
-        DefNode def_node
-        (0x6040000001d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000310
-        		        type: VARIABLE | {x}
-
-        }
-
-      CountConstants::
-        {
-        DefNode def_node
-        (0x6040000002d0)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: 0x604000000350
-        		        type: VARIABLE | {x}
-
-        }
-
-      }
-
+*********************************************************************
+		Log Successfuly ended, on Sun Nov 27 11:58:31 2022
+*********************************************************************

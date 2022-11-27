@@ -16,7 +16,7 @@ int Ctor (BinaryTree* tree)
     {
     CHECK_STDERR(tree, return NULL_PTR);
 
-    // Node* root = (Node*) calloc (1, sizeof(Node));
+    // Node* root = (Node*) CALLOC (1, sizeof(Node));
     // CHECK_STDERR(root, return BAD_CALLOC);
 
     // // //root->data         = CRINGE;
@@ -61,10 +61,10 @@ int AddChildren (Node* node)
     if (node->second_child)
         return MsgRet(FAILURE, "Node already has second child\n");
 
-    Node* first_child  = (Node*) calloc (1, sizeof(Node));
+    Node* first_child  = (Node*) CALLOC (1, sizeof(Node));
     CHECK_STDERR(first_child,  return BAD_CALLOC);
 
-    Node* second_child = (Node*) calloc (1, sizeof(Node));
+    Node* second_child = (Node*) CALLOC (1, sizeof(Node));
     CHECK_STDERR(second_child, return BAD_CALLOC);
 
     first_child->parent       = node;
@@ -81,14 +81,15 @@ int AddChildren (Node* node)
     return SUCCESS;
     }
 
+// remake - this is cringe
 static int  DeleteBranch (Node* root)
     {
-    assert(root);
+    if (!root) return;
     // CHECK_STDERR(root, return NULL_PTR);
 
-    if (! (root->first_child || root->second_child) )
+    if (!root->first_child && !root->second_child)
         {
-        free (root);
+        FREE (&root);
         root = NULL;
 
         return SUCCESS;

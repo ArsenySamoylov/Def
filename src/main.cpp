@@ -17,7 +17,13 @@ int main()
    {    
    $log(RELEASE);
     
-   CHECK (UnitTests() == SUCCESS, return LFAILURE);
+   DefTree mem{};
+   GetG(&mem, "x + x");
+
+   DefNode* d = Differentiate(mem.root, 'x');
+   CloseDefTree(&mem);
+   DeleteBranch(d);
+   // CHECK (UnitTests() == SUCCESS, return LFAILURE);
    
    return LSUCCESS;    
    }              

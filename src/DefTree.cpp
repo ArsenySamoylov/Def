@@ -10,9 +10,9 @@ DefNode* NewDefNode (int      type,       DefNodeValue value,
     {
     $log(DEBUG_ALL)
 
-    DefNode* new_defnode = (DefNode*) calloc (1, sizeof(DefNode));
+    DefNode* new_defnode = (DefNode*) CALLOC (1, sizeof(DefNode));
     CHECK (new_defnode, logf("Couldn't allocate memory for new node\n"), return LNULL);
-
+    
     new_defnode-> parent     = parent;
     new_defnode-> left_child = left_child;
     new_defnode->right_child = right_child;
@@ -84,7 +84,7 @@ int CloseDefTree (DefTree* def_tree)
 int DeleteBranch (DefNode* def_node)
     {
     $log(DEBUG_ALL)
-    assertlog (def_node, EFAULT, return LFAILURE);
+    if (!def_node) return SUCCESS;
 
     if (def_node->left_child != 0)
         CHECK (DeleteBranch (def_node->left_child)  == SUCCESS, return LFAILURE);
@@ -92,7 +92,7 @@ int DeleteBranch (DefNode* def_node)
     if (def_node->right_child != 0)
         CHECK (DeleteBranch (def_node->right_child) == SUCCESS, return LFAILURE);
 
-    free(def_node);
+    KILL( (void**) &def_node);
 
     return SUCCESS;
     }

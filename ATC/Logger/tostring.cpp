@@ -5,6 +5,7 @@
 #include <malloc.h>
 
 #include "EasyDebug.h"
+#include "LogMacroses.h"
 
 const int MAX_LENGTH_INT = 10;
 
@@ -15,7 +16,7 @@ char* tostring(const char* value)
 
 char* tostring(int value)
     {
-    char* buffer = (char*) calloc (MAX_LENGTH_INT + 32, sizeof(buffer[0]));
+    char* buffer = (char*) CALLOC (MAX_LENGTH_INT + 32, sizeof(buffer[0]));
     if (!buffer)
         {
         printf("PRINTF BESIT CALLOC (%s)\n", __func__);

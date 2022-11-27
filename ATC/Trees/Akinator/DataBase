@@ -20,7 +20,7 @@ int OpenDataBase (DataBase* data_base, const char* path)
           return  MsgRet (FAILURE, "Can't find data base in path: %s\n", path)); //  MsgNoRet ("TO do: in this case create std empty data base\n") 
 
 
-    BinaryTree* data_tree = (BinaryTree*) calloc (1, sizeof(data_tree[0]));
+    BinaryTree* data_tree = (BinaryTree*) CALLOC (1, sizeof(data_tree[0]));
     assertlog (data_tree, ENOMEM, return FAILURE);
 
     Ctor(data_tree);
@@ -191,7 +191,7 @@ static Node* SetNewNode (Node* parent, const char** buffer)
     //assert(parent); // PARENT CAN BE NULL !!!    
     assert(buffer);
 
-    Node* new_node = (Node*) calloc (1, sizeof(new_node[0]));
+    Node* new_node = (Node*) CALLOC (1, sizeof(new_node[0]));
     CHECK_STDERR(new_node, return NULL);
 
     new_node->parent = parent;

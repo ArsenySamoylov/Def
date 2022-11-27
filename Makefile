@@ -19,7 +19,7 @@ CFLAGS  := -g   -D _DEBUG  -std=c++20 		-Wall  -Wc++14-compat  				-Wextra  				
 							   		 					
 
 SANITIZERS := -fsanitize=address,leak #,alignment,bool,bounds,enum,float-cast-overflow,float-divide-by-zero,integer-divide-by-zero,leak,nonnull-attribute,null,object-size,return,returns-nonnull-attribute,shift,signed-integer-overflow,undefined,unreachable,vla-bound,vptr
-LFLAGS 	   := -lpthread  -lasan
+LFLAGS 	   := -lpthread  -lasan 
 			  # -lsfml-window -lsfml-system -lsfml-graphics -lncurses -lsfml-audio 
 
 SRCDIR :=  ./src     ./ATC 

@@ -14,3 +14,5 @@ decltype(nullptr) LogMsgNullRet(const char* format, ...);
                             } 
 
 int SYSTEM(const char* format, ...);
+
+// #pragma GCC diagnostic ignored 

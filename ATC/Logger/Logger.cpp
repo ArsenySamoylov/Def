@@ -129,6 +129,42 @@ void Logger::logmsg (char* message)
 
     return;
     }
+
+void* Logger::CAL_LOG (size_t number_of_elmts, size_t size_of_elmts, const char* file, const char* func, int line)
+    {
+    void* ptr =  calloc (number_of_elmts, size_of_elmts); 
+
+    Logger::getInstance().log ("LOG CALLOC:     {%p} = calloc (%zu, %zu = %zu) from %s:%d, at %s:%d\n", ptr, number_of_elmts, size_of_elmts,
+                                                             number_of_elmts * size_of_elmts, 
+                                                             func, line, file, line);     
+    if (!ptr)
+        {
+        Logger::getInstance().log("LOG CALLOC: Couldn't allocate memory\n");
+        printf("LOG CALLOC: Couldn't allocate memory of size %zu (%zu*%zu) at %s:%d, %s:%d\n", number_of_elmts * size_of_elmts, number_of_elmts, size_of_elmts,
+                                                              func, line, file, line);
+        }
+
+    return ptr;
+    } 
+
+void Logger::FREE_LOG (void** break_free, const char* file, const char* func, int line)
+    {
+    if (!break_free)
+        {
+        Logger::getInstance().log("LOG FREE (kill): Atempt to free null pointer from: %s:%d, at %s:%d\n", func, line, file, line);
+                           printf("LOG FREE (kiLL): Atempt to free null pointer from: %s:%d, at %s:%d\n", func, line, file, line);
+        
+        return;
+        }
+
+    Logger::getInstance().log("LOG FREE(kill): {%p} - will be freed from %s:%d, at %s:%d\n", *break_free, func, line, file, line);
+
+    free(*break_free);  
+
+    *break_free = nullptr;
+
+    return;
+    }
 /////////////////////////////////////////////////////////////////////////////
 ////////////// old usefull functions ////////////////////////////////////////
 int Logger::LogMsgRet(int return_value, const char* format, ... )

@@ -24,7 +24,7 @@ char* GetSrcFile (const char *file_direction)
         return NULL;
         }
 
-    char* txt_buffer = (char*) calloc (txt_data.st_size + 1, sizeof (char));
+    char* txt_buffer = (char*) CALLOC (txt_data.st_size + 1, sizeof (char));
     if (!txt_buffer)
         return NULL;
   
@@ -48,7 +48,7 @@ const char** DivideBufferIntoLines (char* buffer, size_t number_of_lines)
     if (!buffer)          return NULL;
     if (!number_of_lines) return NULL;
 
-    const char** lines_array = (const char**) calloc (number_of_lines + 1, sizeof(lines_array[0]));
+    const char** lines_array = (const char**) CALLOC (number_of_lines + 1, sizeof(lines_array[0]));
     if (lines_array == NULL) return NULL;
 
     size_t current_line = 0;
@@ -93,7 +93,7 @@ const char** SplitBufferIntoLines (const char* buffer, size_t number_of_lines)
     if (!buffer)          return NULL;
     if (!number_of_lines) return NULL;
 
-    const char** lines_array = (const char**) calloc (number_of_lines + 1, sizeof(lines_array[0]));
+    const char** lines_array = (const char**) CALLOC (number_of_lines + 1, sizeof(lines_array[0]));
     if (lines_array == NULL) return NULL;
 
     size_t current_line = 0;
@@ -304,8 +304,8 @@ int BufferCtor (Buffer* buf, int size)
     $log(DEBUG_ALL)
     assertlog (buf, EFAULT, return LFAILURE);
 
-    buf->buffer = (const char*) calloc (size, sizeof(buf->buffer[0])); 
-    if (!buf->buffer) return LFAILURE;
+    buf->buffer = (const char*) CALLOC (size, sizeof(buf->buffer[0])); 
+    if (!buf->buffer) return LFAILURE; 
 
     buf->str = (char*) buf->buffer;
 
