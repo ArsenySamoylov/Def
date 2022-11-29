@@ -33,12 +33,14 @@ class Logger : public std::ostream
         
         FILE* getlog ();
             
-        void log           (const char* format, ...);
-        void log_no_indent (const char* format, ...);
-        void logmsg        (char* message);
+        void log            (const char* format, ...);
+        void log_nolvl      (const char* format, ...);
+        void log_no_indent  (const char* format, ...);
+        void logmsg         (char* message); // remove later
 
-        void* CAL_LOG (size_t number_of_elmts, size_t size_of_elmts, const char* file, const char* func, int line);
-        void  FREE_LOG (void** break_free,                           const char* file, const char* func, int line);
+        void* CAL_LOG  (size_t number_of_elmts, size_t size_of_elmts, const char* file, const char* func, int line);
+        void  FREE_LOG (void** break_free,                            const char* file, const char* func, int line);
+        void* REAL_LOG (void* ptr, size_t size,                       const char* file, const char* func, int line);
 
         void checkerrno (const char* format, ...);
         void logerror   (int error_code, const char* format, ...);

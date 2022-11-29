@@ -1,58 +1,19 @@
-Sun Nov 27 11:58:31 2022
+Tue Nov 29 19:35:16 2022
 
 main::
   {
-  GetG::
+  UnitTests::
     {
-    BufferCtor::
+    LOG CALLOC:     {0x614000000040} = calloc (395, 1 = 395) from GetSrcFile:27, at ./ATC/Buffer/my_buffer.cpp:27
+    	num_lines: 44
+    LOG CALLOC:     {0x613000000040} = calloc (45, 8 = 360) from DivideBufferIntoLines:51, at ./ATC/Buffer/my_buffer.cpp:51
+    GetG::
       {
-
-      BufferCtor:299 returned SUCCESS (return 0;)
-      }
-
-    GetE::
-      {
-      GetT::
+      BufferCtor::
         {
-        GetPower::
-          {
-          GetP::
-            {
-            NewDefNode::
-              {
-              LOG CALLOC:     {0x604000000010} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-              }
 
-            GetFunctor::
-              {
-              	NOT_A_FUNCTION: -1
-              }
-
-            }
-
-          	val: 0x604000000010
-          }
-
-        DefNode val
-        (0x604000000010)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        return node:
-        DefNode val
-        (0x604000000010)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
+        BufferCtor:299 returned SUCCESS (return 0;)
         }
-
-      DefNode val
-      (0x604000000010)::::::::::::::::
-      		  left_child: (nil)
-      		 right_child: (nil)
-      		        type: VARIABLE | {x}
 
       GetE::
         {
@@ -64,7 +25,7 @@ main::
               {
               NewDefNode::
                 {
-                LOG CALLOC:     {0x604000000050} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
+                LOG CALLOC:     {0x604000000010} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
                 }
 
               GetFunctor::
@@ -74,159 +35,12 @@ main::
 
               }
 
-            	val: 0x604000000050
+            	val: 0x604000000010
             }
 
           DefNode val
-          (0x604000000050)::::::::::::::::
+          (0x604000000010)::::::::::::::::
           		  left_child: (nil)
           		 right_child: (nil)
           		        type: VARIABLE | {x}
 
-          return node:
-          DefNode val
-          (0x604000000050)::::::::::::::::
-          		  left_child: (nil)
-          		 right_child: (nil)
-          		        type: VARIABLE | {x}
-
-          }
-
-        DefNode val
-        (0x604000000050)::::::::::::::::
-        		  left_child: (nil)
-        		 right_child: (nil)
-        		        type: VARIABLE | {x}
-
-        }
-
-      	val_2: 0x604000000050
-      NewDefNode::
-        {
-        LOG CALLOC:     {0x604000000090} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-        }
-
-      	result: 0x604000000090
-      }
-
-    DefNode val
-    (0x604000000090)::::::::::::::::
-    		  left_child: 0x604000000010
-    		 right_child: 0x604000000050
-    		        type: OPERATOR | {+}
-
-    	val: 0x604000000090
-
-    GetG:44 returned SUCCESS (return 0;)
-    }
-
-  Differentiate::
-    {
-    DefNode def_node
-    (0x604000000090)::::::::::::::::
-    		  left_child: 0x604000000010
-    		 right_child: 0x604000000050
-    		        type: OPERATOR | {+}
-
-    CopyDefNode::
-      {
-      NewDefNode::
-        {
-        LOG CALLOC:     {0x6040000000d0} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000000010)::::::::::::::::
-      		  left_child: (nil)
-      		 right_child: (nil)
-      		        type: VARIABLE | {x}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          LOG CALLOC:     {0x604000000110} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-          }
-
-        }
-
-      NewDefNode::
-        {
-        LOG CALLOC:     {0x604000000150} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-        }
-
-      }
-
-    Differentiate::
-      {
-      DefNode def_node
-      (0x604000000050)::::::::::::::::
-      		  left_child: (nil)
-      		 right_child: (nil)
-      		        type: VARIABLE | {x}
-
-      CopyDefNode::
-        {
-        NewDefNode::
-          {
-          LOG CALLOC:     {0x604000000190} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-          }
-
-        }
-
-      NewDefNode::
-        {
-        LOG CALLOC:     {0x6040000001d0} = calloc (1, 40 = 40) from NewDefNode:13, at ./src/DefTree.cpp:13
-        }
-
-      }
-
-    }
-
-  CloseDefTree::
-    {
-    DeleteBranch::
-      {
-      DeleteBranch::
-        {
-        LOG FREE(kill): {0x604000000010} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
-        }
-
-      DeleteBranch::
-        {
-        LOG FREE(kill): {0x604000000050} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
-        }
-
-      LOG FREE(kill): {0x604000000090} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
-      }
-
-
-    CloseDefTree:81 returned SUCCESS (return 0;)
-    }
-
-  DeleteBranch::
-    {
-    DeleteBranch::
-      {
-      LOG FREE(kill): {0x604000000150} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
-      }
-
-    DeleteBranch::
-      {
-      LOG FREE(kill): {0x6040000001d0} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
-      }
-
-    LOG FREE(kill): {0x6040000000d0} - will be freed from DeleteBranch:95, at ./src/DefTree.cpp:95
-    }
-
-
-  main:28 returned SUCCESS (return 0;)
-  }
-
-*********************************************************************
-		Log Successfuly ended, on Sun Nov 27 11:58:31 2022
-*********************************************************************

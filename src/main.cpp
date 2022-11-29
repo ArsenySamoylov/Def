@@ -17,13 +17,7 @@ int main()
    {    
    $log(RELEASE);
     
-   DefTree mem{};
-   GetG(&mem, "x + x");
-
-   DefNode* d = Differentiate(mem.root, 'x');
-   CloseDefTree(&mem);
-   DeleteBranch(d);
-   // CHECK (UnitTests() == SUCCESS, return LFAILURE);
+   CHECK (UnitTests() == SUCCESS, return LFAILURE);
    
    return LSUCCESS;    
    }              
@@ -164,7 +158,7 @@ int UnitTests()
       $$
 
       CHECK (CloseDefTree(&def_tree)   == SUCCESS, return LFAILURE);
-      CHECK (CloseDefTree(&d)          == SUCCESS, return LFAILURE);
+      // CHECK (CloseDefTree(&d)          == SUCCESS, return LFAILURE);
       CHECK (CloseDefTree(&simplified) == SUCCESS, return LFAILURE);
       }
     

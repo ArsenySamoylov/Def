@@ -21,8 +21,11 @@
 #define logf(format, ...)   LOG__.log(format __VA_OPT__(,) __VA_ARGS__)
 #define logf_ni(format, ...)   LOG__.log_no_indent(format __VA_OPT__(,) __VA_ARGS__)
 
-#define CALLOC(number_of_elements, size_of_element)  LOG__.CAL_LOG (number_of_elements, size_of_element, __FILE__, __func__, __LINE__);
-#define KILL(ptr)                                    LOG__.FREE_LOG(ptr, __FILE__, __func__, __LINE__);
+#define CALLOC(number_of_elements, size_of_element)  LOG__.CAL_LOG  (number_of_elements, size_of_element, __FILE__, __func__, __LINE__);
+#define KILL(ptr)                                    LOG__.FREE_LOG (ptr,                                 __FILE__, __func__, __LINE__);
+#define REALLOC(ptr, size)                           LOG__.REAL_LOG (ptr, size,                           __FILE__, __func__, __LINE__);
+
+
 #define PASTE(x, y) x ## _ ## y
 #define EVAL(x,y) PASTE(x,y)
 #define NAME(func) EVAL(func, __LINE__)

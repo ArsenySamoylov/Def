@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include "LogMacroses.h"
+#include "DSL.h"
 
 DefNode* NewDefNode (int      type,       DefNodeValue value, 
                      DefNode* left_child, DefNode*     right_child, 
@@ -84,7 +85,10 @@ int CloseDefTree (DefTree* def_tree)
 int DeleteBranch (DefNode* def_node)
     {
     $log(DEBUG_ALL)
+
     if (!def_node) return SUCCESS;
+
+    $LOG_NODE(def_node)
 
     if (def_node->left_child != 0)
         CHECK (DeleteBranch (def_node->left_child)  == SUCCESS, return LFAILURE);

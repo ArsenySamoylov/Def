@@ -139,21 +139,21 @@ void PrintNode (DefNode* node)
 
     switch (node->type)
         {
-        case OPERATOR: sprintf(def_data, "Operator | {%c}", node->value.t_operator);
+        case OPERATOR: sprintf(def_data, "Operator | {%c} | {%p}", node->value.t_operator, (void*) node);
                        break;
 
-        case VARIABLE: sprintf(def_data, "Variable | {%c}", node->value.t_variable);
+        case VARIABLE: sprintf(def_data, "Variable | {%c} | {%p}", node->value.t_variable, (void*) node);
                        break;
 
-        case CONSTANT: sprintf(def_data, "Constant | {%lg}", node->value.t_constant);
+        case CONSTANT: sprintf(def_data, "Constant | {%lg} | {%p}", node->value.t_constant, (void*) node);
                        break;
 
-        case FUNCTOR: sprintf(def_data, "Functor | {%d}", node->value.t_functor);
+        case FUNCTOR: sprintf(def_data, "Functor | {%d} | {%p}", node->value.t_functor, (void*) node);
                        break;
         default: break;
         }
 
-    DotPrint ("\t\tnode_%p [shape = Mrecord label =  \"%s\"]\n", node, def_data);
+    DotPrint ("\t\tnode_%p [shape = Mrecord label =  \"%s\"]\n", (void*) node, def_data);
 
     return;
     }    
