@@ -1,13 +1,18 @@
 \documentclass{minimal}
 \usepackage{graphicx}
 \begin{document}
-Original formula: $$ { cos(x) }^{ 4 } $$
+Original formula: $$ cos(x) $$
 \newline
-Differentiated formula (simplified): $$ {({(4)} \cdot {({ cos(x) }^{ 3 })})} \cdot {({(-1)} \cdot {(sin(x))})} $$
+Differentiated formula (simplified): $$ {(-1)} \cdot {(sin(x))} $$
 \newline
 \begin{center}
 \includegraphics [scale = 0.4]{UnitTests/graphics/0graphicorig.png}
 \end{center}
 \newline\newline
-\\ \\Result, after definnig x as 3.14: \textbf{0.00637059}
+\\ \\Result, after definnig x as 3.13: \textbf{-0.0115924}
+
+
+Teylor series (6 members): 
+
+ $$F(x) = {-0.999933} + \frac{-0.0115924}{1!} {\cdot x^{1}} + \frac{0.999933}{2!} {\cdot x^{2}} + \frac{0.0115924}{3!} {\cdot x^{3}} + \frac{-0.999933}{4!} {\cdot x^{4}} + \frac{-0.0115924}{5!} {\cdot x^{5}} + o(x^6);$$
 \end {document}

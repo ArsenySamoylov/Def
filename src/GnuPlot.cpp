@@ -19,15 +19,15 @@ int MakeGraphic(const char* path, const char* formula)
       
       plot("set title \"Test\"\n");
       
-      plot("set xrange  [ * : * ] noreverse writeback\n");
-      plot("set x2range [ * : * ] noreverse writeback\n");
-      plot("set yrange  [ * : * ] noreverse writeback\n");
-      plot("set y2range [ * : * ] noreverse writeback\n");
-      plot("set zrange  [ * : * ] noreverse writeback\n");
-      plot("set cbrange [ * : * ] noreverse writeback\n");
-      plot("set rrange  [ * : * ] noreverse writeback\n");
+    //   plot("set xrange  [ * : * ] noreverse writeback\n");
+    //   plot("set x2range [ * : * ] noreverse writeback\n");
+    //   plot("set yrange  [ * : * ] noreverse writeback\n");
+    //   plot("set y2range [ * : * ] noreverse writeback\n");
+    //   plot("set zrange  [ * : * ] noreverse writeback\n");
+    //   plot("set cbrange [ * : * ] noreverse writeback\n");
+    //   plot("set rrange  [ * : * ] noreverse writeback\n");
       // plot("set colorbox vertical origin screen 0.9, 0.2 size screen 0.05, 0.6 front  noinvert bdefault");
-      plot("NO_ANIMATION = 1\n");
+    //   plot("NO_ANIMATION = 1\n");
       plot("plot [-10:10] %s\n", formula);
 
     //   plot("e");

@@ -102,7 +102,7 @@ int UnitTests()
       //////////////////////////////// AddGraphics
       Buffer orig_graphic_form{};
       CHECK (BufferCtor(&orig_graphic_form, MAX_GNU_PLOT_FORMULA_LENGTH) == SUCCESS, return LFAILURE);
-      CHECK (DefTreeToGnuFormula (root, &orig_graphic_form)     == SUCCESS, return LFAILURE);
+      CHECK (DefTreeToGnuFormula (diff, &orig_graphic_form)     == SUCCESS, return LFAILURE);
       
       char graphic_name[MAX_GRAPHIC_NAME_LENGTH] = "";
       sprintf(graphic_name, "UnitTests/graphics/%zugraphicorig.png", i/2); 
@@ -113,8 +113,13 @@ int UnitTests()
       AddMessage ("\\end{center}\n");
    
       //////////////////////////////// Define Variable
-      DefineVariable ('x', 3.14, diff);
-      DefineVariable ('y', -3,   diff);
+      char var = 0;
+      double val = NAN;
+      int number_of_mem = 0;
+
+      sscanf(tests[i+1], "#%c=%lg, n=%i", &var, &val, &number_of_mem);
+
+      DefineVariable (var, val, diff);
 
       sprintf(GraphicName, "%zu_var_dif", i/2);
       const char* var_def = MakeImg(GraphicName, diff);
@@ -133,8 +138,10 @@ int UnitTests()
          }
          
       AddMessage("\\newline\\newline\n\\\\ \\\\");
-      AddMessage("Result, after definnig %c as %lg: \\textbf{%lg}\n", 'x', 3.14, result_value);
+      AddMessage("Result, after definnig %c as %lg: \\textbf{%lg}\n\n\n", 'x', val, result_value);
 
+   AddMessage ("Teylor series (%d members): \n", number_of_mem);
+   Teylor (root, number_of_mem, var, val); 
    CloseTexFile();
 
    SYSTEM("open UnitTests/LaTex/result_%zu.pdf", i/2);

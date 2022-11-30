@@ -14,3 +14,5 @@ void  CloseTexFile ();
 
 int AddDefTreeToTex (const DefNode *const node);
 int AddMessage   (const char* format, ...);
+
+int Teylor (const DefNode *const node, int number_of_mem, char var, double value);

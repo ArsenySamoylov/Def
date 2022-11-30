@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.24)  30 NOV 2022 17:41
+This is pdfTeX, Version 3.141592653-2.6-1.40.22 (TeX Live 2022/dev/Debian) (preloaded format=pdflatex 2022.11.24)  30 NOV 2022 18:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -120,7 +120,7 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.12 \\ \\
-          Result, after definnig x as 3.14: \textbf{0.00637059}
+          Result, after definnig x as 3.13: \textbf{-0.0115924}
 ? 
 
 ! LaTeX Error: There's no line here to end.
@@ -130,25 +130,25 @@ Type  H <return>  for immediate help.
  ...                                              
                                                   
 l.12 \\ \\R
-           esult, after definnig x as 3.14: \textbf{0.00637059}
+           esult, after definnig x as 3.13: \textbf{-0.0115924}
 ? 
 [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./UnitTests/graphics/0gr
 aphicorig.png>] (UnitTests/LaTex//result_0.aux) ) 
 Here is how much of TeX's memory you used:
  1076 strings out of 480247
  18977 string characters out of 5896150
- 302001 words of memory out of 5000000
+ 304001 words of memory out of 5000000
  19066 multiletter control sequences out of 15000+600000
  469567 words of font info for 29 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 55i,5n,62p,217b,163s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 55i,5n,62p,269b,163s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist
 /fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/share/texlive/texmf-dist/fonts
 /type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texlive/texmf-dist/fonts/type1
 /public/amsfonts/cm/cmr10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
 /amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
 s/cm/cmsy10.pfb>
-Output written on UnitTests/LaTex//result_0.pdf (1 page, 59388 bytes).
+Output written on UnitTests/LaTex//result_0.pdf (1 page, 63052 bytes).
 PDF statistics:
  35 PDF objects out of 1000 (max. 8388607)
  19 compressed objects within 1 object stream

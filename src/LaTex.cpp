@@ -1,5 +1,7 @@
 #include "LaTex.h"
 
+#include <math.h>
+
 #include "Def.h"
 #include "Utils.h"
 #include "LogMacroses.h"
@@ -122,6 +124,44 @@ int DefTreeToTex(const DefNode *const node, Buffer* buf)
     logf ("You shouldn't reach here %s:%d\n", __func__, __LINE__);
     return  LFAILURE;
     }
+
+#pragma GCC diagnostic ignored "-Wfloat-equal"
+int Teylor (const DefNode *const node, int number_of_mem, char var, double value)
+    {
+    $log(1)
+    assertlog(node,              EFAULT, return LFAILURE);
+    assertlog(number_of_mem > 0, EFAULT, return LFAILURE);
+    assertlog(var,               EFAULT, return LFAILURE);
+    assertlog(value != NAN,      EFAULT, return LFAILURE);
+
+    DefNode* local = COPY(node);
+    double koeff = NAN;
+
+    DefineVariable  (var, value, local);
+    koeff = CountConstants (local);
+
+    texprint("\n $$F(x) = {%lg} ", koeff);
+
+    for(int i = 1; i < number_of_mem; i++)
+        {
+        DefNode* temp = Differentiate(local, var);
+        temp = Simplify (temp);
+
+        DefineVariable (var, value, temp);
+        koeff = CountConstants (temp);
+        
+        if (koeff)
+            texprint ("+ \\frac{%lg}{%d!} {\\cdot x^{%d}} ", koeff, i, i);  
+
+        DeleteBranch (local);
+        local = temp;
+        }
+    
+    texprint("+ o(x^%d);$$\n", number_of_mem);
+    return SUCCESS;
+    }
+
+
 
 int AddMessage (const char* format, ...)
     {
