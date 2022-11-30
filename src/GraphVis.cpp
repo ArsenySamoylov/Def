@@ -1,16 +1,29 @@
 #include "DefGraphVis.h"
 
 #include <stdarg.h>
+#include <string.h>
 
+#include "DSL.h"
 #include "EasyDebug.h"
 #include "LogMacroses.h"
 
 static FILE* Dot = NULL; 
 
-const char* MakeImg (const char* img_name, const DefTree* data_tree) 
+static void DotPrint     (const char* format, ...);
+
+static void SetDot    ();
+static void SetEndDot ();
+
+static void DotTreeBranch (const DefNode *const node);
+static void PrintNode     (const DefNode *const node);
+
+#define set_func_name   fprintf (Dot, "########################################################### %s\n", __func__);
+
+const char* MakeImg (const char* img_name, const DefNode *const node) 
     {
     $log(2)
     assert (img_name);
+    assert (node);
 
     char      dot_file [MAX_GRAPH_NAME_LENGTH + 16] = {};
     snprintf (dot_file, MAX_GRAPH_NAME_LENGTH, "%s%s.dot", 
@@ -25,7 +38,7 @@ const char* MakeImg (const char* img_name, const DefTree* data_tree)
 
     // THIS COULD BE THE PLACE FOR YOUR FUNCTION
     
-    DotTreeBranch (data_tree->root);
+    DotTreeBranch (node);
     // FOR EXample like this ^
 
     SetEndDot ();
@@ -45,7 +58,7 @@ const char* MakeImg (const char* img_name, const DefTree* data_tree)
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-void SetDot ()
+static void SetDot ()
     {
     if (!Dot) return;
 
@@ -57,7 +70,7 @@ void SetDot ()
     return;
     }
 
-void SetEndDot ()
+static void SetEndDot ()
     {
     if (!Dot)   return;
 
@@ -70,7 +83,7 @@ void SetEndDot ()
     }
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////
-void DotPrint (const char* format, ...)
+static void DotPrint (const char* format, ...)
     {
     va_list ptr;
     va_start(ptr, format);
@@ -96,7 +109,7 @@ void CloseDotFile ()
     return; 
     }
 
-void DotTreeBranch (DefNode* node)
+static void DotTreeBranch (const DefNode *const node)
     {
     assertlog (node, EFAULT, abort());
     
@@ -125,10 +138,8 @@ void DotTreeBranch (DefNode* node)
     return;
     }
 
-#include <string.h>
-#include "DSL.h"
-
-void PrintNode (DefNode* node)
+#pragma GCC diagnostic ignored "-Wcast-qual"
+static void PrintNode (const DefNode *const node)
     {
     $log(1) 
     assertlog (node, EFAULT, abort());

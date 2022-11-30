@@ -16,14 +16,14 @@ enum T_OPERATORS
     MUL = '*',
     DIV = '/', 
     POW = '^',
+    //////////////
+    BRACKET,
     };
 
 
-const int NUMBER_OF_SUPPORTED_FUNCTIONS = 3;
+const int NUMBER_OF_SUPPORTED_FUNCTIONS = 4;
 const char *const SUPPORTED_FUNCTIONS[] = {"sin", "cos", "ln", "sqrt"};
-const char OPERATORS[] = "+_*/^";
-
-#define NOT_A_FUNCTION (-1)
+const char OPERATORS[] = "+-*/^";
 
 // static_assert (array[sin] == to_str[sin]);
 

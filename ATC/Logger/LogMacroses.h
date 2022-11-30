@@ -76,8 +76,8 @@
 #define $lp(pointer)     do { logf ("\t%s: %p\n", #pointer, (void*)pointer); } while(0);
 
 
-#define TODO(message) printf(redcolor "#TODO Check this place to improve it (%s::%d)\n%s" resetconsole , __func__, __LINE__, message);      \
-                                 logf("#TODO Check this place to improve it (%s%d)\n", __func__, __LINE__);                                 \
+#define TODO(message) printf(redcolor "#TODO Check this place to improve it (%s:%d)\n%s" resetconsole , __FILE__, __LINE__, message);      \
+                                 logf("#TODO Check this place to improve it (%s:%d)\n%s",               __FILE__, __LINE__, message);      \
                                  logf(message);
 
 #define YOU_SHALL_NOT_PASS printf(purplecolor "You shouldn't be able to reach this place (%s::%d)\n" resetconsole , __func__, __LINE__);     \

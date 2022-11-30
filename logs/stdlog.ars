@@ -1,13 +1,13 @@
-Tue Nov 29 19:35:16 2022
+Wed Nov 30 17:41:10 2022
 
 main::
   {
   UnitTests::
     {
-    LOG CALLOC:     {0x614000000040} = calloc (395, 1 = 395) from GetSrcFile:27, at ./ATC/Buffer/my_buffer.cpp:27
-    	num_lines: 44
-    LOG CALLOC:     {0x613000000040} = calloc (45, 8 = 360) from DivideBufferIntoLines:51, at ./ATC/Buffer/my_buffer.cpp:51
-    GetG::
+    LOG CALLOC:     {0x614000000040} = calloc (409, 1 = 409) from GetSrcFile:27, at ./ATC/Buffer/my_buffer.cpp:27
+    	num_lines: 41
+    LOG CALLOC:     {0x613000000040} = calloc (42, 8 = 336) from DivideBufferIntoLines:51, at ./ATC/Buffer/my_buffer.cpp:51
+    Tokenizer::
       {
       BufferCtor::
         {
@@ -15,6 +15,41 @@ main::
         BufferCtor:299 returned SUCCESS (return 0;)
         }
 
+      LOG CALLOC:     {0x618000000080} = calloc (20, 40 = 800) from Tokenizer:47, at ./src/ExpressionParser.cpp:47
+      LOG REALLOC:     {0x618000000080} -> {0x60e000000040} = realloc (size 160) from Tokenizer:133, at ./src/ExpressionParser.cpp:133
+      	number_of_tokens: 4
+      	i: 0
+      DefNode *tokens_arr + i
+      (0x60e000000040)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: FUNCTOR | {1}
+
+      	i: 1
+      DefNode *tokens_arr + i
+      (0x60e000000068)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: VARIABLE | {x}
+
+      	i: 2
+      DefNode *tokens_arr + i
+      (0x60e000000090)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: OPERATOR | {^}
+
+      	i: 3
+      DefNode *tokens_arr + i
+      (0x60e0000000b8)::::::::::::::::
+      		  left_child: (nil)
+      		 right_child: (nil)
+      		        type: CONSTANT | {4}
+
+      }
+
+    GetG::
+      {
       GetE::
         {
         GetT::
@@ -23,24 +58,1857 @@ main::
             {
             GetP::
               {
-              NewDefNode::
+              GetF::
                 {
-                LOG CALLOC:     {0x604000000010} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
-                }
+                GetP::
+                  {
+                  GetN::
+                    {
+                    DefNode result
+                    (0x60e000000068)::::::::::::::::
+                    		  left_child: (nil)
+                    		 right_child: (nil)
+                    		        type: VARIABLE | {x}
 
-              GetFunctor::
-                {
-                	NOT_A_FUNCTION: -1
+                    }
+
+                  }
+
+                DefNode result
+                (0x60e000000040)::::::::::::::::
+                		  left_child: (nil)
+                		 right_child: 0x60e000000068
+                		        type: FUNCTOR | {1}
+
                 }
 
               }
 
-            	val: 0x604000000010
+            DefNode token
+            (0x60e000000090)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: OPERATOR | {^}
+
+            GetP::
+              {
+              GetN::
+                {
+                DefNode result
+                (0x60e0000000b8)::::::::::::::::
+                		  left_child: (nil)
+                		 right_child: (nil)
+                		        type: CONSTANT | {4}
+
+                }
+
+              }
+
             }
 
-          DefNode val
-          (0x604000000010)::::::::::::::::
+          DefNode node
+          (0x60e000000090)::::::::::::::::
+          		  left_child: 0x60e000000040
+          		 right_child: 0x60e0000000b8
+          		        type: OPERATOR | {^}
+
+          }
+
+        }
+
+      DefNode root
+      (0x60e000000090)::::::::::::::::
+      		  left_child: 0x60e000000040
+      		 right_child: 0x60e0000000b8
+      		        type: OPERATOR | {^}
+
+      }
+
+    MakeImg::
+      {
+      PrintNode::
+        {
+        DefNode node
+        (0x60e000000090)::::::::::::::::
+        		  left_child: 0x60e000000040
+        		 right_child: 0x60e0000000b8
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x60e000000040)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x60e000000068
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x60e000000040)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x60e000000068
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x60e000000068)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x60e000000068)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x60e0000000b8)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x60e0000000b8)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      }
+
+    Differentiate::
+      {
+      DefNode def_node
+      (0x60e000000090)::::::::::::::::
+      		  left_child: 0x60e000000040
+      		 right_child: 0x60e0000000b8
+      		        type: OPERATOR | {^}
+
+      NewDefNode::
+        {
+        LOG CALLOC:     {0x604000000010} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+        }
+
+      Simplify::
+        {
+        DefNode def_node
+        (0x60e0000000b8)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      Simplify::
+        {
+        DefNode def_node
+        (0x60e000000040)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x60e000000068
+        		        type: FUNCTOR | {1}
+
+        }
+
+      NewDefNode::
+        {
+        LOG CALLOC:     {0x604000000050} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+        }
+
+      CopyBranch::
+        {
+        NewDefNode::
+          {
+          LOG CALLOC:     {0x604000000090} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+          }
+
+        CopyBranch::
+          {
+          NewDefNode::
+            {
+            LOG CALLOC:     {0x6040000000d0} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+            }
+
+          }
+
+        }
+
+      NewDefNode::
+        {
+        LOG CALLOC:     {0x604000000110} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+        }
+
+      CopyBranch::
+        {
+        NewDefNode::
+          {
+          LOG CALLOC:     {0x604000000150} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+          }
+
+        }
+
+      NewDefNode::
+        {
+        LOG CALLOC:     {0x604000000190} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+        }
+
+      Differentiate::
+        {
+        DefNode def_node
+        (0x60e000000040)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x60e000000068
+        		        type: FUNCTOR | {1}
+
+        NewDefNode::
+          {
+          LOG CALLOC:     {0x6040000001d0} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+          }
+
+        Differentiate::
+          {
+          DefNode def_node
+          (0x60e000000068)::::::::::::::::
           		  left_child: (nil)
           		 right_child: (nil)
           		        type: VARIABLE | {x}
+
+          NewDefNode::
+            {
+            LOG CALLOC:     {0x604000000210} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+            }
+
+          }
+
+        NewDefNode::
+          {
+          LOG CALLOC:     {0x604000000250} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+          }
+
+        NewDefNode::
+          {
+          LOG CALLOC:     {0x604000000290} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+          }
+
+        NewDefNode::
+          {
+          LOG CALLOC:     {0x6040000002d0} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+          }
+
+        CopyBranch::
+          {
+          NewDefNode::
+            {
+            LOG CALLOC:     {0x604000000310} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+            }
+
+          }
+
+        }
+
+      }
+
+    MakeImg::
+      {
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000010)::::::::::::::::
+        		  left_child: 0x604000000190
+        		 right_child: 0x6040000002d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000150)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000150)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000110)::::::::::::::::
+        		  left_child: 0x604000000090
+        		 right_child: 0x604000000050
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000110)::::::::::::::::
+        		  left_child: 0x604000000090
+        		 right_child: 0x604000000050
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000090)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x6040000000d0
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000090)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x6040000000d0
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000290
+        		 right_child: 0x604000000210
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000290
+        		 right_child: 0x604000000210
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000290)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000290)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000250)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {-1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000250)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {-1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: FUNCTOR | {0}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: FUNCTOR | {0}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000210)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000210)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {1}
+
+        }
+
+      }
+
+    Simplify::
+      {
+      DefNode def_node
+      (0x604000000010)::::::::::::::::
+      		  left_child: 0x604000000190
+      		 right_child: 0x6040000002d0
+      		        type: OPERATOR | {*}
+
+      Simplify::
+        {
+        DefNode def_node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        Simplify::
+          {
+          DefNode def_node
+          (0x604000000150)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {4}
+
+          }
+
+        Simplify::
+          {
+          DefNode def_node
+          (0x604000000110)::::::::::::::::
+          		  left_child: 0x604000000090
+          		 right_child: 0x604000000050
+          		        type: OPERATOR | {^}
+
+          Simplify::
+            {
+            DefNode def_node
+            (0x604000000090)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x6040000000d0
+            		        type: FUNCTOR | {1}
+
+            }
+
+          Simplify::
+            {
+            DefNode def_node
+            (0x604000000050)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: CONSTANT | {3}
+
+            }
+
+          }
+
+        }
+
+      Simplify::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000290
+        		 right_child: 0x604000000210
+        		        type: OPERATOR | {*}
+
+        Simplify::
+          {
+          DefNode def_node
+          (0x604000000290)::::::::::::::::
+          		  left_child: 0x604000000250
+          		 right_child: 0x6040000001d0
+          		        type: OPERATOR | {*}
+
+          Simplify::
+            {
+            DefNode def_node
+            (0x604000000250)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: CONSTANT | {-1}
+
+            }
+
+          Simplify::
+            {
+            DefNode def_node
+            (0x6040000001d0)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x604000000310
+            		        type: FUNCTOR | {0}
+
+            }
+
+          }
+
+        Simplify::
+          {
+          DefNode def_node
+          (0x604000000210)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {1}
+
+          }
+
+        PromoteChild::
+          {
+          DefNode step_mom
+          (0x6040000002d0)::::::::::::::::
+          		  left_child: 0x604000000290
+          		 right_child: 0x604000000210
+          		        type: OPERATOR | {*}
+
+          DefNode son
+          (0x604000000290)::::::::::::::::
+          		  left_child: 0x604000000250
+          		 right_child: 0x6040000001d0
+          		        type: OPERATOR | {*}
+
+          DeleteBranch::
+            {
+            DefNode def_node
+            (0x604000000210)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: CONSTANT | {1}
+
+            LOG FREE(kill): {0x604000000210} - will be freed from DeleteBranch:99, at ./src/DefTree.cpp:99
+            }
+
+          DefReplaceWith::
+            {
+            DefNode destination
+            (0x6040000002d0)::::::::::::::::
+            		  left_child: 0x604000000290
+            		 right_child: 0x604000000210
+            		        type: OPERATOR | {*}
+
+            DefNode source
+            (0x604000000290)::::::::::::::::
+            		  left_child: 0x604000000250
+            		 right_child: 0x6040000001d0
+            		        type: OPERATOR | {*}
+
+            LOG FREE(kill): {0x604000000290} - will be freed from DefReplaceWith:371, at ./src/Def.cpp:371
+            }
+
+          }
+
+        }
+
+      }
+
+    MakeImg::
+      {
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000010)::::::::::::::::
+        		  left_child: 0x604000000190
+        		 right_child: 0x6040000002d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000150)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000150)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000110)::::::::::::::::
+        		  left_child: 0x604000000090
+        		 right_child: 0x604000000050
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000110)::::::::::::::::
+        		  left_child: 0x604000000090
+        		 right_child: 0x604000000050
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000090)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x6040000000d0
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000090)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x6040000000d0
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000250)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {-1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000250)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {-1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: FUNCTOR | {0}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: FUNCTOR | {0}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: VARIABLE | {x}
+
+        }
+
+      }
+
+
+    OpenTexFile:30 returned SUCCESS (return 0;)
+    AddDefTreeToTex::
+      {
+      BufferCtor::
+        {
+        LOG CALLOC:     {0x60c000000040} = calloc (128, 1 = 128) from BufferCtor:307, at ./ATC/Buffer/my_buffer.cpp:307
+
+        BufferCtor:312 returned SUCCESS (return 0;)
+        }
+
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        DefTreeToTex::
+          {
+
+          BufferPutString:408 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          DefTreeToTex::
+            {
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+            }
+
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          }
+
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        DefTreeToTex::
+          {
+
+          BufferPutDouble:381 returned SUCCESS (return 0;)
+          }
+
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+      LOG FREE(kill): {0x60c000000040} - will be freed from AddDefTreeToTex:64, at ./src/LaTex.cpp:64
+      }
+
+    AddDefTreeToTex::
+      {
+      BufferCtor::
+        {
+        LOG CALLOC:     {0x60c000000100} = calloc (128, 1 = 128) from BufferCtor:307, at ./ATC/Buffer/my_buffer.cpp:307
+
+        BufferCtor:312 returned SUCCESS (return 0;)
+        }
+
+      DefTreeToTex::
+        {
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        DefTreeToTex::
+          {
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          DefTreeToTex::
+            {
+
+            BufferPutDouble:381 returned SUCCESS (return 0;)
+            }
+
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutString:408 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          DefTreeToTex::
+            {
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+            DefTreeToTex::
+              {
+
+              BufferPutString:408 returned SUCCESS (return 0;)
+
+              BufferPutChar:394 returned SUCCESS (return 0;)
+              DefTreeToTex::
+                {
+
+                BufferPutChar:394 returned SUCCESS (return 0;)
+                }
+
+
+              BufferPutChar:394 returned SUCCESS (return 0;)
+              }
+
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+            DefTreeToTex::
+              {
+
+              BufferPutDouble:381 returned SUCCESS (return 0;)
+              }
+
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+            }
+
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          }
+
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutString:408 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        DefTreeToTex::
+          {
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          DefTreeToTex::
+            {
+
+            BufferPutDouble:381 returned SUCCESS (return 0;)
+            }
+
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutString:408 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          DefTreeToTex::
+            {
+
+            BufferPutString:408 returned SUCCESS (return 0;)
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+            DefTreeToTex::
+              {
+
+              BufferPutChar:394 returned SUCCESS (return 0;)
+              }
+
+
+            BufferPutChar:394 returned SUCCESS (return 0;)
+            }
+
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          }
+
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+      LOG FREE(kill): {0x60c000000100} - will be freed from AddDefTreeToTex:64, at ./src/LaTex.cpp:64
+      }
+
+    BufferCtor::
+      {
+      LOG CALLOC:     {0x60c0000001c0} = calloc (128, 1 = 128) from BufferCtor:307, at ./ATC/Buffer/my_buffer.cpp:307
+
+      BufferCtor:312 returned SUCCESS (return 0;)
+      }
+
+    DefTreeToGnuFormula::
+      {
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToGnuFormula::
+        {
+
+        BufferPutString:408 returned SUCCESS (return 0;)
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        DefTreeToGnuFormula::
+          {
+
+          BufferPutChar:394 returned SUCCESS (return 0;)
+          }
+
+
+        BufferPutChar:394 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+
+      BufferPutString:408 returned SUCCESS (return 0;)
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      DefTreeToGnuFormula::
+        {
+
+        BufferPutDouble:381 returned SUCCESS (return 0;)
+        }
+
+
+      BufferPutChar:394 returned SUCCESS (return 0;)
+      }
+
+    MakeGraphic::
+      {
+      }
+
+    DefineVariable::
+      {
+      DefNode def_node
+      (0x604000000010)::::::::::::::::
+      		  left_child: 0x604000000190
+      		 right_child: 0x6040000002d0
+      		        type: OPERATOR | {*}
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000150)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {4}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            }
+
+          }
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000110)::::::::::::::::
+          		  left_child: 0x604000000090
+          		 right_child: 0x604000000050
+          		        type: OPERATOR | {^}
+
+          DefineVariable::
+            {
+            DefNode def_node
+            (0x604000000090)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x6040000000d0
+            		        type: FUNCTOR | {1}
+
+            DefineVariable::
+              {
+              }
+
+            DefineVariable::
+              {
+              DefNode def_node
+              (0x6040000000d0)::::::::::::::::
+              		  left_child: (nil)
+              		 right_child: (nil)
+              		        type: VARIABLE | {x}
+
+              NewDefNode::
+                {
+                LOG CALLOC:     {0x604000000350} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+                }
+
+
+              DefineVariable:272 returned SUCCESS (return 0;)
+              }
+
+            }
+
+          DefineVariable::
+            {
+            DefNode def_node
+            (0x604000000050)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: CONSTANT | {3}
+
+            DefineVariable::
+              {
+              }
+
+            DefineVariable::
+              {
+              }
+
+            }
+
+          }
+
+        }
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000250)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {-1}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            }
+
+          }
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x6040000001d0)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: 0x604000000310
+          		        type: FUNCTOR | {0}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            DefNode def_node
+            (0x604000000310)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: VARIABLE | {x}
+
+            NewDefNode::
+              {
+              LOG CALLOC:     {0x604000000390} = calloc (1, 40 = 40) from NewDefNode:14, at ./src/DefTree.cpp:14
+              }
+
+
+            DefineVariable:272 returned SUCCESS (return 0;)
+            }
+
+          }
+
+        }
+
+      }
+
+    DefineVariable::
+      {
+      DefNode def_node
+      (0x604000000010)::::::::::::::::
+      		  left_child: 0x604000000190
+      		 right_child: 0x6040000002d0
+      		        type: OPERATOR | {*}
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000150)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {4}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            }
+
+          }
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000110)::::::::::::::::
+          		  left_child: 0x604000000090
+          		 right_child: 0x604000000050
+          		        type: OPERATOR | {^}
+
+          DefineVariable::
+            {
+            DefNode def_node
+            (0x604000000090)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x6040000000d0
+            		        type: FUNCTOR | {1}
+
+            DefineVariable::
+              {
+              }
+
+            DefineVariable::
+              {
+              DefNode def_node
+              (0x6040000000d0)::::::::::::::::
+              		  left_child: (nil)
+              		 right_child: 0x604000000350
+              		        type: VARIABLE | {x}
+
+              DefineVariable::
+                {
+                }
+
+              DefineVariable::
+                {
+                DefNode def_node
+                (0x604000000350)::::::::::::::::
+                		  left_child: (nil)
+                		 right_child: (nil)
+                		        type: CONSTANT | {3.14}
+
+                DefineVariable::
+                  {
+                  }
+
+                DefineVariable::
+                  {
+                  }
+
+                }
+
+              }
+
+            }
+
+          DefineVariable::
+            {
+            DefNode def_node
+            (0x604000000050)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: CONSTANT | {3}
+
+            DefineVariable::
+              {
+              }
+
+            DefineVariable::
+              {
+              }
+
+            }
+
+          }
+
+        }
+
+      DefineVariable::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x604000000250)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {-1}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            }
+
+          }
+
+        DefineVariable::
+          {
+          DefNode def_node
+          (0x6040000001d0)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: 0x604000000310
+          		        type: FUNCTOR | {0}
+
+          DefineVariable::
+            {
+            }
+
+          DefineVariable::
+            {
+            DefNode def_node
+            (0x604000000310)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x604000000390
+            		        type: VARIABLE | {x}
+
+            DefineVariable::
+              {
+              }
+
+            DefineVariable::
+              {
+              DefNode def_node
+              (0x604000000390)::::::::::::::::
+              		  left_child: (nil)
+              		 right_child: (nil)
+              		        type: CONSTANT | {3.14}
+
+              DefineVariable::
+                {
+                }
+
+              DefineVariable::
+                {
+                }
+
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    MakeImg::
+      {
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000010)::::::::::::::::
+        		  left_child: 0x604000000190
+        		 right_child: 0x6040000002d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000150)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000150)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {4}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000110)::::::::::::::::
+        		  left_child: 0x604000000090
+        		 right_child: 0x604000000050
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000110)::::::::::::::::
+        		  left_child: 0x604000000090
+        		 right_child: 0x604000000050
+        		        type: OPERATOR | {^}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000090)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x6040000000d0
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000090)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x6040000000d0
+        		        type: FUNCTOR | {1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000350
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000000d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000350
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000350)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3.14}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000350)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3.14}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000050)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000250)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {-1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000250)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {-1}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: FUNCTOR | {0}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x6040000001d0)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000310
+        		        type: FUNCTOR | {0}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000390
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000310)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: 0x604000000390
+        		        type: VARIABLE | {x}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000390)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3.14}
+
+        }
+
+      PrintNode::
+        {
+        DefNode node
+        (0x604000000390)::::::::::::::::
+        		  left_child: (nil)
+        		 right_child: (nil)
+        		        type: CONSTANT | {3.14}
+
+        }
+
+      }
+
+    CountConstants::
+      {
+      DefNode def_node
+      (0x604000000010)::::::::::::::::
+      		  left_child: 0x604000000190
+      		 right_child: 0x6040000002d0
+      		        type: OPERATOR | {*}
+
+      CountConstants::
+        {
+        DefNode def_node
+        (0x604000000190)::::::::::::::::
+        		  left_child: 0x604000000150
+        		 right_child: 0x604000000110
+        		        type: OPERATOR | {*}
+
+        CountConstants::
+          {
+          DefNode def_node
+          (0x604000000150)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {4}
+
+          }
+
+        CountConstants::
+          {
+          DefNode def_node
+          (0x604000000110)::::::::::::::::
+          		  left_child: 0x604000000090
+          		 right_child: 0x604000000050
+          		        type: OPERATOR | {^}
+
+          CountConstants::
+            {
+            DefNode def_node
+            (0x604000000050)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: (nil)
+            		        type: CONSTANT | {3}
+
+            }
+
+          CountConstants::
+            {
+            DefNode def_node
+            (0x604000000090)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x6040000000d0
+            		        type: FUNCTOR | {1}
+
+            CountConstants::
+              {
+              DefNode def_node
+              (0x6040000000d0)::::::::::::::::
+              		  left_child: (nil)
+              		 right_child: 0x604000000350
+              		        type: VARIABLE | {x}
+
+              }
+
+            }
+
+          }
+
+        }
+
+      CountConstants::
+        {
+        DefNode def_node
+        (0x6040000002d0)::::::::::::::::
+        		  left_child: 0x604000000250
+        		 right_child: 0x6040000001d0
+        		        type: OPERATOR | {*}
+
+        CountConstants::
+          {
+          DefNode def_node
+          (0x604000000250)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: (nil)
+          		        type: CONSTANT | {-1}
+
+          }
+
+        CountConstants::
+          {
+          DefNode def_node
+          (0x6040000001d0)::::::::::::::::
+          		  left_child: (nil)
+          		 right_child: 0x604000000310
+          		        type: FUNCTOR | {0}
+
+          CountConstants::
+            {
+            DefNode def_node
+            (0x604000000310)::::::::::::::::
+            		  left_child: (nil)
+            		 right_child: 0x604000000390
+            		        type: VARIABLE | {x}
+
+            }
+
+          }
+
+        }
+
+      }
 
