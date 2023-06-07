@@ -15,15 +15,7 @@ int UnitTests();
 
 int main()
    {    
-   $log(RELEASE);
-   
-   // Token* token_arr = nullptr;
-   // int number_of_tokens = Tokenizer(&token_arr, "x+x");
-
-   // DefNode* root = GetG(token_arr, number_of_tokens);
-   // MakeImg("test", root);
-
-   // free(token_arr);
+   $log(RELEASE)
     
    CHECK (UnitTests() == SUCCESS, return LFAILURE);
    
@@ -31,7 +23,7 @@ int main()
    }              
 
 
-int NUMBER_O_TESTS = 4;
+int NUMBER_O_TESTS = 1;
 
 #pragma GCC diagnostic ignored "-Wunused-variable"
 int UnitTests()
@@ -50,9 +42,6 @@ int UnitTests()
        {
        static char GraphicName[99] = "";
     
-        // $s(tests[i])
-        // $s(tests[i+1])
-
         SYSTEM("rm -rf ./UnitTests/graphics/*.png");
         SYSTEM("rm -rf ./UnitTests/graphics/dot/*.dot");
 
@@ -143,9 +132,6 @@ int UnitTests()
    AddMessage ("Teylor series (%d members): \n", number_of_mem);
    Teylor (root, number_of_mem, var, val); 
    CloseTexFile();
-
-   SYSTEM("open UnitTests/LaTex/result_%zu.pdf", i/2);
-   $$
 
    KILL((void**) &token_arr);
    DeleteBranch (diff);

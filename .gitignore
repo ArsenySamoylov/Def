@@ -6,9 +6,6 @@
 .vscode/
 *.json
 *.html
-*.png
 graphics/
 *.txt
 *.png
-.gitignore
-SPrYtny

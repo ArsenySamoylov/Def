@@ -32,7 +32,6 @@ static DefNode* GetN     (TokenBuffer* token_buf);
 static int BufferGetWord (Buffer* buf, char* word_buffer);
 static int isfunctor (char* str);
 
-
 #define token  (arr + number_of_tokens)
 
 int Tokenizer (Token** tokens_arr, const char* expression)
@@ -56,6 +55,7 @@ int Tokenizer (Token** tokens_arr, const char* expression)
         if (number_of_tokens == size)
             {
             size *= 2;
+            TODO("RECALLOC\n");
             Token* fuck = (Token*) REALLOC(arr, size * sizeof(arr[0]));  
             if (!fuck) return LFAILURE;
             
@@ -125,7 +125,7 @@ int Tokenizer (Token** tokens_arr, const char* expression)
         YOU_SHALL_NOT_PASS
 
         printf("Something went wrong in: %s\n", buf.str);
-        KILL((void**) &arr);
+        KILL((void**)arr);
 
         return LFAILURE;
         }
