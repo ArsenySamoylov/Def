@@ -1,3 +1,9 @@
+# Disclaimer
+
+This project is intended for educational purposes only. It is a study project and not intended for production use. 
+
+Please use it responsibly and at your own risk =).
+
 ## Дифференциатор
  - это удобное приложение, которое рассчитывает производные за Вас !!!
 
